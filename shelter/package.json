@@ -1,0 +1,29 @@
+{
+  "name": "shelter",
+  "version": "1.0.0",
+  "description": "shelter project",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/svt1108-JSFE2022Q1.git"
+  },
+  "author": "Svetlana Pozina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolling-scopes-school/svt1108-JSFE2022Q1/issues"
+  },
+  "homepage": "https://github.com/rolling-scopes-school/svt1108-JSFE2022Q1#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "node-sass": "^7.0.1",
+    "sass-loader": "^12.6.0",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
