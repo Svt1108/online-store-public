@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Georgia";
+  src: url("../../assets/fonts/Georgia/georgia.ttf");
+  src: url("../../assets/fonts/Georgia/georgia_bolditalic.ttf");
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../../assets/fonts/arial/ARIAL.TTF");
+  src: url("../../assets/fonts/arial/ARIALBD.TTF");
+  src: url("../../assets/fonts/arial/ARIALBI.TTF");
+}
