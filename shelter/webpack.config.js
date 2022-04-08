@@ -34,7 +34,7 @@ module.exports = {
   },
   output: {
     filename: "[name]/script.js",
-    path: __dirname + "/dist",
+    path: __dirname + "/final",
   },
   module: {
     rules: [
