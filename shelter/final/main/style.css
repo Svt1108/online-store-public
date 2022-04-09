@@ -311,14 +311,40 @@ template {
   \************************************************************************************************************/
 @font-face {
   font-family: "Georgia";
-  src: url(../7eb0e3cec9d41a50efd7.ttf);
-  src: url(../29adf59bbff72c5b2fd1.ttf); }
+  /* src: url("../../assets/fonts/Georgia/georgia.ttf");
+  src: url("../../assets/fonts/Georgia/georgia_bolditalic.ttf"); */
+  src: url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]");
+  font-weight: normal;
+  font-style: normal; }
 
 @font-face {
   font-family: "Arial";
-  src: url(../5afb1f7c7464ace62524.TTF);
-  src: url(../64dde1b4aa064ce0c627.TTF);
-  src: url(../cfe3eb6f645188c8a5cc.TTF); }
+  src: url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]");
+  /* 
+  src: url("../../assets/fonts/arial1/Arial-Black.woff"),
+    url("../../assets/fonts/arial1/Arial-BlackItalic.woff"),
+    url("../../assets/fonts/arial1/Arial-BoldItalicMT.woff"),
+    url("../../assets/fonts/arial1/Arial-BoldMT.woff"),
+    url("../../assets/fonts/arial1/Arial-ItalicMT.woff"),
+    url("../../assets/fonts/arial1/Arial-Lgt.woff"),
+    url("../../assets/fonts/arial1/Arial-LgtItl.woff"),
+    url("../../assets/fonts/arial1/Arial-Mdm.woff"),
+    url("../../assets/fonts/arial1/Arial-MdmItl.woff"),
+    url("../../assets/fonts/arial1/ArialCE-BoldItalic.woff"),
+    url("../../assets/fonts/arial1/ArialCE-Italic.woff"),
+    url("../../assets/fonts/arial1/ArialCE.woff"),
+    url("../../assets/fonts/arial1/ArialCEMTBlack-Regular.woff"),
+    url("../../assets/fonts/arial1/ArialMT.woff"); */
+  /* url("../../assets/fonts/arial1/ArialNarrow-Bold.woff"),
+    url("../../assets/fonts/arial1/ArialNarrow-BoldItalic.woff"),
+    url("../../assets/fonts/arial1/ArialNarrow-Italic.woff"),
+    url("../../assets/fonts/arial1/ArialNarrow.woff"); */
+  font-weight: normal;
+  font-style: normal; }
+
+/*!*****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/css/variables.scss ***!
+  \*****************************************************************************************************************/
 
 /*!************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/css/main.scss ***!
@@ -329,8 +355,7 @@ template {
   box-sizing: border-box; }
 
 body {
-  width: 100%;
-  font-family: Arial, sans-serif; }
+  width: 100%; }
   body .main {
     width: 100vw;
     display: flex;
@@ -343,6 +368,9 @@ body {
   min-height: 120px;
   margin: 0 auto; }
 
+a {
+  text-decoration: none; }
+
 .start_screen {
   width: 100%;
   height: 908px;
@@ -353,22 +381,102 @@ body {
     grid-template-columns: 502px 1fr;
     grid-template-areas: "header header" "main_text dog"; }
     .start_screen .content #header {
-      background-color: aqua;
+      display: flex;
       grid-area: header;
       padding: 60px 0;
-      position: relative; }
+      position: relative;
+      align-items: center; }
       .start_screen .content #header .logo {
         position: absolute;
-        left: 0; }
+        left: 0;
+        width: 184px;
+        display: flex;
+        flex-direction: column; }
         .start_screen .content #header .logo h1 {
-          color: white; }
-      .start_screen .content #header .header_menu {
+          color: #f1cdb3;
+          font-family: Georgia, serif;
+          font-weight: 400;
+          font-size: 32px;
+          line-height: 110%;
+          letter-spacing: 0.05em;
+          margin: 0 0 10px 0;
+          padding: 0;
+          width: 100%; }
+        .start_screen .content #header .logo p {
+          font-family: Arial, sans-serif;
+          font-size: 13px;
+          line-height: 15px;
+          letter-spacing: 0.11em;
+          color: white;
+          margin: 10 0 0 0;
+          padding: 0;
+          width: 100%; }
+      .start_screen .content #header .navmenu {
         position: absolute;
-        right: 0; }
+        right: 0;
+        width: 460px;
+        align-items: center; }
+        .start_screen .content #header .navmenu ul {
+          list-style: none;
+          display: flex;
+          align-items: center;
+          flex-wrap: nowrap; }
+          .start_screen .content #header .navmenu ul li {
+            width: 25%; }
+      .start_screen .content #header .navlink {
+        font-family: Arial, sans-serif;
+        font-size: 15px;
+        line-height: 160%;
+        width: 100%;
+        text-align: center;
+        height: 100%;
+        color: #cdcdcd;
+        border-bottom: 3px solid transparent;
+        padding-bottom: 3px; }
+      .start_screen .content #header .about {
+        border-bottom: 3px solid #f1cdb3; }
     .start_screen .content #dog {
       grid-area: dog; }
     .start_screen .content #main_text {
-      background-color: aquamarine;
-      opacity: 0.5;
-      grid-area: main_text; }
+      grid-area: main_text;
+      margin-right: 42px;
+      margin-top: 163px; }
+      .start_screen .content #main_text h2 {
+        width: 310px;
+        height: 114px;
+        font-family: "Georgia";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 44px;
+        line-height: 130%;
+        display: flex;
+        align-items: center;
+        color: #ffffff; }
+      .start_screen .content #main_text p {
+        font-family: "Arial";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 160%;
+        /* or 24px */
+        display: flex;
+        align-items: center;
+        /* color-dark-s */
+        color: #cdcdcd;
+        margin: 42px 0; }
+      .start_screen .content #main_text .buttonb {
+        display: flex;
+        background-color: #f1cdb3;
+        width: 207px;
+        height: 52px;
+        border-radius: 100px;
+        color: #292929;
+        font-family: "Georgia";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 130%;
+        letter-spacing: 0.06em;
+        justify-content: center;
+        align-items: center; }
 

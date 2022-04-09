@@ -40,13 +40,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
+/***/ "./src/css/variables.scss":
+/*!********************************!*\
+  !*** ./src/css/variables.scss ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://shelter/./src/css/variables.scss?");
+
+/***/ }),
+
 /***/ "./src/index_pet.js":
 /*!**************************!*\
   !*** ./src/index_pet.js ***!
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_normalize_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/normalize.css */ \"./src/css/normalize.css\");\n/* harmony import */ var _css_fonts_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/fonts.css */ \"./src/css/fonts.css\");\n/* harmony import */ var _css_pets_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/pets.scss */ \"./src/css/pets.scss\");\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://shelter/./src/index_pet.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_normalize_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/normalize.css */ \"./src/css/normalize.css\");\n/* harmony import */ var _css_fonts_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/fonts.css */ \"./src/css/fonts.css\");\n/* harmony import */ var _css_variables_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/variables.scss */ \"./src/css/variables.scss\");\n/* harmony import */ var _css_pets_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./css/pets.scss */ \"./src/css/pets.scss\");\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://shelter/./src/index_pet.js?");
 
 /***/ })
 

@@ -35,12 +35,21 @@ module.exports = {
   output: {
     filename: "[name]/script.js",
     path: __dirname + "/final",
+    /*   assetModuleFilename: "fonts/[hash][ext][query]",   для Webpack 5 вместо file-loader */
   },
   module: {
     rules: [
       {
         test: /\.(s*)css$/,
         use: [miniCss.loader, "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.(ttf|woff|woff2|eot)$/,
+        loader: "file-loader",
+        options: {
+          name: "fonts/[name].[ext]",
+        },
+        type: "javascript/auto" /* отключение встроенного assetModule */,
       },
     ],
   },

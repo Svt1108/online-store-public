@@ -1,11 +1,49 @@
 @font-face {
   font-family: "Georgia";
-  src: url("../../assets/fonts/Georgia/georgia.ttf");
-  src: url("../../assets/fonts/Georgia/georgia_bolditalic.ttf");
+  /* src: url("../../assets/fonts/Georgia/georgia.ttf");
+  src: url("../../assets/fonts/Georgia/georgia_bolditalic.ttf"); */
+  src: url("../../assets/fonts/georgia1/Georgia.ttf"),
+    url("../../assets/fonts/georgia1/Georgia4.ttf"),
+    url("../../assets/fonts/georgia1/GeorgiaRegularfont.ttf"),
+    url("../../assets/fonts/georgia1/GeorgiaBoldItalicfont.ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "Arial";
-  src: url("../../assets/fonts/arial/ARIAL.TTF");
-  src: url("../../assets/fonts/arial/ARIALBD.TTF");
-  src: url("../../assets/fonts/arial/ARIALBI.TTF");
+  src: url("../../assets/fonts/arial/Arial.ttf"),
+    url("../../assets/fonts/arial/Arialbd.ttf"),
+    url("../../assets/fonts/arial/Arialbi.ttf"),
+    url("../../assets/fonts/arial/Arialblackitalic.ttf"),
+    url("../../assets/fonts/arial/ArialCE.ttf"),
+    url("../../assets/fonts/arial/arialceb.ttf"),
+    url("../../assets/fonts/arial/ArialCEBoldItalic.ttf"),
+    url("../../assets/fonts/arial/ArialCEItalic.ttf"),
+    url("../../assets/fonts/arial/ArialCEMTBlack.ttf"),
+    url("../../assets/fonts/arial/Ariali.ttf"),
+    url("../../assets/fonts/arial/Ariallgt.ttf"),
+    url("../../assets/fonts/arial/Ariallgtitl.ttf"),
+    url("../../assets/fonts/arial/ArialMdm.ttf");
+  /* 
+  src: url("../../assets/fonts/arial1/Arial-Black.woff"),
+    url("../../assets/fonts/arial1/Arial-BlackItalic.woff"),
+    url("../../assets/fonts/arial1/Arial-BoldItalicMT.woff"),
+    url("../../assets/fonts/arial1/Arial-BoldMT.woff"),
+    url("../../assets/fonts/arial1/Arial-ItalicMT.woff"),
+    url("../../assets/fonts/arial1/Arial-Lgt.woff"),
+    url("../../assets/fonts/arial1/Arial-LgtItl.woff"),
+    url("../../assets/fonts/arial1/Arial-Mdm.woff"),
+    url("../../assets/fonts/arial1/Arial-MdmItl.woff"),
+    url("../../assets/fonts/arial1/ArialCE-BoldItalic.woff"),
+    url("../../assets/fonts/arial1/ArialCE-Italic.woff"),
+    url("../../assets/fonts/arial1/ArialCE.woff"),
+    url("../../assets/fonts/arial1/ArialCEMTBlack-Regular.woff"),
+    url("../../assets/fonts/arial1/ArialMT.woff"); */
+  /* url("../../assets/fonts/arial1/ArialNarrow-Bold.woff"),
+    url("../../assets/fonts/arial1/ArialNarrow-BoldItalic.woff"),
+    url("../../assets/fonts/arial1/ArialNarrow-Italic.woff"),
+    url("../../assets/fonts/arial1/ArialNarrow.woff"); */
+
+  font-weight: normal;
+  font-style: normal;
 }
