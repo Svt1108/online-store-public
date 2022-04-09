@@ -1,4 +1,5 @@
 @import "variables";
+@import "elements";
 
 * {
   margin: 0;
@@ -169,21 +170,9 @@ a {
         color: #cdcdcd;
         margin: 42px 0;
       }
-      .buttonb {
-        display: flex;
-        background-color: $font_color1;
+      .buttonb1 {
         width: 207px;
         height: 52px;
-        border-radius: 100px;
-        color: #292929;
-        font-family: "Georgia";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 17px;
-        line-height: 130%;
-        letter-spacing: 0.06em;
-        justify-content: center;
-        align-items: center;
       }
     }
   }
@@ -234,6 +223,121 @@ a {
         line-height: 160%;
         color: #4c4c4c;
       }
+    }
+  }
+}
+
+.pets {
+  width: 100%;
+  height: 877px;
+  background: #f6f6f6;
+
+  .content {
+    display: flex;
+    height: 100%;
+    padding: 80px 0 100px 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h3 {
+      width: 400px;
+      font-family: "Georgia";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 35px;
+      line-height: 130%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.06em;
+      color: #545454;
+    }
+
+    .slider {
+      height: 435px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      position: relative;
+      margin: 60px 0;
+
+      .left-button {
+        position: absolute;
+        left: 0;
+      }
+
+      .cards {
+        // margin: 0 105px;
+        //border: 1px solid rgb(55, 0, 255);
+        // width: 1000px;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        gap: 90px;
+        margin: 0 auto;
+        // position: relative;
+
+        .pet {
+          display: flex;
+          flex-wrap: wrap;
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+          width: 270px;
+          height: 435px;
+          background-color: #fafafa;
+          border-radius: 9px;
+          cursor: pointer;
+
+          .img_pet {
+            align-self: center;
+            width: 100%;
+            height: 270px;
+            box-sizing: content-box;
+          }
+
+          .name {
+            font-family: "Georgia";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 23px;
+            display: inline-flex;
+            letter-spacing: 0.06em;
+            color: #545454;
+            margin: 30px;
+          }
+
+          .buttonw1 {
+            width: 187px;
+            height: 52px;
+            align-self: center;
+            margin: 0 auto;
+          }
+        }
+
+        .pet:hover {
+          background-color: #ffffff;
+          .buttonw1 {
+            background-color: #fddcc4;
+            border: 2px solid #fff;
+          }
+        }
+      }
+
+      .right-button {
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    .buttonb2 {
+      height: 52px;
+      width: 261px;
     }
   }
 }

@@ -311,8 +311,6 @@ template {
   \************************************************************************************************************/
 @font-face {
   font-family: "Georgia";
-  /* src: url("../../assets/fonts/Georgia/georgia.ttf");
-  src: url("../../assets/fonts/Georgia/georgia_bolditalic.ttf"); */
   src: url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]");
   font-weight: normal;
   font-style: normal; }
@@ -320,25 +318,6 @@ template {
 @font-face {
   font-family: "Arial";
   src: url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]");
-  /* 
-  src: url("../../assets/fonts/arial1/Arial-Black.woff"),
-    url("../../assets/fonts/arial1/Arial-BlackItalic.woff"),
-    url("../../assets/fonts/arial1/Arial-BoldItalicMT.woff"),
-    url("../../assets/fonts/arial1/Arial-BoldMT.woff"),
-    url("../../assets/fonts/arial1/Arial-ItalicMT.woff"),
-    url("../../assets/fonts/arial1/Arial-Lgt.woff"),
-    url("../../assets/fonts/arial1/Arial-LgtItl.woff"),
-    url("../../assets/fonts/arial1/Arial-Mdm.woff"),
-    url("../../assets/fonts/arial1/Arial-MdmItl.woff"),
-    url("../../assets/fonts/arial1/ArialCE-BoldItalic.woff"),
-    url("../../assets/fonts/arial1/ArialCE-Italic.woff"),
-    url("../../assets/fonts/arial1/ArialCE.woff"),
-    url("../../assets/fonts/arial1/ArialCEMTBlack-Regular.woff"),
-    url("../../assets/fonts/arial1/ArialMT.woff"); */
-  /* url("../../assets/fonts/arial1/ArialNarrow-Bold.woff"),
-    url("../../assets/fonts/arial1/ArialNarrow-BoldItalic.woff"),
-    url("../../assets/fonts/arial1/ArialNarrow-Italic.woff"),
-    url("../../assets/fonts/arial1/ArialNarrow.woff"); */
   font-weight: normal;
   font-style: normal; }
 
