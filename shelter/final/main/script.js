@@ -70,7 +70,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css
   \************************/
 /***/ (() => {
 
-eval("const navlinks = document.querySelectorAll(\".navlink\");\r\nconst navlinkAbout = document.querySelector(\".about\");\r\n\r\n//about.style.borderBottom = `3px solid #f1cdb3`;\r\n\r\nfor (let navlink of navlinks) {\r\n  navlink.addEventListener(\"mouseover\", () => setHover(navlink));\r\n  navlink.addEventListener(\"mouseleave\", () => removeHover(navlink));\r\n}\r\n\r\nfunction setHover(element) {\r\n  for (let navlink1 of navlinks)\r\n    navlink1.style.borderBottom = `3px solid transparent`;\r\n  element.style.borderBottom = `3px solid #f1cdb3`;\r\n}\r\n\r\nfunction removeHover(element) {\r\n  element.style.borderBottom = `3px solid transparent`;\r\n}\r\n\n\n//# sourceURL=webpack://shelter/./src/js/main.js?");
+eval("const navlinks = document.querySelectorAll(\".navlink\");\r\nconst navlinkAbout = document.querySelector(\".first\");\r\n\r\n//first.style.borderBottom = `3px solid #f1cdb3`;\r\n\r\nfor (let navlink of navlinks) {\r\n  navlink.addEventListener(\"mouseover\", () => setHover(navlink));\r\n  navlink.addEventListener(\"mouseleave\", () => removeHover(navlink));\r\n}\r\n\r\nfunction setHover(element) {\r\n  for (let navlink1 of navlinks) {\r\n    navlink1.style.borderBottom = `3px solid transparent`;\r\n    navlink1.style.color = `#cdcdcd`;\r\n  }\r\n  element.style.borderBottom = `3px solid #f1cdb3`;\r\n  element.style.color = `white`;\r\n}\r\n\r\nfunction removeHover(element) {\r\n  element.style.borderBottom = `3px solid transparent`;\r\n  element.style.color = `#cdcdcd`;\r\n}\r\n\n\n//# sourceURL=webpack://shelter/./src/js/main.js?");
 
 /***/ })
 

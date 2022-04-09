@@ -1,7 +1,7 @@
 const navlinks = document.querySelectorAll(".navlink");
-const navlinkAbout = document.querySelector(".about");
+const navlinkAbout = document.querySelector(".first");
 
-//about.style.borderBottom = `3px solid #f1cdb3`;
+//first.style.borderBottom = `3px solid #f1cdb3`;
 
 for (let navlink of navlinks) {
   navlink.addEventListener("mouseover", () => setHover(navlink));
@@ -9,11 +9,15 @@ for (let navlink of navlinks) {
 }
 
 function setHover(element) {
-  for (let navlink1 of navlinks)
+  for (let navlink1 of navlinks) {
     navlink1.style.borderBottom = `3px solid transparent`;
+    navlink1.style.color = `#cdcdcd`;
+  }
   element.style.borderBottom = `3px solid #f1cdb3`;
+  element.style.color = `white`;
 }
 
 function removeHover(element) {
   element.style.borderBottom = `3px solid transparent`;
+  element.style.color = `#cdcdcd`;
 }
