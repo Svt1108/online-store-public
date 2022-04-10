@@ -3,15 +3,16 @@
 const navlinks = document.querySelectorAll(".button_circle_nav");
 const firstBtn = document.querySelector(".first_btn");
 
-firstBtn.style.backgroundColor = `#fddcc4`;
-firstBtn.style.border = `2px solid #fddcc4`;
+firstBtn.style.backgroundColor = `#f1cdb3`;
+firstBtn.style.border = `2px solid #f1cdb3`;
+firstBtn.style.cursor = `default`;
 
 for (let navlink of navlinks) {
   //   console.log(navlink.getAttribute("data-disabled"));
   if (navlink.getAttribute("data-disabled") == "false") {
     navlink.addEventListener("mouseover", () => setHover(navlink));
     navlink.addEventListener("mouseleave", () => removeHover(navlink));
-  } else {
+  } else if (navlink.getAttribute("data-disabled") == "true") {
     navlink.style.border = `2px solid #cdcdcd`;
     navlink.style.backgroundColor = `transparent`;
     navlink.style.cursor = `default`;
