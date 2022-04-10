@@ -705,3 +705,115 @@ a {
       .help .content .helps .icon_help:last-child {
         margin-right: 120px; }
 
+.addition {
+  width: 100%;
+  height: 462px;
+  background: #f6f6f6; }
+  .addition .content {
+    display: flex;
+    height: 100%;
+    padding: 80px 142px 100px 143px;
+    align-items: center;
+    flex-direction: row; }
+    .addition .content .donation {
+      margin-left: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; }
+      .addition .content .donation h3 {
+        width: 300px;
+        font-family: "Georgia";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 130%;
+        letter-spacing: 0.06em;
+        color: #545454;
+        margin-bottom: 20px; }
+      .addition .content .donation h5 {
+        font-family: "Georgia";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 110%;
+        letter-spacing: 0.06em;
+        color: #545454;
+        margin-bottom: 20px; }
+      .addition .content .donation .account {
+        width: 349px;
+        height: 43px;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+        background: #f1cdb3;
+        border-radius: 9px;
+        align-items: center;
+        justify-content: center; }
+        .addition .content .donation .account h4 {
+          font-family: "Georgia";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 115%;
+          letter-spacing: 0.06em;
+          color: #545454;
+          margin-left: 15px; }
+      .addition .content .donation .account:hover {
+        background-color: #fddcc4; }
+      .addition .content .donation p {
+        font-family: "Arial";
+        font-style: italic;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #b2b2b2; }
+
+.footer {
+  width: 100%;
+  height: 350px;
+  background: linear-gradient(110deg, #5b483a, #211f20); }
+  .footer .content {
+    display: flex;
+    height: 100%;
+    padding-top: 40px;
+    flex-direction: row; }
+    .footer .content .question {
+      width: 280px; }
+      .footer .content .question .address + .address {
+        margin-top: 40px; }
+      .footer .content .question h3 + .address {
+        margin-top: 40px; }
+    .footer .content .visit {
+      width: 302px; }
+      .footer .content .visit .address + .address {
+        margin-top: 34px; }
+      .footer .content .visit h3 + .address {
+        margin-top: 32px; }
+    .footer .content .pict_footer {
+      width: 300px;
+      height: 310px; }
+    .footer .content h3 {
+      font-family: "Georgia";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 35px;
+      line-height: 130%;
+      letter-spacing: 0.06em;
+      color: #ffffff; }
+    .footer .content .address .div_link {
+      display: flex;
+      flex-direction: row; }
+      .footer .content .address .div_link h4 {
+        margin-left: 20px;
+        color: #f1cdb3;
+        font-family: "Georgia";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 115%;
+        letter-spacing: 0.06em; }
+    .footer .content .question + .visit {
+      margin-left: 160px; }
+    .footer .content .visit + .pict_footer {
+      margin-left: 160px; }
+

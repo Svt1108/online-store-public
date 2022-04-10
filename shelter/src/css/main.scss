@@ -382,21 +382,6 @@ a {
         margin-top: 0;
       }
 
-      // .helps {
-      //   display: flex;
-      //   flex-wrap: wrap;
-      //   margin: -60px -60px;
-      // }
-      // .icon_help {
-      //   margin: 60px;
-      // }
-      // .icon_help--1 {
-      //   width: calc(50% - 120px);
-      // }
-      // .icon_help--2 {
-      //   width: calc(100% - 120px);
-      // }
-
       .icon_help {
         display: flex;
         flex-direction: column;
@@ -421,6 +406,161 @@ a {
       .icon_help:last-child {
         margin-right: 120px;
       }
+    }
+  }
+}
+
+.addition {
+  width: 100%;
+  height: 462px;
+  background: #f6f6f6;
+
+  .content {
+    display: flex;
+    height: 100%;
+    padding: 80px 142px 100px 143px;
+    align-items: center;
+    flex-direction: row;
+
+    .donation_dog {
+    }
+
+    .donation {
+      margin-left: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      h3 {
+        width: 300px;
+        font-family: "Georgia";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 130%;
+        letter-spacing: 0.06em;
+        color: #545454;
+        margin-bottom: 20px;
+      }
+
+      h5 {
+        font-family: "Georgia";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 110%;
+        letter-spacing: 0.06em;
+        color: #545454;
+        margin-bottom: 20px;
+      }
+
+      .account {
+        width: 349px;
+        height: 43px;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+        background: #f1cdb3;
+        border-radius: 9px;
+        align-items: center;
+        justify-content: center;
+        h4 {
+          font-family: "Georgia";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 115%;
+          letter-spacing: 0.06em;
+          color: #545454;
+          margin-left: 15px;
+        }
+      }
+
+      .account:hover {
+        background-color: #fddcc4;
+      }
+
+      p {
+        font-family: "Arial";
+        font-style: italic;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #b2b2b2;
+      }
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 350px;
+  background: $back_gradient;
+
+  .content {
+    display: flex;
+    height: 100%;
+    padding-top: 40px;
+    flex-direction: row;
+
+    .question {
+      width: 280px;
+      .address + .address {
+        margin-top: 40px;
+      }
+      h3 + .address {
+        margin-top: 40px;
+      }
+    }
+
+    .visit {
+      width: 302px;
+      .address + .address {
+        margin-top: 34px;
+      }
+      h3 + .address {
+        margin-top: 32px;
+      }
+    }
+
+    .pict_footer {
+      width: 300px;
+      height: 310px;
+    }
+
+    h3 {
+      font-family: "Georgia";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 35px;
+      line-height: 130%;
+      letter-spacing: 0.06em;
+      color: #ffffff;
+    }
+
+    .address {
+      .div_link {
+        display: flex;
+        flex-direction: row;
+
+        h4 {
+          margin-left: 20px;
+          color: #f1cdb3;
+          font-family: "Georgia";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 115%;
+          letter-spacing: 0.06em;
+        }
+      }
+    }
+
+    .question + .visit {
+      margin-left: 160px;
+    }
+    .visit + .pict_footer {
+      margin-left: 160px;
     }
   }
 }
