@@ -116,6 +116,14 @@ a {
         color: white;
       }
 
+      .navlink:hover {
+        color: white;
+      }
+
+      .navlink:active {
+        color: white;
+        border-bottom: 3px solid $font_color1;
+      }
       // .navlink:after {
       //   content: "";
       //   display: block;

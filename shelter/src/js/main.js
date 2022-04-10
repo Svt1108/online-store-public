@@ -1,5 +1,5 @@
 /* navigation */
-
+/*
 const navlinks = document.querySelectorAll(".navlink");
 const navlinkAbout = document.querySelector(".first");
 
@@ -32,7 +32,7 @@ function setHover(element) {
 function removeHover(element) {
   element.style.borderBottom = `3px solid transparent`;
   element.style.color = `#cdcdcd`;
-}
+} */
 
 /* slider */
 

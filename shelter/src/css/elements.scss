@@ -50,3 +50,28 @@
   background-color: #fddcc4;
   border: 2px solid #fddcc4;
 }
+
+.button_circle_nav {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #f1cdb3;
+  box-sizing: border-box;
+  border-radius: 100px;
+}
+
+// .button_circle_disabled {
+//   border: 2px solid #cdcdcd;
+//   color: #cdcdcd;
+//   cursor: default;
+// }
+
+// .button_circle_disabled:hover {
+//   border: 2px solid #cdcdcd;
+//   color: #cdcdcd;
+//   background-color: transparent;
+// }

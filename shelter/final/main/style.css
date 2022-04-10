@@ -306,6 +306,21 @@ template {
 [hidden] {
   display: none; }
 
+/*!************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/css/fonts.css ***!
+  \************************************************************************************************************/
+@font-face {
+  font-family: "Georgia";
+  src: url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Arial";
+  src: url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]"), url("..//[object%20Module]");
+  font-weight: normal;
+  font-style: normal; }
+
 /*!*****************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/css/variables.scss ***!
   \*****************************************************************************************************************/
@@ -361,6 +376,18 @@ template {
   background-color: #fddcc4;
   border: 2px solid #fddcc4; }
 
+.button_circle_nav {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #f1cdb3;
+  box-sizing: border-box;
+  border-radius: 100px; }
+
 /*!************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/css/main.scss ***!
   \************************************************************************************************************/
@@ -411,6 +438,18 @@ template {
 .button_circle:hover {
   background-color: #fddcc4;
   border: 2px solid #fddcc4; }
+
+.button_circle_nav {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #f1cdb3;
+  box-sizing: border-box;
+  border-radius: 100px; }
 
 * {
   margin: 0;
@@ -499,6 +538,11 @@ a {
       .start_screen .content #header .first {
         border-bottom: 3px solid #f1cdb3;
         color: white; }
+      .start_screen .content #header .navlink:hover {
+        color: white; }
+      .start_screen .content #header .navlink:active {
+        color: white;
+        border-bottom: 3px solid #f1cdb3; }
     .start_screen .content #dog {
       grid-area: dog; }
     .start_screen .content #main_text {
