@@ -436,7 +436,8 @@ a {
 .start_screen {
   width: 100%;
   height: 908px;
-  background: linear-gradient(110deg, #5b483a, #211f20); }
+  background: linear-gradient(110deg, #5b483a, #211f20);
+  background: url(../e39085ad3889bd9f99c7.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20; }
   .start_screen .content {
     display: grid;
     grid-template-rows: 180px 1fr;
@@ -464,11 +465,11 @@ a {
           margin: 0 0 10px 0;
           padding: 0;
           width: 100%; }
-        .start_screen .content #header .logo p {
+        .start_screen .content #header .logo .pp {
           font-family: Arial, sans-serif;
           font-size: 13px;
           line-height: 15px;
-          letter-spacing: 0.11em;
+          letter-spacing: 0.1em;
           color: white;
           margin: 10 0 0 0;
           padding: 0;
@@ -771,7 +772,8 @@ a {
 .footer {
   width: 100%;
   height: 350px;
-  background: linear-gradient(110deg, #5b483a, #211f20); }
+  background: linear-gradient(110deg, #5b483a, #211f20);
+  background: url(../e39085ad3889bd9f99c7.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20; }
   .footer .content {
     display: flex;
     height: 100%;

@@ -33,6 +33,8 @@ a {
   width: 100%;
   height: 908px;
   background: $back_gradient;
+  background: url(../../assets/images/noise_transparent@2x.png),
+    radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
 
   .content {
     display: grid;
@@ -67,11 +69,11 @@ a {
           padding: 0;
           width: 100%;
         }
-        p {
+        .pp {
           font-family: $font_arial;
           font-size: 13px;
           line-height: 15px;
-          letter-spacing: 0.11em;
+          letter-spacing: 0.1em;
           color: white;
           margin: 10 0 0 0;
           padding: 0;
@@ -496,6 +498,8 @@ a {
   width: 100%;
   height: 350px;
   background: $back_gradient;
+  background: url(../../assets/images/noise_transparent@2x.png),
+    radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
 
   .content {
     display: flex;
