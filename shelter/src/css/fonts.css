@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Georgia";
+  src: url("../../assets/fonts/georgia1/Georgia.ttf"),
+    url("../../assets/fonts/georgia1/Georgia4.ttf"),
+    url("../../assets/fonts/georgia1/GeorgiaRegularfont.ttf"),
+    url("../../assets/fonts/georgia1/GeorgiaBoldItalicfont.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../../assets/fonts/arial/Arial.ttf"),
+    url("../../assets/fonts/arial/Arialbd.ttf"),
+    url("../../assets/fonts/arial/Arialbi.ttf"),
+    url("../../assets/fonts/arial/Arialblackitalic.ttf"),
+    url("../../assets/fonts/arial/ArialCE.ttf"),
+    url("../../assets/fonts/arial/arialceb.ttf"),
+    url("../../assets/fonts/arial/ArialCEBoldItalic.ttf"),
+    url("../../assets/fonts/arial/ArialCEItalic.ttf"),
+    url("../../assets/fonts/arial/ArialCEMTBlack.ttf"),
+    url("../../assets/fonts/arial/Ariali.ttf"),
+    url("../../assets/fonts/arial/Ariallgt.ttf"),
+    url("../../assets/fonts/arial/Ariallgtitl.ttf"),
+    url("../../assets/fonts/arial/ArialMdm.ttf");
+
+  font-weight: normal;
+  font-style: normal;
+}
