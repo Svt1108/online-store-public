@@ -518,16 +518,16 @@ a {
       .start_screen .content #header .navmenu {
         position: absolute;
         right: 0;
-        width: 460px;
+        width: 441px;
         align-items: center; }
         .start_screen .content #header .navmenu ul {
           list-style: none;
           display: flex;
           align-items: center;
-          flex-wrap: nowrap; }
-          .start_screen .content #header .navmenu ul li {
-            width: 25%; }
+          flex-wrap: nowrap;
+          gap: 35px; }
       .start_screen .content #header .navlink {
+        white-space: nowrap;
         font-family: Arial, sans-serif;
         font-size: 15px;
         line-height: 160%;
@@ -826,13 +826,15 @@ a {
     padding-top: 40px;
     flex-direction: row; }
     .footer .content .question {
-      width: 280px; }
+      width: 280px;
+      margin-top: 16px; }
       .footer .content .question .address + .address {
         margin-top: 40px; }
       .footer .content .question h3 + .address {
         margin-top: 40px; }
     .footer .content .visit {
-      width: 302px; }
+      width: 302px;
+      margin-top: 16px; }
       .footer .content .visit .address + .address {
         margin-top: 34px; }
       .footer .content .visit h3 + .address {
