@@ -87,7 +87,7 @@ a {
       .navmenu {
         position: absolute;
         right: 0;
-        width: 460px;
+        width: 441px;
         align-items: center;
 
         ul {
@@ -95,14 +95,16 @@ a {
           display: flex;
           align-items: center;
           flex-wrap: nowrap;
+          gap: 35px;
 
           li {
-            width: 25%;
+            //width: 25%;
           }
         }
       }
 
       .navlink {
+        white-space: nowrap;
         font-family: $font_arial;
         font-size: 15px;
         line-height: 160%;
@@ -520,6 +522,7 @@ a {
 
     .question {
       width: 280px;
+      margin-top: 16px;
       .address + .address {
         margin-top: 40px;
       }
@@ -530,6 +533,7 @@ a {
 
     .visit {
       width: 302px;
+      margin-top: 16px;
       .address + .address {
         margin-top: 34px;
       }
