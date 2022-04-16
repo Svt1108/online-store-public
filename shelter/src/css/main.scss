@@ -529,20 +529,27 @@ a {
 
 .addition {
   width: 100%;
-  height: 462px;
+  //  height: 462px;
   display: flex;
   justify-content: center;
   background: #f6f6f6;
 
   .content {
     display: flex;
-    width: 1280px;
+    max-width: 1280px;
     height: 100%;
-    padding: 80px 182px 100px 183px;
+    padding: 80px 182px 99px 183px;
     align-items: center;
+    justify-content: center;
     flex-direction: row;
 
+    @include media-tablet {
+      flex-direction: column-reverse;
+      padding: 80px 182px 97px 183px;
+    }
+
     .donation_dog {
+      display: block;
     }
 
     .donation {
@@ -550,6 +557,11 @@ a {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+
+      @include media-tablet {
+        margin-left: 0;
+        margin-bottom: 60px;
+      }
 
       h3 {
         width: 300px;
@@ -607,6 +619,7 @@ a {
         font-size: 12px;
         line-height: 18px;
         color: #b2b2b2;
+        width: 380px;
       }
     }
   }

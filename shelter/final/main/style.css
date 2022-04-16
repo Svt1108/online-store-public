@@ -823,22 +823,32 @@ a {
 
 .addition {
   width: 100%;
-  height: 462px;
   display: flex;
   justify-content: center;
   background: #f6f6f6; }
   .addition .content {
     display: flex;
-    width: 1280px;
+    max-width: 1280px;
     height: 100%;
-    padding: 80px 182px 100px 183px;
+    padding: 80px 182px 99px 183px;
     align-items: center;
+    justify-content: center;
     flex-direction: row; }
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      .addition .content {
+        flex-direction: column-reverse;
+        padding: 80px 182px 97px 183px; } }
+    .addition .content .donation_dog {
+      display: block; }
     .addition .content .donation {
       margin-left: 30px;
       display: flex;
       flex-direction: column;
       align-items: flex-start; }
+      @media screen and (min-width: 768px) and (max-width: 1279px) {
+        .addition .content .donation {
+          margin-left: 0;
+          margin-bottom: 60px; } }
       .addition .content .donation h3 {
         width: 300px;
         font-family: "Georgia";
@@ -885,21 +895,27 @@ a {
         font-weight: 400;
         font-size: 12px;
         line-height: 18px;
-        color: #b2b2b2; }
+        color: #b2b2b2;
+        width: 380px; }
 
 .footer {
   width: 100%;
-  height: 350px;
   display: flex;
   justify-content: center;
   background: linear-gradient(110deg, #5b483a, #211f20);
   background: url(../e39085ad3889bd9f99c7.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20; }
   .footer .content {
     display: flex;
-    width: 1280px;
+    max-width: 1280px;
     height: 100%;
     padding: 40px 40px 0 40px;
     flex-direction: row; }
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      .footer .content {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 14px 40px 0 40px;
+        row-gap: 65px; } }
     .footer .content .question {
       width: 280px;
       margin-top: 16px; }
@@ -915,8 +931,15 @@ a {
       .footer .content .visit h3 + .address {
         margin-top: 32px; }
     .footer .content .pict_footer {
+      display: block;
       width: 300px;
-      height: 310px; }
+      height: 310px;
+      justify-content: center; }
+      @media screen and (min-width: 768px) and (max-width: 1279px) {
+        .footer .content .pict_footer {
+          display: flex;
+          width: 100%;
+          justify-content: center; } }
     .footer .content h3 {
       font-family: "Georgia";
       font-style: normal;
@@ -940,8 +963,14 @@ a {
         letter-spacing: 0.06em; }
     .footer .content .question + .visit {
       margin-left: 160px; }
+      @media screen and (min-width: 768px) and (max-width: 1279px) {
+        .footer .content .question + .visit {
+          margin-left: 8.5%; } }
     .footer .content .visit + .pict_footer {
       margin-left: 160px; }
+      @media screen and (min-width: 768px) and (max-width: 1279px) {
+        .footer .content .visit + .pict_footer {
+          margin-left: 0; } }
 
 /*!*********************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/css/utils/_mixins.scss ***!

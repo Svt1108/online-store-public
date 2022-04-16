@@ -1,6 +1,6 @@
 .footer {
   width: 100%;
-  height: 350px;
+  //height: 350px;
   display: flex;
   justify-content: center;
   background: $back_gradient;
@@ -9,10 +9,16 @@
 
   .content {
     display: flex;
-    width: 1280px;
+    max-width: 1280px;
     height: 100%;
     padding: 40px 40px 0 40px;
     flex-direction: row;
+    @include media-tablet {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 14px 40px 0 40px;
+      row-gap: 65px;
+    }
 
     .question {
       width: 280px;
@@ -37,8 +43,16 @@
     }
 
     .pict_footer {
+      display: block;
       width: 300px;
       height: 310px;
+      justify-content: center;
+
+      @include media-tablet {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+      }
     }
 
     h3 {
@@ -72,9 +86,15 @@
 
     .question + .visit {
       margin-left: 160px;
+      @include media-tablet {
+        margin-left: 8.5%;
+      }
     }
     .visit + .pict_footer {
       margin-left: 160px;
+      @include media-tablet {
+        margin-left: 0;
+      }
     }
   }
 }
