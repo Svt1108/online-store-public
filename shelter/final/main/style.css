@@ -666,7 +666,7 @@ a {
   display: flex;
   justify-content: center; }
   .pets .content {
-    width: 1280px;
+    max-width: 1280px;
     display: flex;
     height: 100%;
     padding: 80px 40px 100px 40px;
@@ -675,7 +675,8 @@ a {
     flex-direction: column; }
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       .pets .content {
-        padding: 80px 0 100px 0; } }
+        padding: 80px 0 100px 0;
+        width: 768px; } }
     .pets .content h3 {
       width: 400px;
       font-family: "Georgia";
@@ -696,16 +697,12 @@ a {
       flex-wrap: nowrap;
       align-items: center;
       position: relative;
-      margin: 60px 0; }
+      margin: 60px 0;
+      gap: 53px; }
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         .pets .content .slider {
-          justify-content: center; } }
-      .pets .content .slider .left-button {
-        position: absolute;
-        left: 0; }
-        @media screen and (min-width: 768px) and (max-width: 1279px) {
-          .pets .content .slider .left-button {
-            position: static; } }
+          justify-content: center;
+          gap: 1.5%; } }
       .pets .content .slider .cards {
         height: 100%;
         overflow: hidden;
@@ -718,7 +715,7 @@ a {
             gap: 0;
             justify-content: space-between;
             width: 75.5%;
-            margin: 1.5%; } }
+            margin: 0; } }
         .pets .content .slider .cards .pet {
           display: flex;
           flex-wrap: wrap;
@@ -756,29 +753,25 @@ a {
           .pets .content .slider .cards .pet:hover .buttonw1 {
             background-color: #fddcc4;
             border: 2px solid #fff; }
-      .pets .content .slider .right-button {
-        position: absolute;
-        right: 0; }
-        @media screen and (min-width: 768px) and (max-width: 1279px) {
-          .pets .content .slider .right-button {
-            position: static; } }
     .pets .content .buttonb2 {
       height: 52px;
       width: 261px; }
 
 .help {
   width: 100%;
-  height: 611px;
   display: flex;
   justify-content: center;
   background: #fff; }
   .help .content {
     display: flex;
-    width: 1280px;
+    max-width: 1280px;
     height: 100%;
-    padding: 80px 40px 100px 40px;
+    padding: 80px 40px 44px 40px;
     align-items: center;
     flex-direction: column; }
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      .help .content {
+        padding: 80px 13px 44px 13px; } }
     .help .content h3 {
       font-family: "Georgia";
       font-style: normal;
@@ -801,11 +794,17 @@ a {
       .help .content .helps .icon_help + .icon_help {
         margin-left: 120px;
         margin-top: 0; }
+        @media screen and (min-width: 768px) and (max-width: 1279px) {
+          .help .content .helps .icon_help + .icon_help {
+            margin-left: 0; } }
       .help .content .helps .icon_help {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center; }
+        @media screen and (min-width: 768px) and (max-width: 1279px) {
+          .help .content .helps .icon_help {
+            width: 33.3%; } }
         .help .content .helps .icon_help .text_help {
           font-family: "Georgia";
           font-style: normal;
@@ -818,6 +817,9 @@ a {
           margin-bottom: 55px; }
       .help .content .helps .icon_help:last-child {
         margin-right: 120px; }
+        @media screen and (min-width: 768px) and (max-width: 1279px) {
+          .help .content .helps .icon_help:last-child {
+            margin-right: 0; } }
 
 .addition {
   width: 100%;
