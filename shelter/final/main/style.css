@@ -386,7 +386,8 @@ template {
   height: 52px;
   border: 2px solid #f1cdb3;
   box-sizing: border-box;
-  border-radius: 100px; }
+  border-radius: 100px;
+  font-size: 20px; }
 
 /*!************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/css/main.scss ***!
@@ -449,7 +450,8 @@ template {
   height: 52px;
   border: 2px solid #f1cdb3;
   box-sizing: border-box;
-  border-radius: 100px; }
+  border-radius: 100px;
+  font-size: 20px; }
 
 * {
   margin: 0;
@@ -465,6 +467,10 @@ body {
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     body {
       min-width: 768px;
+      overflow-x: hidden; } }
+  @media screen and (max-width: 767px) {
+    body {
+      min-width: 320px;
       overflow-x: hidden; } }
 
 a {
@@ -489,6 +495,12 @@ a {
         grid-template-rows: 120px 352px auto;
         grid-template-columns: 1fr;
         grid-template-areas: "header" "main_text" "dog"; } }
+    @media screen and (max-width: 767px) {
+      .start_screen .content {
+        padding: 0 10px;
+        grid-template-rows: 120px 326px auto;
+        grid-template-columns: 1fr;
+        grid-template-areas: "header" "main_text" "dog"; } }
     .start_screen .content #header {
       display: flex;
       grid-area: header;
@@ -498,12 +510,20 @@ a {
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         .start_screen .content #header {
           padding: 0; } }
+      @media screen and (max-width: 767px) {
+        .start_screen .content #header {
+          padding: 0 10px;
+          width: 100vw;
+          justify-content: space-between; } }
       .start_screen .content #header .logo {
         position: absolute;
         left: 0;
         width: 184px;
         display: flex;
         flex-direction: column; }
+        @media screen and (max-width: 767px) {
+          .start_screen .content #header .logo {
+            position: static; } }
         .start_screen .content #header .logo h1 {
           color: #f1cdb3;
           font-family: Georgia, serif;
@@ -528,6 +548,11 @@ a {
         right: 0;
         width: 441px;
         align-items: center; }
+        @media screen and (max-width: 767px) {
+          .start_screen .content #header .navmenu {
+            position: static;
+            width: 0px;
+            overflow: hidden; } }
         .start_screen .content #header .navmenu ul {
           list-style: none;
           display: flex;
@@ -553,6 +578,15 @@ a {
       .start_screen .content #header .navlink:active {
         color: white;
         border-bottom: 3px solid #f1cdb3; }
+    .start_screen .content .burger {
+      width: 30px;
+      margin-right: 43px; }
+      .start_screen .content .burger .burger_line {
+        width: 30px;
+        height: 2px;
+        background-color: #f1cdb3; }
+      .start_screen .content .burger .burger_line + .burger_line {
+        margin-top: 9px; }
     .start_screen .content #dog {
       grid-area: dog; }
       @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -560,9 +594,18 @@ a {
           display: flex;
           padding: 100px 0 0 0;
           justify-content: center; } }
+      @media screen and (max-width: 767px) {
+        .start_screen .content #dog {
+          display: flex;
+          padding: 100px 0 0 0;
+          justify-content: center; } }
       .start_screen .content #dog .dog_image {
         display: block; }
         @media screen and (min-width: 768px) and (max-width: 1279px) {
+          .start_screen .content #dog .dog_image {
+            max-width: 80.3%;
+            margin-right: -20%; } }
+        @media screen and (max-width: 767px) {
           .start_screen .content #dog .dog_image {
             max-width: 80.3%;
             margin-right: -20%; } }

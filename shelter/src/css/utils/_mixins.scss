@@ -5,7 +5,7 @@
 }
 
 @mixin media-mobile {
-  @media screen and (min-width: $mobile-width) and (max-width: calc($tablet-width - 1px)) {
+  @media screen and (max-width: ($tablet-width - 1)) {
     @content;
   }
 }

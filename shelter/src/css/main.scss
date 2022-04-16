@@ -22,6 +22,10 @@ body {
     min-width: $tablet-width;
     overflow-x: hidden;
   }
+  @include media-mobile {
+    min-width: $mobile-width;
+    overflow-x: hidden;
+  }
 }
 
 a {
@@ -63,6 +67,16 @@ a {
         "dog";
     }
 
+    @include media-mobile {
+      padding: 0 10px;
+      grid-template-rows: 120px 326px auto;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "header"
+        "main_text"
+        "dog";
+    }
+
     #header {
       display: flex;
       grid-area: header;
@@ -74,12 +88,25 @@ a {
         padding: 0;
       }
 
+      @include media-mobile {
+        padding: 0 10px;
+        width: 100vw;
+        justify-content: space-between;
+        //width: fit-content;
+        //  justify-content: center;
+        //flex-wrap: wrap;
+      }
+
       .logo {
         position: absolute;
         left: 0;
         width: 184px;
         display: flex;
         flex-direction: column;
+
+        @include media-mobile {
+          position: static;
+        }
 
         h1 {
           color: $font_color1;
@@ -109,6 +136,13 @@ a {
         right: 0;
         width: 441px;
         align-items: center;
+
+        @include media-mobile {
+          position: static;
+          width: 0px;
+          overflow: hidden;
+          //  display: none;
+        }
 
         ul {
           list-style: none;
@@ -163,6 +197,21 @@ a {
       // }
     }
 
+    .burger {
+      width: 30px;
+      margin-right: 43px;
+
+      .burger_line {
+        width: 30px;
+        height: 2px;
+        background-color: $font_color1;
+      }
+
+      .burger_line + .burger_line {
+        margin-top: 9px;
+      }
+    }
+
     #dog {
       grid-area: dog;
 
@@ -173,10 +222,21 @@ a {
         justify-content: center;
       }
 
+      @include media-mobile {
+        display: flex;
+        padding: 100px 0 0 0;
+        justify-content: center;
+      }
+
       .dog_image {
         display: block;
         @include media-tablet {
           // display: block;
+          max-width: 80.3%;
+          margin-right: -20%;
+        }
+
+        @include media-mobile {
           max-width: 80.3%;
           margin-right: -20%;
         }
