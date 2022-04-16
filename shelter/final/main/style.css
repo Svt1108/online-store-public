@@ -673,6 +673,9 @@ a {
     align-items: center;
     justify-content: center;
     flex-direction: column; }
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      .pets .content {
+        padding: 80px 0 100px 0; } }
     .pets .content h3 {
       width: 400px;
       font-family: "Georgia";
@@ -694,9 +697,15 @@ a {
       align-items: center;
       position: relative;
       margin: 60px 0; }
+      @media screen and (min-width: 768px) and (max-width: 1279px) {
+        .pets .content .slider {
+          justify-content: center; } }
       .pets .content .slider .left-button {
         position: absolute;
         left: 0; }
+        @media screen and (min-width: 768px) and (max-width: 1279px) {
+          .pets .content .slider .left-button {
+            position: static; } }
       .pets .content .slider .cards {
         height: 100%;
         overflow: hidden;
@@ -704,6 +713,12 @@ a {
         flex-direction: row;
         gap: 90px;
         margin: 0 auto; }
+        @media screen and (min-width: 768px) and (max-width: 1279px) {
+          .pets .content .slider .cards {
+            gap: 0;
+            justify-content: space-between;
+            width: 75.5%;
+            margin: 1.5%; } }
         .pets .content .slider .cards .pet {
           display: flex;
           flex-wrap: wrap;
@@ -744,6 +759,9 @@ a {
       .pets .content .slider .right-button {
         position: absolute;
         right: 0; }
+        @media screen and (min-width: 768px) and (max-width: 1279px) {
+          .pets .content .slider .right-button {
+            position: static; } }
     .pets .content .buttonb2 {
       height: 52px;
       width: 261px; }

@@ -34,50 +34,63 @@ function removeHover(element) {
   element.style.color = `#cdcdcd`;
 } */
 
+const mediaQuery = window.matchMedia(
+  "screen and (min-width: 768px) and (max-width: 1279px)"
+);
+function handleTabletChange(e) {
+  if (e.matches) {
+    slider(2);
+  } else slider(3);
+}
+mediaQuery.addListener(handleTabletChange);
+handleTabletChange(mediaQuery);
+
 /* slider */
 
-const RightBtn = document.querySelector(".right-button");
-const LeftBtn = document.querySelector(".left-button");
-const sidebar = document.querySelector(".cards");
-const cardsCount = document.querySelectorAll(".cards > div").length;
-const pets = document.querySelectorAll(".pet");
-const container = document.querySelector(".slider");
+function slider(number) {
+  const RightBtn = document.querySelector(".right-button");
+  const LeftBtn = document.querySelector(".left-button");
+  const sidebar = document.querySelector(".cards");
+  const cardsCount = document.querySelectorAll(".cards > div").length;
+  const pets = document.querySelectorAll(".pet");
+  const container = document.querySelector(".slider");
 
-let result = [];
-let arr = [];
-let flag = 0;
+  let result = [];
+  let arr = [];
+  let flag = 0;
 
-displaySlides();
+  displaySlides();
 
-LeftBtn.addEventListener("click", () => displaySlides());
-RightBtn.addEventListener("click", () => displaySlides());
+  LeftBtn.addEventListener("click", () => displaySlides());
+  RightBtn.addEventListener("click", () => displaySlides());
 
-function displaySlides() {
-  arr = [];
-  for (let i = 0; i < cardsCount; i++) {
-    if (!result.includes(i)) arr.push(i);
+  function displaySlides() {
+    arr = [];
+    for (let i = 0; i < cardsCount; i++) {
+      if (!result.includes(i)) arr.push(i);
+    }
+
+    getRandomNumber(arr);
+    pets.forEach((element) => {
+      element.style.display = `none`;
+      // element.style.transition = `left 2s`;
+      // element.style.left = `-2500px`;
+    });
+
+    pets.forEach((element) => {
+      element.style.display = `none`;
+    });
+
+    for (let i = 0; i < number; i++) {
+      pets[result[i]].style.display = `block`;
+    }
   }
 
-  getRandomNumber(arr);
-  pets.forEach((element) => {
-    element.style.display = `none`;
-    // element.style.transition = `left 2s`;
-    // element.style.left = `-2500px`;
-  });
-
-  pets.forEach((element) => {
-    element.style.display = `none`;
-  });
-
-  for (let i = 0; i < 3; i++) {
-    pets[result[i]].style.display = `block`;
+  function getRandomNumber(arr) {
+    for (let i = 0; i < number; i++) {
+      let index = Math.floor(Math.random() * arr.length);
+      result[i] = arr.splice(index, 1)[0];
+    }
+    return result;
   }
-}
-
-function getRandomNumber(arr) {
-  for (let i = 0; i < 3; i++) {
-    let index = Math.floor(Math.random() * arr.length);
-    result[i] = arr.splice(index, 1)[0];
-  }
-  return result;
 }

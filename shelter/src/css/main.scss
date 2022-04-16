@@ -326,6 +326,10 @@ a {
     justify-content: center;
     flex-direction: column;
 
+    @include media-tablet {
+      padding: 80px 0 100px 0;
+    }
+
     h3 {
       width: 400px;
       font-family: "Georgia";
@@ -350,14 +354,20 @@ a {
       position: relative;
       margin: 60px 0;
 
+      @include media-tablet {
+        justify-content: center;
+      }
+
       .left-button {
         position: absolute;
         left: 0;
+        @include media-tablet {
+          position: static;
+        }
       }
 
       .cards {
         // margin: 0 105px;
-        //border: 1px solid rgb(55, 0, 255);
         // width: 1000px;
         height: 100%;
         overflow: hidden;
@@ -365,6 +375,13 @@ a {
         flex-direction: row;
         gap: 90px;
         margin: 0 auto;
+
+        @include media-tablet {
+          gap: 0;
+          justify-content: space-between;
+          width: 75.5%;
+          margin: 1.5%;
+        }
         // position: relative;
 
         .pet {
@@ -419,6 +436,10 @@ a {
       .right-button {
         position: absolute;
         right: 0;
+
+        @include media-tablet {
+          position: static;
+        }
       }
     }
 
