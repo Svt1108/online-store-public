@@ -69,7 +69,7 @@ a {
 
     @include media-mobile {
       padding: 0 10px;
-      grid-template-rows: 120px 326px auto;
+      grid-template-rows: 120px 376px 1fr;
       grid-template-columns: 1fr;
       grid-template-areas:
         "header"
@@ -224,7 +224,7 @@ a {
 
       @include media-mobile {
         display: flex;
-        padding: 100px 0 0 0;
+        padding: 55px 0 0 0;
         justify-content: center;
       }
 
@@ -237,8 +237,8 @@ a {
         }
 
         @include media-mobile {
-          max-width: 80.3%;
-          margin-right: -20%;
+          max-width: 81.5%;
+          margin-right: -12%;
         }
       }
     }
@@ -257,6 +257,24 @@ a {
         justify-content: center;
       }
 
+      @include media-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // justify-content: center;
+        margin: 0;
+      }
+
+      .main_text_wrapper {
+        @include media-mobile {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          // justify-content: center;
+          padding: 5px 2.5%;
+        }
+      }
+
       h2 {
         width: 310px;
         height: 114px;
@@ -271,6 +289,15 @@ a {
         align-items: center;
 
         color: #ffffff;
+
+        @include media-mobile {
+          width: 250px;
+          font-size: 25px;
+          line-height: 130%;
+          text-align: center;
+          align-items: center;
+          letter-spacing: 0.06em;
+        }
       }
 
       p {
@@ -288,6 +315,11 @@ a {
 
         color: #cdcdcd;
         margin: 42px 0;
+
+        @include media-mobile {
+          text-align: center;
+          margin: 16px 0 42px 0;
+        }
       }
       .buttonb1 {
         width: 207px;
@@ -326,6 +358,13 @@ a {
       //justify-content: center;
     }
 
+    @include media-mobile {
+      flex-direction: column-reverse;
+      padding: 42px 2.5% 42.4px 2.5%;
+      //gap: 80px;
+      //justify-content: center;
+    }
+
     .picture_about {
       height: 100%;
       margin: 0 120px 0 175px;
@@ -333,11 +372,27 @@ a {
       @include media-tablet {
         margin: 0;
       }
+      @include media-mobile {
+        margin: 0;
+        width: 260px;
+      }
+    }
+
+    .picture_about_image {
+      @include media-mobile {
+        width: 260px;
+      }
     }
 
     .text_about {
       width: 430px;
       height: 380px;
+      @include media-mobile {
+        width: 90%;
+        height: auto;
+        justify-content: center;
+        padding-bottom: 38px;
+      }
       //margin-right: 175px;
       //  padding-right: 175px;
 
@@ -355,6 +410,13 @@ a {
         align-items: center;
         letter-spacing: 0.06em;
         color: #545454;
+
+        @include media-mobile {
+          width: 280px;
+          height: 64px;
+          font-size: 25px;
+          text-align: center;
+        }
       }
 
       p {
@@ -365,6 +427,10 @@ a {
         font-size: 15px;
         line-height: 160%;
         color: #4c4c4c;
+
+        @include media-mobile {
+          text-align: justify;
+        }
       }
     }
   }

@@ -498,7 +498,7 @@ a {
     @media screen and (max-width: 767px) {
       .start_screen .content {
         padding: 0 10px;
-        grid-template-rows: 120px 326px auto;
+        grid-template-rows: 120px 376px 1fr;
         grid-template-columns: 1fr;
         grid-template-areas: "header" "main_text" "dog"; } }
     .start_screen .content #header {
@@ -597,7 +597,7 @@ a {
       @media screen and (max-width: 767px) {
         .start_screen .content #dog {
           display: flex;
-          padding: 100px 0 0 0;
+          padding: 55px 0 0 0;
           justify-content: center; } }
       .start_screen .content #dog .dog_image {
         display: block; }
@@ -607,8 +607,8 @@ a {
             margin-right: -20%; } }
         @media screen and (max-width: 767px) {
           .start_screen .content #dog .dog_image {
-            max-width: 80.3%;
-            margin-right: -20%; } }
+            max-width: 81.5%;
+            margin-right: -12%; } }
     .start_screen .content #main_text {
       grid-area: main_text;
       margin-right: 42px;
@@ -620,6 +620,18 @@ a {
           padding: 0 12.4rem;
           align-items: center;
           justify-content: center; } }
+      @media screen and (max-width: 767px) {
+        .start_screen .content #main_text {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 0; } }
+      @media screen and (max-width: 767px) {
+        .start_screen .content #main_text .main_text_wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 5px 2.5%; } }
       .start_screen .content #main_text h2 {
         width: 310px;
         height: 114px;
@@ -631,6 +643,14 @@ a {
         display: flex;
         align-items: center;
         color: #ffffff; }
+        @media screen and (max-width: 767px) {
+          .start_screen .content #main_text h2 {
+            width: 250px;
+            font-size: 25px;
+            line-height: 130%;
+            text-align: center;
+            align-items: center;
+            letter-spacing: 0.06em; } }
       .start_screen .content #main_text p {
         font-family: "Arial";
         font-style: normal;
@@ -643,6 +663,10 @@ a {
         /* color-dark-s */
         color: #cdcdcd;
         margin: 42px 0; }
+        @media screen and (max-width: 767px) {
+          .start_screen .content #main_text p {
+            text-align: center;
+            margin: 16px 0 42px 0; } }
       .start_screen .content #main_text .buttonb1 {
         width: 207px;
         height: 52px; }
@@ -669,6 +693,10 @@ a {
         flex-direction: column-reverse;
         padding: 80px 10% 100px 10%;
         gap: 80px; } }
+    @media screen and (max-width: 767px) {
+      .about .content {
+        flex-direction: column-reverse;
+        padding: 42px 2.5% 42.4px 2.5%; } }
     .about .content .picture_about {
       height: 100%;
       margin: 0 120px 0 175px;
@@ -676,9 +704,22 @@ a {
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         .about .content .picture_about {
           margin: 0; } }
+      @media screen and (max-width: 767px) {
+        .about .content .picture_about {
+          margin: 0;
+          width: 260px; } }
+    @media screen and (max-width: 767px) {
+      .about .content .picture_about_image {
+        width: 260px; } }
     .about .content .text_about {
       width: 430px;
       height: 380px; }
+      @media screen and (max-width: 767px) {
+        .about .content .text_about {
+          width: 90%;
+          height: auto;
+          justify-content: center;
+          padding-bottom: 38px; } }
       .about .content .text_about h3 {
         top: 0;
         left: 0;
@@ -693,6 +734,12 @@ a {
         align-items: center;
         letter-spacing: 0.06em;
         color: #545454; }
+        @media screen and (max-width: 767px) {
+          .about .content .text_about h3 {
+            width: 280px;
+            height: 64px;
+            font-size: 25px;
+            text-align: center; } }
       .about .content .text_about p {
         margin: 25px 0 0 0;
         font-family: "Arial";
@@ -701,6 +748,9 @@ a {
         font-size: 15px;
         line-height: 160%;
         color: #4c4c4c; }
+        @media screen and (max-width: 767px) {
+          .about .content .text_about p {
+            text-align: justify; } }
 
 .pets {
   width: 100%;
