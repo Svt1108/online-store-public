@@ -477,15 +477,16 @@ a {
   background: linear-gradient(110deg, #5b483a, #211f20);
   background: url(../e39085ad3889bd9f99c7.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20; }
   .start_screen .content {
+    max-width: 1280px;
     padding: 0 40px;
     display: grid;
-    grid-template-rows: 180px 1fr;
+    grid-template-rows: 180px auto;
     grid-template-columns: 502px 1fr;
     grid-template-areas: "header header" "main_text dog"; }
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       .start_screen .content {
         padding: 0 30px;
-        grid-template-rows: 120px 352px 1fr;
+        grid-template-rows: 120px 352px auto;
         grid-template-columns: 1fr;
         grid-template-areas: "header" "main_text" "dog"; } }
     .start_screen .content #header {
@@ -558,12 +559,13 @@ a {
         .start_screen .content #dog {
           display: flex;
           padding: 100px 0 0 0;
-          align-items: center;
-          justify-content: flex-end; } }
-      @media screen and (min-width: 768px) and (max-width: 1279px) {
-        .start_screen .content #dog .dog_image {
-          display: block;
-          max-width: 80%; } }
+          justify-content: center; } }
+      .start_screen .content #dog .dog_image {
+        display: block; }
+        @media screen and (min-width: 768px) and (max-width: 1279px) {
+          .start_screen .content #dog .dog_image {
+            max-width: 80.3%;
+            margin-right: -20%; } }
     .start_screen .content #main_text {
       grid-area: main_text;
       margin-right: 42px;
@@ -610,19 +612,27 @@ a {
 
 .about {
   width: 100%;
-  height: 588px;
   display: flex;
   justify-content: center;
   background: white; }
   .about .content {
-    width: 1280px;
+    max-width: 1280px;
     display: flex;
     height: 100%;
-    padding: 80px 40px 100px 40px;
+    padding: 80px 215px 100px 40px;
     align-items: center; }
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      .about .content {
+        flex-direction: column-reverse;
+        padding: 80px 10% 100px 10%;
+        gap: 80px; } }
     .about .content .picture_about {
       height: 100%;
-      margin: 0 120px 0 175px; }
+      margin: 0 120px 0 175px;
+      font-size: 0; }
+      @media screen and (min-width: 768px) and (max-width: 1279px) {
+        .about .content .picture_about {
+          margin: 0; } }
     .about .content .text_about {
       width: 430px;
       height: 380px; }
