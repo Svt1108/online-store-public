@@ -1,10 +1,13 @@
 @import "variables";
 @import "elements";
+@import "./utils/mixins";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 10px;
+  // transition: all 1s;
 }
 
 html {
@@ -13,26 +16,13 @@ body {
   display: flex;
 
   min-width: 1280px;
-  max-width: 100em;
+  max-width: 100%;
   flex-direction: column;
-
-  // overflow-y: hidden;
-
-  // .main {
-  //   min-width: 98.8vw;
-
-  //   display: flex;
-  //   flex-direction: column;
-  //   flex-wrap: nowrap;
-  //   align-items: center;
-  // }
+  @include media-tablet {
+    min-width: $tablet-width;
+    overflow-x: hidden;
+  }
 }
-
-// .content {
-//   width: 1200px;
-//   margin: 0 auto;
-//   border: 1px solid red;
-// }
 
 a {
   text-decoration: none;
@@ -40,7 +30,7 @@ a {
 
 .start_screen {
   //min-width: 100%;
-  height: 908px;
+  //height: 908px;
 
   width: 100%;
   display: flex;
@@ -52,7 +42,7 @@ a {
     radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
 
   .content {
-    width: 1280px;
+    //width: 1280px;
     padding: 0 40px;
 
     display: grid;
@@ -62,12 +52,26 @@ a {
       "header header"
       "main_text dog";
 
+    @include media-tablet {
+      padding: 0 30px;
+      grid-template-rows: 120px 352px 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "header"
+        "main_text"
+        "dog";
+    }
+
     #header {
       display: flex;
       grid-area: header;
       padding: 60px 0;
       position: relative;
       align-items: center;
+
+      @include media-tablet {
+        padding: 0;
+      }
 
       .logo {
         position: absolute;
@@ -160,6 +164,20 @@ a {
 
     #dog {
       grid-area: dog;
+
+      @include media-tablet {
+        display: flex;
+        padding: 100px 0 0 0;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      .dog_image {
+        @include media-tablet {
+          display: block;
+          max-width: 80%;
+        }
+      }
     }
 
     #main_text {
@@ -167,6 +185,14 @@ a {
       //     align-self: center;
       margin-right: 42px;
       margin-top: 163px;
+
+      @include media-tablet {
+        margin-right: 0;
+        margin-top: 30px;
+        padding: 0 12.4rem;
+        align-items: center;
+        justify-content: center;
+      }
 
       h2 {
         width: 310px;
@@ -203,6 +229,14 @@ a {
       .buttonb1 {
         width: 207px;
         height: 52px;
+      }
+      .button_link {
+        @include media-tablet {
+          display: block;
+          margin: 0 auto;
+          width: 207px;
+          height: 52px;
+        }
       }
     }
   }
@@ -535,84 +569,3 @@ a {
 }
 
 @import "./layout/footer";
-
-// .footer {
-//   width: 100%;
-//   height: 350px;
-//   display: flex;
-//   justify-content: center;
-//   background: $back_gradient;
-//   background: url(../../assets/images/noise_transparent@2x.png),
-//     radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
-
-//   .content {
-//     display: flex;
-//     width: 1280px;
-//     height: 100%;
-//     padding: 40px 40px 0 40px;
-//     flex-direction: row;
-
-//     .question {
-//       width: 280px;
-//       margin-top: 16px;
-//       .address + .address {
-//         margin-top: 40px;
-//       }
-//       h3 + .address {
-//         margin-top: 40px;
-//       }
-//     }
-
-//     .visit {
-//       width: 302px;
-//       margin-top: 16px;
-//       .address + .address {
-//         margin-top: 34px;
-//       }
-//       h3 + .address {
-//         margin-top: 32px;
-//       }
-//     }
-
-//     .pict_footer {
-//       width: 300px;
-//       height: 310px;
-//     }
-
-//     h3 {
-//       font-family: "Georgia";
-//       font-style: normal;
-//       font-weight: 400;
-//       font-size: 35px;
-//       line-height: 130%;
-//       letter-spacing: 0.06em;
-//       color: #ffffff;
-//     }
-
-//     .address {
-//       .div_link {
-//         display: flex;
-//         flex-direction: row;
-//         align-items: center;
-
-//         h4 {
-//           margin-left: 20px;
-//           color: #f1cdb3;
-//           font-family: "Georgia";
-//           font-style: normal;
-//           font-weight: 400;
-//           font-size: 20px;
-//           line-height: 115%;
-//           letter-spacing: 0.06em;
-//         }
-//       }
-//     }
-
-//     .question + .visit {
-//       margin-left: 160px;
-//     }
-//     .visit + .pict_footer {
-//       margin-left: 160px;
-//     }
-//   }
-// }

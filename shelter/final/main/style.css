@@ -454,37 +454,49 @@ template {
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-size: 10px; }
 
 body {
   display: flex;
   min-width: 1280px;
-  max-width: 100em;
+  max-width: 100%;
   flex-direction: column; }
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    body {
+      min-width: 768px;
+      overflow-x: hidden; } }
 
 a {
   text-decoration: none; }
 
 .start_screen {
-  height: 908px;
   width: 100%;
   display: flex;
   justify-content: center;
   background: linear-gradient(110deg, #5b483a, #211f20);
   background: url(../e39085ad3889bd9f99c7.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20; }
   .start_screen .content {
-    width: 1280px;
     padding: 0 40px;
     display: grid;
     grid-template-rows: 180px 1fr;
     grid-template-columns: 502px 1fr;
     grid-template-areas: "header header" "main_text dog"; }
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      .start_screen .content {
+        padding: 0 30px;
+        grid-template-rows: 120px 352px 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "header" "main_text" "dog"; } }
     .start_screen .content #header {
       display: flex;
       grid-area: header;
       padding: 60px 0;
       position: relative;
       align-items: center; }
+      @media screen and (min-width: 768px) and (max-width: 1279px) {
+        .start_screen .content #header {
+          padding: 0; } }
       .start_screen .content #header .logo {
         position: absolute;
         left: 0;
@@ -542,10 +554,27 @@ a {
         border-bottom: 3px solid #f1cdb3; }
     .start_screen .content #dog {
       grid-area: dog; }
+      @media screen and (min-width: 768px) and (max-width: 1279px) {
+        .start_screen .content #dog {
+          display: flex;
+          padding: 100px 0 0 0;
+          align-items: center;
+          justify-content: flex-end; } }
+      @media screen and (min-width: 768px) and (max-width: 1279px) {
+        .start_screen .content #dog .dog_image {
+          display: block;
+          max-width: 80%; } }
     .start_screen .content #main_text {
       grid-area: main_text;
       margin-right: 42px;
       margin-top: 163px; }
+      @media screen and (min-width: 768px) and (max-width: 1279px) {
+        .start_screen .content #main_text {
+          margin-right: 0;
+          margin-top: 30px;
+          padding: 0 12.4rem;
+          align-items: center;
+          justify-content: center; } }
       .start_screen .content #main_text h2 {
         width: 310px;
         height: 114px;
@@ -572,6 +601,12 @@ a {
       .start_screen .content #main_text .buttonb1 {
         width: 207px;
         height: 52px; }
+      @media screen and (min-width: 768px) and (max-width: 1279px) {
+        .start_screen .content #main_text .button_link {
+          display: block;
+          margin: 0 auto;
+          width: 207px;
+          height: 52px; } }
 
 .about {
   width: 100%;
@@ -877,4 +912,8 @@ a {
       margin-left: 160px; }
     .footer .content .visit + .pict_footer {
       margin-left: 160px; }
+
+/*!*********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/css/utils/_mixins.scss ***!
+  \*********************************************************************************************************************/
 
