@@ -563,14 +563,12 @@ a {
       color: #292929;
       border-bottom: 3px solid #f1cdb3; }
     .header .content .burger {
-      display: none;
-      width: 0;
-      margin-right: 0; }
+      position: absolute;
+      right: 53px;
+      width: 0; }
       @media screen and (max-width: 767px) {
         .header .content .burger {
-          width: 30px;
-          margin-right: 43px;
-          display: block; } }
+          width: 30px; } }
       .header .content .burger .burger_line {
         width: 30px;
         height: 2px;

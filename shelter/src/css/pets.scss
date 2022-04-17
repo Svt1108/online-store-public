@@ -162,14 +162,13 @@ a {
     }
 
     .burger {
-      display: none;
+      position: absolute;
+      right: 53px;
       width: 0;
-      margin-right: 0;
 
       @include media-mobile {
         width: 30px;
-        margin-right: 43px;
-        display: block;
+        //       margin-right: 43px;
       }
 
       .burger_line {
