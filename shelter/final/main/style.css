@@ -742,7 +742,8 @@ a {
             width: 280px;
             height: 64px;
             font-size: 25px;
-            text-align: center; } }
+            text-align: center;
+            margin: 0 auto; } }
       .about .content .text_about p {
         margin: 25px 0 0 0;
         font-family: "Arial";
