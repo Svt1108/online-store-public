@@ -1005,7 +1005,7 @@ a {
     @media screen and (max-width: 767px) {
       .addition .content .donation_dog_image {
         display: block;
-        max-width: 86.5%; } }
+        max-width: 82.7%; } }
     .addition .content .donation {
       margin-left: 30px;
       display: flex;
@@ -1018,7 +1018,7 @@ a {
       @media screen and (max-width: 767px) {
         .addition .content .donation {
           margin-left: 0;
-          margin-bottom: 35px;
+          margin-bottom: 42px;
           align-items: center; } }
       .addition .content .donation h3 {
         width: 210px;
@@ -1108,9 +1108,24 @@ a {
         justify-content: center;
         padding: 14px 40px 0 40px;
         row-gap: 65px; } }
+    @media screen and (max-width: 767px) {
+      .footer .content {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 1% 0 1%;
+        row-gap: 22px;
+        align-items: center; } }
     .footer .content .question {
       width: 280px;
       margin-top: 16px; }
+      @media screen and (max-width: 767px) {
+        .footer .content .question {
+          display: flex;
+          flex-direction: column;
+          width: 90%;
+          align-items: center;
+          justify-content: center;
+          margin-top: 8px; } }
       .footer .content .question .address + .address {
         margin-top: 40px; }
       .footer .content .question h3 + .address {
@@ -1118,10 +1133,22 @@ a {
     .footer .content .visit {
       width: 302px;
       margin-top: 16px; }
+      @media screen and (max-width: 767px) {
+        .footer .content .visit {
+          width: 300px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start; } }
       .footer .content .visit .address + .address {
         margin-top: 34px; }
+        @media screen and (max-width: 767px) {
+          .footer .content .visit .address + .address {
+            margin-top: 40px; } }
       .footer .content .visit h3 + .address {
         margin-top: 32px; }
+        @media screen and (max-width: 767px) {
+          .footer .content .visit h3 + .address {
+            margin-top: 40px; } }
     .footer .content .pict_footer {
       display: block;
       width: 300px;
@@ -1132,6 +1159,17 @@ a {
           display: flex;
           width: 100%;
           justify-content: center; } }
+      @media screen and (max-width: 767px) {
+        .footer .content .pict_footer {
+          width: fit-content;
+          height: fit-content;
+          display: flex;
+          justify-content: center;
+          align-items: center; } }
+    @media screen and (max-width: 767px) {
+      .footer .content .pict_footer_image {
+        display: block;
+        max-width: 87%; } }
     .footer .content h3 {
       font-family: "Georgia";
       font-style: normal;
@@ -1140,10 +1178,19 @@ a {
       line-height: 130%;
       letter-spacing: 0.06em;
       color: #ffffff; }
+      @media screen and (max-width: 767px) {
+        .footer .content h3 {
+          font-size: 25px;
+          text-align: center;
+          align-self: center;
+          width: 260px; } }
     .footer .content .address .div_link {
       display: flex;
       flex-direction: row;
       align-items: center; }
+      @media screen and (max-width: 767px) {
+        .footer .content .address .div_link {
+          justify-content: center; } }
       .footer .content .address .div_link h4 {
         margin-left: 20px;
         color: #f1cdb3;
@@ -1158,11 +1205,18 @@ a {
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         .footer .content .question + .visit {
           margin-left: 8.5%; } }
+      @media screen and (max-width: 767px) {
+        .footer .content .question + .visit {
+          margin-left: 0; } }
     .footer .content .visit + .pict_footer {
       margin-left: 160px; }
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         .footer .content .visit + .pict_footer {
           margin-left: 0; } }
+      @media screen and (max-width: 767px) {
+        .footer .content .visit + .pict_footer {
+          margin-left: 0;
+          margin-top: 17px; } }
 
 /*!*********************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/css/utils/_mixins.scss ***!
