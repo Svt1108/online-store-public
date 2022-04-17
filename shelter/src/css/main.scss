@@ -378,13 +378,16 @@ a {
       }
       @include media-mobile {
         margin: 0;
-        width: 260px;
+        display: flex;
+        justify-content: center;
+        //       width: 260px;
       }
     }
 
     .picture_about_image {
       @include media-mobile {
-        width: 260px;
+        display: block;
+        max-width: 86.5%;
       }
     }
 
@@ -619,6 +622,10 @@ a {
       padding: 80px 13px 44px 13px;
     }
 
+    @include media-mobile {
+      padding: 42px 1% 11px 1%;
+    }
+
     h3 {
       font-family: "Georgia";
       font-style: normal;
@@ -630,6 +637,10 @@ a {
       text-align: center;
       letter-spacing: 0.06em;
       color: #545454;
+
+      @include media-mobile {
+        font-size: 25px;
+      }
     }
 
     .helps {
@@ -641,11 +652,20 @@ a {
       flex-wrap: wrap;
       justify-content: center;
 
+      @include media-mobile {
+        padding: 0;
+        justify-content: flex-start;
+        margin-top: 42px;
+      }
+
       .icon_help + .icon_help {
         margin-left: 120px;
         margin-top: 0;
 
         @include media-tablet {
+          margin-left: 0;
+        }
+        @include media-mobile {
           margin-left: 0;
         }
       }
@@ -657,6 +677,10 @@ a {
         align-items: center;
         @include media-tablet {
           width: 33.3%;
+        }
+        @include media-mobile {
+          width: 50%;
+          height: 117px;
         }
 
         //  height: 113px;
@@ -671,12 +695,32 @@ a {
           color: #545454;
           margin-top: 30px;
           margin-bottom: 55px;
+
+          @include media-mobile {
+            font-size: 15px;
+            line-height: 110%;
+            margin-bottom: 30px;
+            margin-top: 20px;
+          }
+        }
+
+        .icon_pict {
+          width: 60px;
+          height: 60px;
+
+          @include media-mobile {
+            width: 50px;
+            height: 50px;
+          }
         }
       }
 
       .icon_help:last-child {
         margin-right: 120px;
         @include media-tablet {
+          margin-right: 0;
+        }
+        @include media-mobile {
           margin-right: 0;
         }
       }
@@ -705,8 +749,24 @@ a {
       padding: 80px 182px 97px 183px;
     }
 
+    @include media-mobile {
+      flex-direction: column-reverse;
+      padding: 42px 1% 42px 1%;
+    }
+
     .donation_dog {
       display: block;
+      @include media-mobile {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .donation_dog_image {
+      @include media-mobile {
+        display: block;
+        max-width: 86.5%;
+      }
     }
 
     .donation {
@@ -720,8 +780,14 @@ a {
         margin-bottom: 60px;
       }
 
+      @include media-mobile {
+        margin-left: 0;
+        margin-bottom: 35px;
+        align-items: center;
+      }
+
       h3 {
-        width: 300px;
+        width: 210px;
         font-family: "Georgia";
         font-style: normal;
         font-weight: 400;
@@ -730,6 +796,11 @@ a {
         letter-spacing: 0.06em;
         color: #545454;
         margin-bottom: 20px;
+
+        @include media-mobile {
+          font-size: 25px;
+          text-align: center;
+        }
       }
 
       h5 {
@@ -741,6 +812,11 @@ a {
         letter-spacing: 0.06em;
         color: #545454;
         margin-bottom: 20px;
+
+        @include media-mobile {
+          line-height: 160%;
+          letter-spacing: 0;
+        }
       }
 
       .account {
@@ -753,6 +829,13 @@ a {
         border-radius: 9px;
         align-items: center;
         justify-content: center;
+
+        @include media-mobile {
+          width: fit-content;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
         h4 {
           font-family: "Georgia";
           font-style: normal;
@@ -762,6 +845,11 @@ a {
           letter-spacing: 0.06em;
           color: #545454;
           margin-left: 15px;
+
+          @include media-mobile {
+            font-size: 15px;
+            line-height: 110%;
+          }
         }
       }
 
@@ -777,6 +865,10 @@ a {
         line-height: 18px;
         color: #b2b2b2;
         width: 380px;
+        @include media-mobile {
+          width: 89%;
+          text-align: justify;
+        }
       }
     }
   }

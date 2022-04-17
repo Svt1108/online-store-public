@@ -710,10 +710,12 @@ a {
       @media screen and (max-width: 767px) {
         .about .content .picture_about {
           margin: 0;
-          width: 260px; } }
+          display: flex;
+          justify-content: center; } }
     @media screen and (max-width: 767px) {
       .about .content .picture_about_image {
-        width: 260px; } }
+        display: block;
+        max-width: 86.5%; } }
     .about .content .text_about {
       width: 430px;
       height: 380px; }
@@ -890,6 +892,9 @@ a {
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       .help .content {
         padding: 80px 13px 44px 13px; } }
+    @media screen and (max-width: 767px) {
+      .help .content {
+        padding: 42px 1% 11px 1%; } }
     .help .content h3 {
       font-family: "Georgia";
       font-style: normal;
@@ -901,6 +906,9 @@ a {
       text-align: center;
       letter-spacing: 0.06em;
       color: #545454; }
+      @media screen and (max-width: 767px) {
+        .help .content h3 {
+          font-size: 25px; } }
     .help .content .helps {
       margin-top: 60px;
       display: flex;
@@ -909,10 +917,18 @@ a {
       padding: 0 27px;
       flex-wrap: wrap;
       justify-content: center; }
+      @media screen and (max-width: 767px) {
+        .help .content .helps {
+          padding: 0;
+          justify-content: flex-start;
+          margin-top: 42px; } }
       .help .content .helps .icon_help + .icon_help {
         margin-left: 120px;
         margin-top: 0; }
         @media screen and (min-width: 768px) and (max-width: 1279px) {
+          .help .content .helps .icon_help + .icon_help {
+            margin-left: 0; } }
+        @media screen and (max-width: 767px) {
           .help .content .helps .icon_help + .icon_help {
             margin-left: 0; } }
       .help .content .helps .icon_help {
@@ -923,6 +939,10 @@ a {
         @media screen and (min-width: 768px) and (max-width: 1279px) {
           .help .content .helps .icon_help {
             width: 33.3%; } }
+        @media screen and (max-width: 767px) {
+          .help .content .helps .icon_help {
+            width: 50%;
+            height: 117px; } }
         .help .content .helps .icon_help .text_help {
           font-family: "Georgia";
           font-style: normal;
@@ -933,9 +953,25 @@ a {
           color: #545454;
           margin-top: 30px;
           margin-bottom: 55px; }
+          @media screen and (max-width: 767px) {
+            .help .content .helps .icon_help .text_help {
+              font-size: 15px;
+              line-height: 110%;
+              margin-bottom: 30px;
+              margin-top: 20px; } }
+        .help .content .helps .icon_help .icon_pict {
+          width: 60px;
+          height: 60px; }
+          @media screen and (max-width: 767px) {
+            .help .content .helps .icon_help .icon_pict {
+              width: 50px;
+              height: 50px; } }
       .help .content .helps .icon_help:last-child {
         margin-right: 120px; }
         @media screen and (min-width: 768px) and (max-width: 1279px) {
+          .help .content .helps .icon_help:last-child {
+            margin-right: 0; } }
+        @media screen and (max-width: 767px) {
           .help .content .helps .icon_help:last-child {
             margin-right: 0; } }
 
@@ -956,8 +992,20 @@ a {
       .addition .content {
         flex-direction: column-reverse;
         padding: 80px 182px 97px 183px; } }
+    @media screen and (max-width: 767px) {
+      .addition .content {
+        flex-direction: column-reverse;
+        padding: 42px 1% 42px 1%; } }
     .addition .content .donation_dog {
       display: block; }
+      @media screen and (max-width: 767px) {
+        .addition .content .donation_dog {
+          display: flex;
+          justify-content: center; } }
+    @media screen and (max-width: 767px) {
+      .addition .content .donation_dog_image {
+        display: block;
+        max-width: 86.5%; } }
     .addition .content .donation {
       margin-left: 30px;
       display: flex;
@@ -967,8 +1015,13 @@ a {
         .addition .content .donation {
           margin-left: 0;
           margin-bottom: 60px; } }
+      @media screen and (max-width: 767px) {
+        .addition .content .donation {
+          margin-left: 0;
+          margin-bottom: 35px;
+          align-items: center; } }
       .addition .content .donation h3 {
-        width: 300px;
+        width: 210px;
         font-family: "Georgia";
         font-style: normal;
         font-weight: 400;
@@ -977,6 +1030,10 @@ a {
         letter-spacing: 0.06em;
         color: #545454;
         margin-bottom: 20px; }
+        @media screen and (max-width: 767px) {
+          .addition .content .donation h3 {
+            font-size: 25px;
+            text-align: center; } }
       .addition .content .donation h5 {
         font-family: "Georgia";
         font-style: normal;
@@ -986,6 +1043,10 @@ a {
         letter-spacing: 0.06em;
         color: #545454;
         margin-bottom: 20px; }
+        @media screen and (max-width: 767px) {
+          .addition .content .donation h5 {
+            line-height: 160%;
+            letter-spacing: 0; } }
       .addition .content .donation .account {
         width: 349px;
         height: 43px;
@@ -996,6 +1057,11 @@ a {
         border-radius: 9px;
         align-items: center;
         justify-content: center; }
+        @media screen and (max-width: 767px) {
+          .addition .content .donation .account {
+            width: fit-content;
+            padding-left: 15px;
+            padding-right: 15px; } }
         .addition .content .donation .account h4 {
           font-family: "Georgia";
           font-style: normal;
@@ -1005,6 +1071,10 @@ a {
           letter-spacing: 0.06em;
           color: #545454;
           margin-left: 15px; }
+          @media screen and (max-width: 767px) {
+            .addition .content .donation .account h4 {
+              font-size: 15px;
+              line-height: 110%; } }
       .addition .content .donation .account:hover {
         background-color: #fddcc4; }
       .addition .content .donation p {
@@ -1015,6 +1085,10 @@ a {
         line-height: 18px;
         color: #b2b2b2;
         width: 380px; }
+        @media screen and (max-width: 767px) {
+          .addition .content .donation p {
+            width: 89%;
+            text-align: justify; } }
 
 .footer {
   width: 100%;
