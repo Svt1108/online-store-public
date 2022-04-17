@@ -39,6 +39,7 @@ a {
 
 .header {
   width: 100%;
+  padding: 0;
   //  height: 120px;
   display: flex;
   justify-content: center;
@@ -47,16 +48,24 @@ a {
   z-index: 700;
 
   .content {
-    width: 100vw;
+    width: 100%;
     max-width: 1280px;
     height: 100%;
     // grid-area: header;
     padding: 30px 40px;
-    //position: relative;
+    // position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-between;
     //gap: 575px;
+
+    .logo + .navmenu {
+      margin-left: 575px;
+
+      @include media-tablet {
+        margin-left: 0;
+      }
+    }
 
     @include media-tablet {
       padding: 30px;
@@ -69,11 +78,12 @@ a {
     }
 
     .logo {
-      //position: absolute;
-      //left: 0;
+      // position: absolute;
+      // left: 0;
       width: 184px;
       display: flex;
       flex-direction: column;
+      white-space: nowrap;
 
       h1 {
         color: #545454;
@@ -99,8 +109,8 @@ a {
     }
 
     .navmenu {
-      //position: absolute;
-      //right: 0;
+      // position: absolute;
+      // right: 0;
       width: 441px;
       align-items: center;
 
@@ -152,8 +162,15 @@ a {
     }
 
     .burger {
-      width: 30px;
-      margin-right: 43px;
+      display: none;
+      width: 0;
+      margin-right: 0;
+
+      @include media-mobile {
+        width: 30px;
+        margin-right: 43px;
+        display: block;
+      }
 
       .burger_line {
         width: 30px;

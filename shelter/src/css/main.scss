@@ -89,8 +89,8 @@ a {
       }
 
       @include media-mobile {
-        padding: 0 10px;
-        width: 100vw;
+        //        padding: 0 0 0 10px;
+        //  width: 100vw;
         justify-content: space-between;
       }
 
@@ -122,7 +122,7 @@ a {
           line-height: 15px;
           letter-spacing: 0.1em;
           color: white;
-          margin: 10 0 0 0;
+          margin: 10px 0 0 3px;
           padding: 0;
           width: 100%;
         }
@@ -131,7 +131,7 @@ a {
       .navmenu {
         position: absolute;
         right: 0;
-        width: 441px;
+        width: 442px;
         align-items: center;
 
         @include media-mobile {
@@ -238,7 +238,7 @@ a {
         }
 
         @include media-mobile {
-          max-width: 81.5%;
+          max-width: 87%;
           margin-right: -12%;
         }
       }
@@ -272,7 +272,7 @@ a {
           flex-direction: column;
           align-items: center;
           // justify-content: center;
-          padding: 5px 2.5%;
+          padding: 5px 0;
         }
       }
 
@@ -434,6 +434,7 @@ a {
 
         @include media-mobile {
           text-align: justify;
+          margin: 24px 0 0 0;
         }
       }
     }
@@ -784,7 +785,7 @@ a {
       }
 
       h3 {
-        width: 210px;
+        width: 300px;
         font-family: "Georgia";
         font-style: normal;
         font-weight: 400;
@@ -795,6 +796,7 @@ a {
         margin-bottom: 20px;
 
         @include media-mobile {
+          width: 210px;
           font-size: 25px;
           text-align: center;
         }
