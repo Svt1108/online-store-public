@@ -34,16 +34,38 @@ function removeHover(element) {
   element.style.color = `#cdcdcd`;
 } */
 
+const mediaQueryLarge = window.matchMedia("screen and (min-width: 1280px)");
+
 const mediaQuery = window.matchMedia(
   "screen and (min-width: 768px) and (max-width: 1279px)"
 );
+
+const mediaQuerySmall = window.matchMedia("screen and (max-width: 767px)");
+
 function handleTabletChange(e) {
   if (e.matches) {
     slider(2);
-  } else slider(3);
+  } /* else slider(3); */
+}
+
+function handleTabletChangeSmall(e) {
+  if (e.matches) {
+    slider(1);
+  }
+}
+
+function handleTabletChangeLarge(e) {
+  if (e.matches) {
+    slider(3);
+  }
 }
 mediaQuery.addListener(handleTabletChange);
+mediaQuerySmall.addListener(handleTabletChangeSmall);
+mediaQueryLarge.addListener(handleTabletChangeLarge);
+
 handleTabletChange(mediaQuery);
+handleTabletChangeSmall(mediaQuerySmall);
+handleTabletChangeLarge(mediaQueryLarge);
 
 /* slider */
 

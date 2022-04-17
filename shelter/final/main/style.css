@@ -584,7 +584,10 @@ a {
       .start_screen .content .burger .burger_line {
         width: 30px;
         height: 2px;
-        background-color: #f1cdb3; }
+        background-color: transparent; }
+        @media screen and (max-width: 767px) {
+          .start_screen .content .burger .burger_line {
+            background-color: #f1cdb3; } }
       .start_screen .content .burger .burger_line + .burger_line {
         margin-top: 9px; }
     .start_screen .content #dog {
@@ -754,7 +757,6 @@ a {
 
 .pets {
   width: 100%;
-  height: 877px;
   background: #f6f6f6;
   display: flex;
   justify-content: center; }
@@ -770,6 +772,10 @@ a {
       .pets .content {
         padding: 80px 0 100px 0;
         width: 768px; } }
+    @media screen and (max-width: 767px) {
+      .pets .content {
+        padding: 42px 1% 42px 1%;
+        height: 100%; } }
     .pets .content h3 {
       width: 400px;
       font-family: "Georgia";
@@ -782,6 +788,10 @@ a {
       text-align: center;
       letter-spacing: 0.06em;
       color: #545454; }
+      @media screen and (max-width: 767px) {
+        .pets .content h3 {
+          font-size: 25px;
+          justify-content: center; } }
     .pets .content .slider {
       height: 435px;
       width: 100%;
@@ -796,6 +806,14 @@ a {
         .pets .content .slider {
           justify-content: center;
           gap: 1.5%; } }
+      @media screen and (max-width: 767px) {
+        .pets .content .slider {
+          justify-content: center;
+          flex-wrap: wrap;
+          height: fit-content;
+          row-gap: 20px;
+          column-gap: 80px;
+          margin: 42px 0; } }
       .pets .content .slider .cards {
         height: 100%;
         overflow: hidden;
@@ -809,6 +827,13 @@ a {
             justify-content: space-between;
             width: 75.5%;
             margin: 0; } }
+        @media screen and (max-width: 767px) {
+          .pets .content .slider .cards {
+            gap: 0;
+            order: -1;
+            width: 95.5%;
+            margin: 0;
+            justify-content: center; } }
         .pets .content .slider .cards .pet {
           display: flex;
           flex-wrap: wrap;
