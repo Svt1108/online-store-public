@@ -496,7 +496,7 @@ a {
         padding: 30px; } }
     @media screen and (max-width: 767px) {
       .header .content {
-        padding: 30px 10px 0 3.5%;
+        padding: 30px 10px 30px 3.5%;
         width: 100vw;
         justify-content: space-between; } }
     .header .content .logo {
@@ -585,6 +585,9 @@ a {
       .pets .content {
         padding: 200px 30px 70px 30px;
         margin-bottom: 5px; } }
+    @media screen and (max-width: 767px) {
+      .pets .content {
+        padding: 160px 10px 42px 10px; } }
     .pets .content h3 {
       width: 400px;
       font-family: "Georgia";
@@ -601,6 +604,11 @@ a {
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         .pets .content h3 {
           margin: 0 0 30px 0; } }
+      @media screen and (max-width: 767px) {
+        .pets .content h3 {
+          width: 300px;
+          margin: 0 0 45px 0;
+          font-size: 25px; } }
     .pets .content .cards {
       display: grid;
       grid-template-rows: 435px 435px;
@@ -614,6 +622,14 @@ a {
           grid-template-rows: 435px 435px 435px;
           grid-template-columns: 270px 270px;
           grid-column-gap: 40px;
+          grid-row-gap: 30px;
+          overflow: hidden;
+          margin-bottom: 40px; } }
+      @media screen and (max-width: 767px) {
+        .pets .content .cards {
+          height: 1365px;
+          grid-template-rows: 435px 435px 435px;
+          grid-template-columns: 270px;
           grid-row-gap: 30px;
           overflow: hidden;
           margin-bottom: 40px; } }
@@ -665,6 +681,9 @@ a {
       line-height: 115%;
       letter-spacing: 0.06em;
       text-align: center; }
+      @media screen and (max-width: 767px) {
+        .pets .content .navigation {
+          gap: 10px; } }
 
 .footer {
   width: 100%;
