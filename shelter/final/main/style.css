@@ -488,19 +488,24 @@ a {
     display: grid;
     grid-template-rows: 180px auto;
     grid-template-columns: 502px 1fr;
-    grid-template-areas: "header header" "main_text dog"; }
+    grid-template-areas: "header header"
+ "main_text dog"; }
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       .start_screen .content {
         padding: 0 30px;
         grid-template-rows: 120px 352px auto;
         grid-template-columns: 1fr;
-        grid-template-areas: "header" "main_text" "dog"; } }
+        grid-template-areas: "header"
+ "main_text"
+ "dog"; } }
     @media screen and (max-width: 767px) {
       .start_screen .content {
         padding: 0 10px;
         grid-template-rows: 120px 376px 1fr;
         grid-template-columns: 1fr;
-        grid-template-areas: "header" "main_text" "dog"; } }
+        grid-template-areas: "header"
+ "main_text"
+ "dog"; } }
     .start_screen .content #header {
       display: flex;
       grid-area: header;
@@ -792,6 +797,7 @@ a {
       color: #545454; }
       @media screen and (max-width: 767px) {
         .pets .content h3 {
+          width: 100%;
           font-size: 25px;
           justify-content: center; } }
     .pets .content .slider {
