@@ -1,7 +1,11 @@
-/* navigation */
+/* --------------------------navigation------------------------------ */
 
 const navlinks = document.querySelectorAll(".button_circle_nav");
 const firstBtn = document.querySelector(".first_btn");
+const startBtn = document.querySelector("#startBtn");
+const lessBtn = document.querySelector("#lessBtn");
+const moreBtn = document.querySelector("#moreBtn");
+const endBtn = document.querySelector("#endBtn");
 
 firstBtn.style.backgroundColor = `#f1cdb3`;
 firstBtn.style.border = `2px solid #f1cdb3`;
@@ -37,7 +41,7 @@ function removeHover(element) {
   element.style.border = `2px solid #f1cdb3`;
 }
 
-/* pagination */
+/* --------------------pagination-------------------------------- */
 
 const petsJS = [
   "Freddie",
@@ -60,8 +64,9 @@ let pages; //количество страниц
 let result = [];
 let resultFin = [];
 let arr = [];
-let pageNumber = 1;
+let pageNumber;
 
+/* --------------------проверка разрешения экрана ----------------------*/
 const mediaQueryLarge = window.matchMedia("screen and (min-width: 1280px)");
 
 const mediaQuery = window.matchMedia(
@@ -76,12 +81,13 @@ function handleTabletChange(e) {
     pages = 8;
     arr = [];
     resultFin = [];
+    pageNumber = 1;
     let pets = document.querySelectorAll(".pet");
     pets.forEach((element) => {
       element.remove();
     });
     pagination();
-    display();
+    display(pageNumber);
   } /* else slider(3); */
 }
 
@@ -91,12 +97,13 @@ function handleTabletChangeSmall(e) {
     pages = 16;
     arr = [];
     resultFin = [];
+    pageNumber = 1;
     let pets = document.querySelectorAll(".pet");
     pets.forEach((element) => {
       element.remove();
     });
     pagination();
-    display();
+    display(pageNumber);
   }
 }
 
@@ -106,12 +113,13 @@ function handleTabletChangeLarge(e) {
     pages = 6;
     arr = [];
     resultFin = [];
+    pageNumber = 1;
     let pets = document.querySelectorAll(".pet");
     pets.forEach((element) => {
       element.remove();
     });
     pagination();
-    display();
+    display(pageNumber);
   }
 }
 mediaQuery.addListener(handleTabletChange);
@@ -122,9 +130,30 @@ handleTabletChange(mediaQuery);
 handleTabletChangeSmall(mediaQuerySmall);
 handleTabletChangeLarge(mediaQueryLarge);
 
+/*-------------------------------работа кнопок--------------------------------*/
+
+document.addEventListener("click", (e) => {
+  navlinks.forEach((Element) => {
+    if (e.composedPath().includes(Element) && Element == moreBtn) {
+      if (pageNumber < pages) {
+        pageNumber++;
+        display(pageNumber);
+      }
+    }
+    if (e.composedPath().includes(Element) && Element == endBtn) {
+      pageNumber = pages;
+      display(pageNumber);
+    }
+  });
+});
+
 //pagination();
 
-function display() {
+function display(pageNumber) {
+  let pets = document.querySelectorAll(".pet");
+  pets.forEach((element) => {
+    element.remove();
+  });
   for (let i = 0; i < numero; i++) {
     sidebar.insertAdjacentHTML(
       `beforeend`,
@@ -170,16 +199,12 @@ function getRandomNumber(arr) {
         }
       }
 
-      // do {
-      //   indexOne = Math.floor(Math.random() * arr.length);
-      //   one = arr[indexOne];
-      // } while (result.includes(one) || check.includes(one));
-
       result.push(one);
-      arr.splice(indexOne, 1)[0];
+      arr.splice(indexOne, 1);
     }
     check = result;
     resultFin.push(result);
+    console.log(arr);
   }
   resultFin.push(arr);
   return resultFin;
