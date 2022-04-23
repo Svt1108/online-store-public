@@ -36,3 +36,151 @@ function removeHover(element) {
   element.style.backgroundColor = `transparent`;
   element.style.border = `2px solid #f1cdb3`;
 }
+
+/* pagination */
+
+const petsJS = [
+  "Freddie",
+  "Jennifer",
+  "Katrine",
+  "Scarlet",
+  "Charly",
+  "Sophia",
+  "Timmy",
+  "Woody",
+];
+
+const sidebar = document.querySelector(".cards");
+const cardsCount = petsJS.length; //общее количество питомцев
+const quantity = 6; //сколько раз встречается питомец
+
+let numero; //число карточек на странице
+let pages; //количество страниц
+
+let result = [];
+let resultFin = [];
+let arr = [];
+let pageNumber = 1;
+
+const mediaQueryLarge = window.matchMedia("screen and (min-width: 1280px)");
+
+const mediaQuery = window.matchMedia(
+  "screen and (min-width: 768px) and (max-width: 1279px)"
+);
+
+const mediaQuerySmall = window.matchMedia("screen and (max-width: 767px)");
+
+function handleTabletChange(e) {
+  if (e.matches) {
+    numero = 6;
+    pages = 8;
+    arr = [];
+    resultFin = [];
+    let pets = document.querySelectorAll(".pet");
+    pets.forEach((element) => {
+      element.remove();
+    });
+    pagination();
+    display();
+  } /* else slider(3); */
+}
+
+function handleTabletChangeSmall(e) {
+  if (e.matches) {
+    numero = 3;
+    pages = 16;
+    arr = [];
+    resultFin = [];
+    let pets = document.querySelectorAll(".pet");
+    pets.forEach((element) => {
+      element.remove();
+    });
+    pagination();
+    display();
+  }
+}
+
+function handleTabletChangeLarge(e) {
+  if (e.matches) {
+    numero = 8;
+    pages = 6;
+    arr = [];
+    resultFin = [];
+    let pets = document.querySelectorAll(".pet");
+    pets.forEach((element) => {
+      element.remove();
+    });
+    pagination();
+    display();
+  }
+}
+mediaQuery.addListener(handleTabletChange);
+mediaQuerySmall.addListener(handleTabletChangeSmall);
+mediaQueryLarge.addListener(handleTabletChangeLarge);
+
+handleTabletChange(mediaQuery);
+handleTabletChangeSmall(mediaQuerySmall);
+handleTabletChangeLarge(mediaQueryLarge);
+
+//pagination();
+
+function display() {
+  for (let i = 0; i < numero; i++) {
+    sidebar.insertAdjacentHTML(
+      `beforeend`,
+      `<div class="pet"><div class="img_pet">
+    <img src="../../assets/images/pets-${
+      petsJS[resultFin[pageNumber - 1][i]]
+    }.png" /></div>
+    <div class="name">${petsJS[resultFin[pageNumber - 1][i]]}</div>
+    <div class="buttonw buttonw1">Learn more</div></div>`
+    );
+  }
+}
+
+function pagination() {
+  for (let j = 0; j < quantity; j++) {
+    for (let i = 0; i < cardsCount; i++) {
+      arr.push(i);
+    }
+  }
+
+  console.log("arr = " + arr);
+  getRandomNumber(arr);
+  console.log(resultFin);
+}
+
+function getRandomNumber(arr) {
+  let one = 7777;
+  check = [];
+  let indexOne = "";
+
+  for (let j = 0; j < pages - 1; j++) {
+    result = [];
+    for (let i = 0; i < numero; i++) {
+      if (numero > 3) {
+        while (result.includes(one) || one == 7777) {
+          indexOne = Math.floor(Math.random() * arr.length);
+          one = arr[indexOne];
+        }
+      } else {
+        while (result.includes(one) || check.includes(one) || one == 7777) {
+          indexOne = Math.floor(Math.random() * arr.length);
+          one = arr[indexOne];
+        }
+      }
+
+      // do {
+      //   indexOne = Math.floor(Math.random() * arr.length);
+      //   one = arr[indexOne];
+      // } while (result.includes(one) || check.includes(one));
+
+      result.push(one);
+      arr.splice(indexOne, 1)[0];
+    }
+    check = result;
+    resultFin.push(result);
+  }
+  resultFin.push(arr);
+  return resultFin;
+}
