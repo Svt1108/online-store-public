@@ -114,8 +114,6 @@ function displaySlidesLeft() {
 
   sidebar.style.flexDirection = "row";
 
-  console.log(number);
-
   displaySlides();
 
   setTimeout(() => moveLeft(), 100);
@@ -156,25 +154,26 @@ function moveLeft() {
 }
 
 function moveRight() {
-  let pets = document.querySelectorAll(".pet");
+  let insides = document.querySelectorAll(".cards");
 
-  for (let i = 0; i < pets.length; i++) {
-    pets[i].style.transition = `transform 2s ease`;
-    pets[i].style.transform = `translateX(${
-      sidebar.clientWidth + parseInt(window.getComputedStyle(sidebar).gap)
+  for (let i = 0; i < insides.length; i++) {
+    insides[i].style.transition = `transform 2s ease`;
+    insides[i].style.transform = `translateX(${
+      parseInt(window.getComputedStyle(sidebar).width) +
+      parseInt(window.getComputedStyle(sidebar).gap)
     }px)`;
-    if (i >= number)
+    if (i == 1)
       setTimeout(
         () => (
-          (pets[i].style.transition = ``),
-          (pets[i].style.transform = `translateX(0)`),
+          (insides[i].style.transition = ``),
+          (insides[i].style.transform = `translateX(0)`),
           LeftBtn.addEventListener("click", displaySlidesLeft),
           RightBtn.addEventListener("click", displaySlidesRight)
         ),
         2000
       );
 
-    if (i < number) setTimeout(() => pets[i].remove(), 2000);
+    if (i == 0) setTimeout(() => insides[i].remove(), 2000);
   }
 }
 
