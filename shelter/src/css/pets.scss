@@ -18,6 +18,7 @@ body {
   min-width: 1280px;
   max-width: 100%;
   flex-direction: column;
+  overflow-x: hidden;
   @include media-tablet {
     min-width: $tablet-width;
     overflow-x: hidden;

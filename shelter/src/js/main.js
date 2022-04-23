@@ -34,6 +34,29 @@ function removeHover(element) {
   element.style.color = `#cdcdcd`;
 } */
 
+/* slider */
+
+const petsJS = [
+  "Freddie",
+  "Jennifer",
+  "Katrine",
+  "Scarlet",
+  "Charly",
+  "Sophia",
+  "Timmy",
+  "Woody",
+];
+
+const cardsCount = petsJS.length;
+
+let result = [];
+let arr = [];
+
+const RightBtn = document.querySelector(".right-button");
+const LeftBtn = document.querySelector(".left-button");
+const sidebar = document.querySelector(".cardsWrapper");
+let number;
+
 const mediaQueryLarge = window.matchMedia("screen and (min-width: 1280px)");
 
 const mediaQuery = window.matchMedia(
@@ -44,19 +67,34 @@ const mediaQuerySmall = window.matchMedia("screen and (max-width: 767px)");
 
 function handleTabletChange(e) {
   if (e.matches) {
-    slider(2);
+    number = 2;
+    let pets = document.querySelectorAll(".cards");
+    pets.forEach((element) => {
+      element.remove();
+    });
+    displaySlides();
   } /* else slider(3); */
 }
 
 function handleTabletChangeSmall(e) {
   if (e.matches) {
-    slider(1);
+    number = 1;
+    let pets = document.querySelectorAll(".cards");
+    pets.forEach((element) => {
+      element.remove();
+    });
+    displaySlides();
   }
 }
 
 function handleTabletChangeLarge(e) {
   if (e.matches) {
-    slider(3);
+    number = 3;
+    let pets = document.querySelectorAll(".cards");
+    pets.forEach((element) => {
+      element.remove();
+    });
+    displaySlides();
   }
 }
 mediaQuery.addListener(handleTabletChange);
@@ -67,52 +105,110 @@ handleTabletChange(mediaQuery);
 handleTabletChangeSmall(mediaQuerySmall);
 handleTabletChangeLarge(mediaQueryLarge);
 
-/* slider */
+LeftBtn.addEventListener("click", displaySlidesLeft);
+RightBtn.addEventListener("click", displaySlidesRight);
 
-function slider(number) {
-  const RightBtn = document.querySelector(".right-button");
-  const LeftBtn = document.querySelector(".left-button");
-  const sidebar = document.querySelector(".cards");
-  const cardsCount = document.querySelectorAll(".cards > div").length;
-  const pets = document.querySelectorAll(".pet");
-  const container = document.querySelector(".slider");
+function displaySlidesLeft() {
+  LeftBtn.removeEventListener("click", displaySlidesLeft);
+  RightBtn.removeEventListener("click", displaySlidesRight);
 
-  let result = [];
-  let arr = [];
-  let flag = 0;
+  sidebar.style.flexDirection = "row";
+
+  console.log(number);
 
   displaySlides();
 
-  LeftBtn.addEventListener("click", () => displaySlides());
-  RightBtn.addEventListener("click", () => displaySlides());
+  setTimeout(() => moveLeft(), 100);
+}
 
-  function displaySlides() {
-    arr = [];
-    for (let i = 0; i < cardsCount; i++) {
-      if (!result.includes(i)) arr.push(i);
-    }
+function displaySlidesRight() {
+  LeftBtn.removeEventListener("click", displaySlidesLeft);
+  RightBtn.removeEventListener("click", displaySlidesRight);
 
-    getRandomNumber(arr);
-    pets.forEach((element) => {
-      element.style.display = `none`;
-      // element.style.transition = `left 2s`;
-      // element.style.left = `-2500px`;
-    });
+  sidebar.style.flexDirection = "row-reverse";
+  displaySlides();
 
-    pets.forEach((element) => {
-      element.style.display = `none`;
-    });
+  setTimeout(() => moveRight(), 100);
+}
 
-    for (let i = 0; i < number; i++) {
-      pets[result[i]].style.display = `block`;
-    }
+function moveLeft() {
+  let insides = document.querySelectorAll(".cards");
+
+  for (let i = 0; i < insides.length; i++) {
+    insides[i].style.transition = `transform 2s ease`;
+    insides[i].style.transform = `translateX(-${
+      parseInt(window.getComputedStyle(sidebar).width) +
+      parseInt(window.getComputedStyle(sidebar).gap)
+    }px)`;
+    if (i == 1)
+      setTimeout(
+        () => (
+          (insides[i].style.transition = ``),
+          (insides[i].style.transform = `translateX(0)`),
+          LeftBtn.addEventListener("click", displaySlidesLeft),
+          RightBtn.addEventListener("click", displaySlidesRight)
+        ),
+        2000
+      );
+
+    if (i == 0) setTimeout(() => insides[i].remove(), 2000);
+  }
+}
+
+function moveRight() {
+  let pets = document.querySelectorAll(".pet");
+
+  for (let i = 0; i < pets.length; i++) {
+    pets[i].style.transition = `transform 2s ease`;
+    pets[i].style.transform = `translateX(${
+      sidebar.clientWidth + parseInt(window.getComputedStyle(sidebar).gap)
+    }px)`;
+    if (i >= number)
+      setTimeout(
+        () => (
+          (pets[i].style.transition = ``),
+          (pets[i].style.transform = `translateX(0)`),
+          LeftBtn.addEventListener("click", displaySlidesLeft),
+          RightBtn.addEventListener("click", displaySlidesRight)
+        ),
+        2000
+      );
+
+    if (i < number) setTimeout(() => pets[i].remove(), 2000);
+  }
+}
+
+function displaySlides() {
+  arr = [];
+  for (let i = 0; i < cardsCount; i++) {
+    if (!result.includes(i)) arr.push(i);
   }
 
-  function getRandomNumber(arr) {
-    for (let i = 0; i < number; i++) {
-      let index = Math.floor(Math.random() * arr.length);
-      result[i] = arr.splice(index, 1)[0];
-    }
-    return result;
+  getRandomNumber(arr);
+
+  sidebar.insertAdjacentHTML(`beforeend`, `<div class="cards temp"></div>`);
+
+  let sidebarInside = document.querySelector(".temp");
+
+  for (let i = 0; i < number; i++) {
+    sidebarInside.insertAdjacentHTML(
+      `beforeend`,
+      `<div class="pet"><div class="img_pet">
+      <img src="../../assets/images/pets-${petsJS[result[i]]}.png" /></div>
+      <div class="name">${petsJS[result[i]]}</div>
+      <div class="buttonw buttonw1">Learn more</div></div>`
+    );
   }
+
+  sidebarInside.classList.remove("temp");
+
+  /*  pets[result[i]].style.display = `block`;   */
+}
+
+function getRandomNumber(arr) {
+  for (let i = 0; i < number; i++) {
+    let index = Math.floor(Math.random() * arr.length);
+    result[i] = arr.splice(index, 1)[0];
+  }
+  return result;
 }

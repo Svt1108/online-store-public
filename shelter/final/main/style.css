@@ -463,7 +463,8 @@ body {
   display: flex;
   min-width: 1280px;
   max-width: 100%;
-  flex-direction: column; }
+  flex-direction: column;
+  overflow-x: hidden; }
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     body {
       min-width: 768px;
@@ -792,6 +793,7 @@ a {
       color: #545454; }
       @media screen and (max-width: 767px) {
         .pets .content h3 {
+          width: 100%;
           font-size: 25px;
           justify-content: center; } }
     .pets .content .slider {
@@ -803,13 +805,15 @@ a {
       align-items: center;
       position: relative;
       margin: 60px 0;
-      gap: 53px; }
+      gap: 53px;
+      overflow: hidden; }
       @media screen and (min-width: 768px) and (max-width: 1279px) {
         .pets .content .slider {
           justify-content: center;
           gap: 1.5%; } }
       @media screen and (max-width: 767px) {
         .pets .content .slider {
+          width: 270px;
           justify-content: center;
           flex-wrap: wrap;
           height: fit-content;
@@ -817,31 +821,24 @@ a {
           column-gap: 80px;
           margin: 42px 0; } }
       .pets .content .slider .cards {
+        width: 990px;
         height: 100%;
-        overflow: hidden;
         display: flex;
-        flex-direction: row;
-        gap: 90px;
-        margin: 0 auto; }
+        gap: 90px; }
         @media screen and (min-width: 768px) and (max-width: 1279px) {
           .pets .content .slider .cards {
-            gap: 0;
-            justify-content: space-between;
-            width: 75.5%;
-            margin: 0; } }
+            width: 580px;
+            gap: 40px; } }
         @media screen and (max-width: 767px) {
           .pets .content .slider .cards {
-            gap: 0;
-            order: -1;
-            width: 95.5%;
-            margin: 0;
-            justify-content: center; } }
+            width: 270px;
+            gap: 0; } }
         .pets .content .slider .cards .pet {
           display: flex;
           flex-wrap: wrap;
           flex-direction: column;
           text-align: center;
-          justify-content: center;
+          justify-content: flex-start;
           align-items: center;
           width: 270px;
           height: 435px;
@@ -991,7 +988,7 @@ a {
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       .addition .content {
         flex-direction: column-reverse;
-        padding: 80px 182px 97px 183px; } }
+        padding: 80px 5% 97px 5%; } }
     @media screen and (max-width: 767px) {
       .addition .content {
         flex-direction: column-reverse;
@@ -1218,6 +1215,36 @@ a {
         .footer .content .visit + .pict_footer {
           margin-left: 0;
           margin-top: 17px; } }
+
+@keyframes move-left {
+  from {
+    transform: translateX(0); }
+  to {
+    transform: translateX(-1038px); } }
+
+.transition-right {
+  animation-name: move-left;
+  animation-duration: 5s; }
+
+.cardsWrapper {
+  width: 990px;
+  display: flex;
+  overflow: hidden;
+  margin: 0 auto;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 90px; }
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    .cardsWrapper {
+      width: 580px;
+      margin: 0;
+      gap: 40px; } }
+  @media screen and (max-width: 767px) {
+    .cardsWrapper {
+      width: 270px;
+      margin: 0;
+      order: -1;
+      gap: 0; } }
 
 /*!*********************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/css/utils/_mixins.scss ***!
