@@ -17,28 +17,33 @@ for (let navlink of navlinks) {
     navlink.addEventListener("mouseover", () => setHover(navlink));
     navlink.addEventListener("mouseleave", () => removeHover(navlink));
   } else if (navlink.getAttribute("data-disabled") == "true") {
-    navlink.style.border = `2px solid #cdcdcd`;
-    navlink.style.backgroundColor = `transparent`;
-    navlink.style.cursor = `default`;
-    navlink.style.color = `#cdcdcd`;
+    disableBtn(navlink);
   }
 }
 
 function setHover(element) {
-  for (let navlink1 of navlinks) {
-    if (navlink1.getAttribute("data-disabled") == "false") {
-      navlink1.style.backgroundColor = `transparent`;
-      navlink1.style.border = `2px solid #f1cdb3`;
-    }
+  if (element.getAttribute("data-disabled") == "false") {
+    element.style.border = `2px solid #fddcc4`;
+    element.style.backgroundColor = `#fddcc4`;
   }
-
-  element.style.border = `2px solid #fddcc4`;
-  element.style.backgroundColor = `#fddcc4`;
 }
 
 function removeHover(element) {
-  element.style.backgroundColor = `transparent`;
-  element.style.border = `2px solid #f1cdb3`;
+  if (element.getAttribute("data-disabled") == "false") {
+    element.style.backgroundColor = `transparent`;
+    element.style.border = `2px solid #f1cdb3`;
+  }
+}
+
+function disableBtn(element) {
+  if (element.getAttribute("data-disabled") == "true") {
+    element.style.border = `2px solid #cdcdcd`;
+    element.style.backgroundColor = `transparent`;
+    element.style.cursor = `default`;
+    element.style.color = `#cdcdcd`;
+  } else {
+    element.style = ``;
+  }
 }
 
 /* --------------------pagination-------------------------------- */
@@ -65,6 +70,7 @@ let result = [];
 let resultFin = [];
 let arr = [];
 let pageNumber;
+//let pets;
 
 /* --------------------проверка разрешения экрана ----------------------*/
 const mediaQueryLarge = window.matchMedia("screen and (min-width: 1280px)");
@@ -82,10 +88,10 @@ function handleTabletChange(e) {
     arr = [];
     resultFin = [];
     pageNumber = 1;
-    let pets = document.querySelectorAll(".pet");
-    pets.forEach((element) => {
-      element.remove();
-    });
+    // let pets = document.querySelectorAll(".pet");
+    // pets.forEach((element) => {
+    //   element.remove();
+    // });
     pagination();
     display(pageNumber);
   } /* else slider(3); */
@@ -98,10 +104,10 @@ function handleTabletChangeSmall(e) {
     arr = [];
     resultFin = [];
     pageNumber = 1;
-    let pets = document.querySelectorAll(".pet");
-    pets.forEach((element) => {
-      element.remove();
-    });
+    // let pets = document.querySelectorAll(".pet");
+    // pets.forEach((element) => {
+    //   element.remove();
+    // });
     pagination();
     display(pageNumber);
   }
@@ -114,10 +120,10 @@ function handleTabletChangeLarge(e) {
     arr = [];
     resultFin = [];
     pageNumber = 1;
-    let pets = document.querySelectorAll(".pet");
-    pets.forEach((element) => {
-      element.remove();
-    });
+    // let pets = document.querySelectorAll(".pet");
+    // pets.forEach((element) => {
+    //   element.remove();
+    // });
     pagination();
     display(pageNumber);
   }
@@ -144,9 +150,38 @@ document.addEventListener("click", (e) => {
       pageNumber = pages;
       display(pageNumber);
     }
+    if (e.composedPath().includes(Element) && Element == lessBtn) {
+      if (pageNumber > 1) {
+        pageNumber--;
+        display(pageNumber);
+      }
+    }
+    if (e.composedPath().includes(Element) && Element == startBtn) {
+      pageNumber = 1;
+      display(pageNumber);
+    }
   });
 });
 
+function displayButtons(pageNumber) {
+  moreBtn.setAttribute("data-disabled", "false");
+  endBtn.setAttribute("data-disabled", "false");
+  lessBtn.setAttribute("data-disabled", "false");
+  startBtn.setAttribute("data-disabled", "false");
+
+  if (pageNumber == pages) {
+    moreBtn.setAttribute("data-disabled", "true");
+    endBtn.setAttribute("data-disabled", "true");
+  }
+  if (pageNumber == 1) {
+    lessBtn.setAttribute("data-disabled", "true");
+    startBtn.setAttribute("data-disabled", "true");
+  }
+  disableBtn(moreBtn);
+  disableBtn(endBtn);
+  disableBtn(lessBtn);
+  disableBtn(startBtn);
+}
 //pagination();
 
 function display(pageNumber) {
@@ -165,6 +200,9 @@ function display(pageNumber) {
     <div class="buttonw buttonw1">Learn more</div></div>`
     );
   }
+  firstBtn.innerHTML = "";
+  firstBtn.append(`${pageNumber}`);
+  displayButtons(pageNumber);
 }
 
 function pagination() {
@@ -174,38 +212,30 @@ function pagination() {
     }
   }
 
-  console.log("arr = " + arr);
-  getRandomNumber(arr);
-  console.log(resultFin);
+  //  console.log("arr = " + arr);
+
+  numero_rand = Math.floor(Math.random() * numero);
+  // console.log(numero_rand);
+  for (i = 0; i < pages; i++)
+    resultFin[i] = arr.slice(
+      i * numero + numero_rand,
+      (i + 1) * numero + numero_rand
+    );
+
+  if (resultFin[pages - 1].length < numero)
+    resultFin[pages - 1].push(
+      ...arr.slice(0, numero - resultFin[pages - 1].length)
+    );
+
+  for (let res of resultFin) shuffle(res);
+  //  console.log(resultFin);
 }
 
-function getRandomNumber(arr) {
-  let one = 7777;
-  check = [];
-  let indexOne = "";
-
-  for (let j = 0; j < pages - 1; j++) {
-    result = [];
-    for (let i = 0; i < numero; i++) {
-      if (numero > 3) {
-        while (result.includes(one) || one == 7777) {
-          indexOne = Math.floor(Math.random() * arr.length);
-          one = arr[indexOne];
-        }
-      } else {
-        while (result.includes(one) || check.includes(one) || one == 7777) {
-          indexOne = Math.floor(Math.random() * arr.length);
-          one = arr[indexOne];
-        }
-      }
-
-      result.push(one);
-      arr.splice(indexOne, 1);
-    }
-    check = result;
-    resultFin.push(result);
-    console.log(arr);
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    let t = array[i];
+    array[i] = array[j];
+    array[j] = t;
   }
-  resultFin.push(arr);
-  return resultFin;
 }
