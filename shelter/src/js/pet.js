@@ -200,7 +200,9 @@ function display(pageNumber) {
   for (let i = 0; i < numero; i++) {
     sidebar.insertAdjacentHTML(
       `beforeend`,
-      `<div class="pet"><div class="img_pet">
+      `<div class="pet" data-name="${
+        petsJS[resultFin[pageNumber - 1][i]]
+      }"><div class="img_pet">
     <img src="../../assets/images/pets-${
       petsJS[resultFin[pageNumber - 1][i]]
     }.png" /></div>
@@ -247,3 +249,70 @@ function shuffle(array) {
     array[j] = t;
   }
 }
+
+/*--------------------modal window--------------------------------*/
+
+const learnMores = document.querySelectorAll(".pet");
+let petName;
+
+document.addEventListener("click", (e) => {
+  learnMores.forEach((Element) => {
+    if (e.composedPath().includes(Element)) {
+      petName = Element.getAttribute("data-name");
+
+      for (let elem of petsArray) {
+        if (elem.name == petName) {
+          console.log(elem.type);
+
+          const modal = document.createElement("div");
+          modal.classList.add("modal_wrap");
+
+          modal.innerHTML = `<div class="modal_window">
+          <img src="${elem.img}" alt="Изображение" width="400" />
+        <h1>Заголовок модального окна</h1>
+        <p>${elem.name}</p>
+        <p>Ещё текст модального окна ...</p>
+        <button class="modal_close" id="button">&#9587;</button>
+      </div>`;
+          document.body.append(modal);
+          document.body.style.overflow = "hidden";
+
+          const modalWrap = document.querySelector(".modal_wrap");
+          const modalWindow = document.querySelector(".modal_window");
+
+          setTimeout(
+            () =>
+              // (modalWindow.style.transition = `5s`),
+              (modalWindow.style.transform = `scale(1)`),
+            100
+          );
+
+          button.onclick = function () {
+            modal.remove();
+            document.body.style.overflow = "";
+          };
+
+          modalWrap.onclick = function (event) {
+            if (event.target == modalWrap) {
+              modal.remove();
+              document.body.style.overflow = "";
+            }
+          };
+          modalWrap.onmouseover = function (event) {
+            if (event.target == modalWrap) {
+              button.style.backgroundColor = `#fddcc4`;
+              button.style.border = `2px solid #fddcc4`;
+              modalWrap.style.cursor = `pointer`;
+            }
+          };
+          modalWindow.onmouseover = function (event) {
+            if (event.target == modalWindow) {
+              button.style.backgroundColor = ``;
+              button.style.border = ``;
+            }
+          };
+        }
+      }
+    }
+  });
+});
