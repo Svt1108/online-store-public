@@ -268,17 +268,30 @@ document.addEventListener("click", (e) => {
           modal.classList.add("modal_wrap");
 
           modal.innerHTML = `<div class="modal_window">
-          <img src="${elem.img}" alt="Изображение" width="400" />
-        <h1>Заголовок модального окна</h1>
-        <p>${elem.name}</p>
-        <p>Ещё текст модального окна ...</p>
-        <button class="modal_close" id="button">&#9587;</button>
-      </div>`;
+          <div class = "modal_image_wrap">
+            <img src="${elem.img}" alt="" class="modal_image" />
+          </div>
+          <div class = "modal_text_wrap">
+            <h3>${elem.name}</h3>
+            <h4>${elem.type} - ${elem.breed}</h4>
+            <h5>${elem.description}</h5> 
+            <ul class = "modal_caracter">
+            <li><strong>Age: </strong>${elem.age}</li>
+            <li><strong>Inoculations: </strong>${elem.inoculations}</li>
+            <li><strong>Diseases: </strong>${elem.diseases}</li>
+            <li><strong>Parasites: </strong>${elem.parasites}</li>
+            </ul>  
+          </div>    
+          <button class="modal_close" id="button"><img src="../../assets/images/vector.png" /></button> 
+          </div>`;
+
           document.body.append(modal);
           document.body.style.overflow = "hidden";
 
           const modalWrap = document.querySelector(".modal_wrap");
           const modalWindow = document.querySelector(".modal_window");
+
+          const modalImageWrap = document.querySelector(".modal_image_wrap");
 
           setTimeout(
             () =>
@@ -303,12 +316,10 @@ document.addEventListener("click", (e) => {
               button.style.backgroundColor = `#fddcc4`;
               button.style.border = `2px solid #fddcc4`;
               modalWrap.style.cursor = `pointer`;
-            }
-          };
-          modalWindow.onmouseover = function (event) {
-            if (event.target == modalWindow) {
+            } else {
               button.style.backgroundColor = ``;
               button.style.border = ``;
+              modalWrap.style.cursor = ``;
             }
           };
         }
