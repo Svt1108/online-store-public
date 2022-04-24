@@ -1,3 +1,11 @@
+let petsJS = [];
+
+import { petsArray } from "../../src/js/petsdata.js";
+
+for (let elem of petsArray) {
+  petsJS.push(elem.name);
+}
+
 /* --------------------------navigation------------------------------ */
 
 const navlinks = document.querySelectorAll(".button_circle_nav");
@@ -48,16 +56,16 @@ function disableBtn(element) {
 
 /* --------------------pagination-------------------------------- */
 
-const petsJS = [
-  "Freddie",
-  "Jennifer",
-  "Katrine",
-  "Scarlet",
-  "Charly",
-  "Sophia",
-  "Timmy",
-  "Woody",
-];
+// petsJS = [
+//   "Freddie",
+//   "Jennifer",
+//   "Katrine",
+//   "Scarlet",
+//   "Charly",
+//   "Sophia",
+//   "Timmy",
+//   "Woody",
+// ];
 
 const sidebar = document.querySelector(".cards");
 const cardsCount = petsJS.length; //общее количество питомцев
@@ -214,9 +222,9 @@ function pagination() {
 
   //  console.log("arr = " + arr);
 
-  numero_rand = Math.floor(Math.random() * numero);
+  let numero_rand = Math.floor(Math.random() * numero);
   // console.log(numero_rand);
-  for (i = 0; i < pages; i++)
+  for (let i = 0; i < pages; i++)
     resultFin[i] = arr.slice(
       i * numero + numero_rand,
       (i + 1) * numero + numero_rand
