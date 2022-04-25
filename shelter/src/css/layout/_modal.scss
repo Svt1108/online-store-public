@@ -22,11 +22,30 @@
   // overflow: visible;
   transition: all 3s;
   transform: scale(0.8);
-  //  opacity: 1;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  border-radius: 10px;
+
+  @include media-tablet {
+    width: 630px;
+    height: 350px;
+  }
+  @include media-mobile {
+    width: 240px;
+    height: 341px;
+  }
 
   .modal_image {
     width: 500px;
     height: 500px;
+    border-bottom-left-radius: 7px;
+
+    @include media-tablet {
+      width: 350px;
+      height: 350px;
+    }
+    @include media-mobile {
+      display: none;
+    }
   }
 
   .modal_text_wrap {
@@ -35,6 +54,17 @@
     padding: 50px 20px 88px 29px;
     display: flex;
     flex-direction: column;
+
+    @include media-tablet {
+      width: 280px;
+      padding: 10px 9px 37px 11px;
+      gap: 2%;
+    }
+    @include media-mobile {
+      width: 100%;
+      padding: 10px;
+      gap: 2%;
+    }
 
     h3 {
       font-family: "Georgia";
@@ -45,6 +75,13 @@
       letter-spacing: 0.06em;
       color: #000000;
       margin-bottom: 10px;
+      @include media-tablet {
+        margin-bottom: 0;
+      }
+      @include media-mobile {
+        margin-bottom: 0;
+        align-self: center;
+      }
     }
 
     h4 {
@@ -55,6 +92,9 @@
       line-height: 115%;
       letter-spacing: 0.06em;
       color: #000000;
+      @include media-mobile {
+        align-self: center;
+      }
     }
 
     h5 {
@@ -67,6 +107,18 @@
       line-height: 110%;
       letter-spacing: 0.06em;
       color: #000000;
+
+      @include media-tablet {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      @include media-mobile {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 13px;
+        align-self: center;
+        text-align: justify;
+      }
     }
 
     .modal_caracter {

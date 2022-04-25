@@ -252,17 +252,26 @@ function shuffle(array) {
 
 /*--------------------modal window--------------------------------*/
 
-const learnMores = document.querySelectorAll(".pet");
 let petName;
 
 document.addEventListener("click", (e) => {
+  console.log(e.composedPath());
+
+  let learnMores = document.querySelectorAll(".pet");
+
   learnMores.forEach((Element) => {
+    // console.log(e.composedPath());
+    // console.log(Element);
     if (e.composedPath().includes(Element)) {
+      // if (e.target == Element) {
+      // console.log(1);
       petName = Element.getAttribute("data-name");
+
+      //    console.log(Element);
 
       for (let elem of petsArray) {
         if (elem.name == petName) {
-          console.log(elem.type);
+          //       console.log(elem.type);
 
           const modal = document.createElement("div");
           modal.classList.add("modal_wrap");
