@@ -373,12 +373,12 @@ burger.onclick = function (event) {
   <ul>
     <li>
       <a href="../main/index.html"
-        ><div class="navlink_burger first">About the shelter</div></a
+        ><div class="navlink_burger">About the shelter</div></a
       >
     </li>
     <li>
       <a href="#"
-        ><div class="navlink_burger">Our pets</div></a
+        ><div class="navlink_burger first">Our pets</div></a
       >
     </li>
     <li>
