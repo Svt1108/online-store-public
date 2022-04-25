@@ -203,9 +203,9 @@ function display(pageNumber) {
       `<div class="pet" data-name="${
         petsJS[resultFin[pageNumber - 1][i]]
       }"><div class="img_pet">
-    <img src="../../assets/images/pets-${
-      petsJS[resultFin[pageNumber - 1][i]]
-    }.png" /></div>
+    <img src="../../assets/images/pets-${petsJS[
+      resultFin[pageNumber - 1][i]
+    ].toLowerCase()}.png" /></div>
     <div class="name">${petsJS[resultFin[pageNumber - 1][i]]}</div>
     <div class="buttonw buttonw1">Learn more</div></div>`
     );
@@ -278,7 +278,7 @@ document.addEventListener("click", (e) => {
 
           modal.innerHTML = `<div class="modal_window">
           <div class = "modal_image_wrap">
-            <img src="${toLowerCase(elem.img)}" alt="" class="modal_image" />
+            <img src="${elem.img.toLowerCase()}" alt="" class="modal_image" />
           </div>
           <div class = "modal_text_wrap">
             <h3>${elem.name}</h3>
