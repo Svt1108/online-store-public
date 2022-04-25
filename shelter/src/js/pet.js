@@ -278,7 +278,7 @@ document.addEventListener("click", (e) => {
 
           modal.innerHTML = `<div class="modal_window">
           <div class = "modal_image_wrap">
-            <img src="${elem.img}" alt="" class="modal_image" />
+            <img src="${toLowerCase(elem.img)}" alt="" class="modal_image" />
           </div>
           <div class = "modal_text_wrap">
             <h3>${elem.name}</h3>
