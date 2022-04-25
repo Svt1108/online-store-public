@@ -2,6 +2,7 @@
 @import "elements";
 @import "./utils/mixins";
 @import "./layout/modal";
+@import "./layout/burger_pets";
 
 * {
   margin: 0;
@@ -163,36 +164,32 @@ a {
       border-bottom: 3px solid $font_color1;
     }
 
-    .burger {
-      position: absolute;
-      right: 53px;
-      width: 0;
-      z-index: 2000;
-      transition: 2s;
+    // .burger {
+    //   position: absolute;
+    //   right: 53px;
+    //   //      width: 0;
+    //   z-index: 2100;
+    //   transition: 2s;
 
-      @include media-mobile {
-        width: 30px;
-        //       margin-right: 43px;
-      }
+    //   @include media-mobile {
+    //     cursor: pointer;
+    //     //       margin-right: 43px;
+    //   }
 
-      .burger_line {
-        width: 30px;
-        height: 2px;
-        background-color: transparent;
+    //   .burger_line {
+    //     width: 30px;
+    //     height: 2px;
+    //     background-color: transparent;
 
-        @include media-mobile {
-          background-color: #000;
-        }
-      }
+    //     @include media-mobile {
+    //       background-color: #000;
+    //     }
+    //   }
 
-      .burger_line + .burger_line {
-        margin-top: 9px;
-      }
-
-      @include media-mobile {
-        cursor: pointer;
-      }
-    }
+    //   .burger_line + .burger_line {
+    //     margin-top: 9px;
+    //   }
+    // }
   }
 }
 
@@ -342,6 +339,35 @@ a {
 }
 
 @import "./layout/footer";
+
+.test {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  z-index: 3000;
+  top: 49px;
+  right: 53px;
+  background-color: transparent;
+  transition: 2s;
+
+  @include media-mobile {
+    cursor: pointer;
+  }
+
+  .test_line {
+    width: 30px;
+    height: 2px;
+    background-color: transparent;
+
+    @include media-mobile {
+      background-color: #000;
+    }
+  }
+
+  .test_line + .test_line {
+    margin-top: 9px;
+  }
+}
 
 // .footer {
 //   width: 100%;
