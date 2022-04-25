@@ -355,8 +355,8 @@ burger.onclick = function (event) {
   </nav>
   </div>`;
 
-  document.body.append(burgerMenuWrap);
   document.body.style.overflow = "hidden";
+  document.body.append(burgerMenuWrap);
 
   burgerMenu = document.querySelector(".burgermenu");
   setTimeout(

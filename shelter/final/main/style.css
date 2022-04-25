@@ -608,7 +608,7 @@ template {
   background-color: rgba(0, 0, 0, 0.6); }
 
 .burgermenu {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: -320px;
   width: 320px;
