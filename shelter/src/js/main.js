@@ -34,18 +34,28 @@ function removeHover(element) {
   element.style.color = `#cdcdcd`;
 } */
 
-/* slider */
+let petsJS = [];
 
-const petsJS = [
-  "Freddie",
-  "Jennifer",
-  "Katrine",
-  "Scarlet",
-  "Charly",
-  "Sophia",
-  "Timmy",
-  "Woody",
-];
+import { petsArray } from "../../src/js/petsdata.js";
+
+for (let elem of petsArray) {
+  petsJS.push(elem.name);
+}
+
+//console.log(petsJS);
+
+/* ----------------------------slider---------------------------------------- */
+
+// const petsJS = [
+//   "Freddie",
+//   "Jennifer",
+//   "Katrine",
+//   "Scarlet",
+//   "Charly",
+//   "Sophia",
+//   "Timmy",
+//   "Woody",
+// ];
 
 const cardsCount = petsJS.length;
 
@@ -192,7 +202,7 @@ function displaySlides() {
   for (let i = 0; i < number; i++) {
     sidebarInside.insertAdjacentHTML(
       `beforeend`,
-      `<div class="pet"><div class="img_pet">
+      `<div class="pet" data-name="${petsJS[result[i]]}"><div class="img_pet">
       <img src="../../assets/images/pets-${petsJS[result[i]]}.png" /></div>
       <div class="name">${petsJS[result[i]]}</div>
       <div class="buttonw buttonw1">Learn more</div></div>`
@@ -211,3 +221,80 @@ function getRandomNumber(arr) {
   }
   return result;
 }
+
+/*--------------------modal window--------------------------------*/
+
+let petName;
+
+document.addEventListener("click", (e) => {
+  let learnMores = document.querySelectorAll(".pet");
+  // console.log(learnMores);
+
+  learnMores.forEach((Element) => {
+    if (e.composedPath().includes(Element)) {
+      //     console.log(Element);
+      petName = Element.getAttribute("data-name");
+      //   console.log(petName);
+
+      for (let elem of petsArray) {
+        if (elem.name == petName) {
+          const modal = document.createElement("div");
+          modal.classList.add("modal_wrap");
+
+          modal.innerHTML = `<div class="modal_window">
+          <div class = "modal_image_wrap">
+            <img src="${elem.img}" alt="" class="modal_image" />
+          </div>
+          <div class = "modal_text_wrap">
+            <h3>${elem.name}</h3>
+            <h4>${elem.type} - ${elem.breed}</h4>
+            <h5>${elem.description}</h5> 
+            <ul class = "modal_caracter">
+            <li><strong>Age: </strong>${elem.age}</li>
+            <li><strong>Inoculations: </strong>${elem.inoculations}</li>
+            <li><strong>Diseases: </strong>${elem.diseases}</li>
+            <li><strong>Parasites: </strong>${elem.parasites}</li>
+            </ul>  
+          </div>    
+          <button class="modal_close" id="button"><img src="../../assets/images/vector.png" /></button> 
+          </div>`;
+
+          //         console.log(modal);
+
+          document.body.append(modal);
+          document.body.style.overflow = "hidden";
+
+          const modalWrap = document.querySelector(".modal_wrap");
+          const modalWindow = document.querySelector(".modal_window");
+
+          const modalImageWrap = document.querySelector(".modal_image_wrap");
+
+          setTimeout(() => (modalWindow.style.transform = `scale(1)`), 100);
+
+          button.onclick = function () {
+            modal.remove();
+            document.body.style.overflow = "";
+          };
+
+          modalWrap.onclick = function (event) {
+            if (event.target == modalWrap) {
+              modal.remove();
+              document.body.style.overflow = "";
+            }
+          };
+          modalWrap.onmouseover = function (event) {
+            if (event.target == modalWrap) {
+              button.style.backgroundColor = `#fddcc4`;
+              button.style.border = `2px solid #fddcc4`;
+              modalWrap.style.cursor = `pointer`;
+            } else {
+              button.style.backgroundColor = ``;
+              button.style.border = ``;
+              modalWrap.style.cursor = ``;
+            }
+          };
+        }
+      }
+    }
+  });
+});

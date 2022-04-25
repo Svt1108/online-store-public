@@ -255,7 +255,7 @@ function shuffle(array) {
 let petName;
 
 document.addEventListener("click", (e) => {
-  console.log(e.composedPath());
+  // console.log(e.composedPath());
 
   let learnMores = document.querySelectorAll(".pet");
 
