@@ -21,10 +21,10 @@ firstBtn.style.cursor = `default`;
 
 for (let navlink of navlinks) {
   //   console.log(navlink.getAttribute("data-disabled"));
-  if (navlink.getAttribute("data-disabled") == "false") {
-    navlink.addEventListener("mouseover", () => setHover(navlink));
-    navlink.addEventListener("mouseleave", () => removeHover(navlink));
-  } else if (navlink.getAttribute("data-disabled") == "true") {
+  //  if (navlink.getAttribute("data-disabled") == "false") {
+  navlink.addEventListener("mouseover", () => setHover(navlink));
+  navlink.addEventListener("mouseleave", () => removeHover(navlink));
+  if (navlink.getAttribute("data-disabled") == "true") {
     disableBtn(navlink);
   }
 }
