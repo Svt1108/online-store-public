@@ -291,7 +291,7 @@ document.addEventListener("click", (e) => {
             <li><strong>Parasites: </strong>${elem.parasites}</li>
             </ul>  
           </div>    
-          <button class="modal_close" id="button"><img src="../../assets/images/vector.png" /></button> 
+          <button class="modal_close" id="button"><img src="../../assets/images/Vector.png" /></button> 
           </div>`;
 
           document.body.append(modal);
