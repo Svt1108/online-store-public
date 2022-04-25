@@ -298,3 +298,91 @@ document.addEventListener("click", (e) => {
     }
   });
 });
+
+/*--------------------------burger---------------------------------*/
+
+const burger = document.querySelector(".burger");
+let burgerMenuWrap;
+let burgerMenu;
+let navlinkBurger;
+
+burger.onclick = function (event) {
+  let test = document.querySelector(".burgermenu_wrap");
+  if (test) {
+    setTimeout(
+      () => (
+        (burgerMenu.style.transform = `translateX(0)`),
+        (burger.style.transform = `rotate(0deg)`)
+      ),
+      100
+    );
+    setTimeout(
+      () => (burgerMenuWrap.remove(), (document.body.style.overflow = "")),
+      2100
+    );
+    return;
+  }
+
+  burgerMenuWrap = document.createElement("div");
+  burgerMenuWrap.classList.add("burgermenu_wrap");
+
+  burgerMenuWrap.innerHTML = `<div class="burgermenu">
+  <div class="logo_burger">
+       <h1>Cozy House</h1>
+       <div class="pp">Shelter for pets in Boston</div>
+  </div>
+  <nav class="navmenu_burger">
+  <ul>
+    <li>
+      <a href="#"
+        ><div class="navlink_burger first">About the shelter</div></a
+      >
+    </li>
+    <li>
+      <a href="../pets/index.html"
+        ><div class="navlink_burger">Our pets</div></a
+      >
+    </li>
+    <li>
+      <a href="#help"><div class="navlink_burger">Help the shelter</div></a>
+    </li>
+    <li>
+      <a href="#contacts"><div class="navlink_burger">Contacts</div></a>
+    </li>
+  </ul>
+  </nav>
+  </div>`;
+
+  document.body.append(burgerMenuWrap);
+  document.body.style.overflow = "hidden";
+
+  burgerMenu = document.querySelector(".burgermenu");
+  setTimeout(
+    () => (
+      (burgerMenu.style.transform = `translateX(-320px)`),
+      (burger.style.transform = `rotate(90deg)`)
+    ),
+    100
+  );
+
+  //navlinkBurger = document.querySelectorAll(".navlink_burger");
+  burgerMenuWrap.onclick = function (event) {
+    console.log(event.target);
+    if (
+      event.target == burgerMenuWrap ||
+      event.target.classList.contains("navlink_burger")
+    ) {
+      setTimeout(
+        () => (
+          (burgerMenu.style.transform = `translateX(0)`),
+          (burger.style.transform = `rotate(0deg)`)
+        ),
+        100
+      );
+      setTimeout(
+        () => (burgerMenuWrap.remove(), (document.body.style.overflow = "")),
+        2100
+      );
+    }
+  };
+};

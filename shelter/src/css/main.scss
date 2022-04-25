@@ -2,6 +2,7 @@
 @import "elements";
 @import "./utils/mixins";
 @import "./layout/modal";
+@import "./layout/burger";
 
 * {
   margin: 0;
@@ -199,6 +200,8 @@ a {
     .burger {
       width: 30px;
       margin-right: 43px;
+      z-index: 2000;
+      transition: 2s;
 
       .burger_line {
         width: 30px;
@@ -207,11 +210,16 @@ a {
 
         @include media-mobile {
           background-color: $font_color1;
+          cursor: pointer;
         }
       }
 
       .burger_line + .burger_line {
         margin-top: 9px;
+      }
+
+      @include media-mobile {
+        cursor: pointer;
       }
     }
 

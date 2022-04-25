@@ -167,6 +167,8 @@ a {
       position: absolute;
       right: 53px;
       width: 0;
+      z-index: 2000;
+      transition: 2s;
 
       @include media-mobile {
         width: 30px;
@@ -185,6 +187,10 @@ a {
 
       .burger_line + .burger_line {
         margin-top: 9px;
+      }
+
+      @include media-mobile {
+        cursor: pointer;
       }
     }
   }

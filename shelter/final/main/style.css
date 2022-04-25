@@ -597,6 +597,82 @@ template {
   background-color: #fddcc4;
   border: 2px solid #fddcc4; }
 
+.burgermenu_wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1100;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.6); }
+
+.burgermenu {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  height: 100vh;
+  transition: 2s;
+  background: url(../e39085ad3889bd9f99c7.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20; }
+
+.logo_burger {
+  width: 257px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 53px 158px 10px; }
+  .logo_burger h1 {
+    color: #f1cdb3;
+    font-family: Georgia, serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0.05em;
+    margin: 0 0 10px 0;
+    padding: 0;
+    width: 100%; }
+  .logo_burger .pp {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    color: white;
+    margin: 10px 0 0 3px;
+    padding: 0;
+    width: 100%; }
+
+.navmenu_burger {
+  align-items: center; }
+  .navmenu_burger ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; }
+
+.navlink_burger {
+  white-space: nowrap;
+  font-family: Arial, sans-serif;
+  font-size: 32px;
+  line-height: 160%;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  color: #cdcdcd;
+  border-bottom: 3px solid transparent;
+  padding-bottom: 3px; }
+
+.first {
+  border-bottom: 3px solid #f1cdb3;
+  color: white; }
+
+.navlink_burger:hover {
+  color: white; }
+
+.navlink_burger:active {
+  color: white;
+  border-bottom: 3px solid #f1cdb3; }
+
 * {
   margin: 0;
   padding: 0;
@@ -723,16 +799,22 @@ a {
         border-bottom: 3px solid #f1cdb3; }
     .start_screen .content .burger {
       width: 30px;
-      margin-right: 43px; }
+      margin-right: 43px;
+      z-index: 2000;
+      transition: 2s; }
       .start_screen .content .burger .burger_line {
         width: 30px;
         height: 2px;
         background-color: transparent; }
         @media screen and (max-width: 767px) {
           .start_screen .content .burger .burger_line {
-            background-color: #f1cdb3; } }
+            background-color: #f1cdb3;
+            cursor: pointer; } }
       .start_screen .content .burger .burger_line + .burger_line {
         margin-top: 9px; }
+      @media screen and (max-width: 767px) {
+        .start_screen .content .burger {
+          cursor: pointer; } }
     .start_screen .content #dog {
       grid-area: dog; }
       @media screen and (min-width: 768px) and (max-width: 1279px) {

@@ -710,7 +710,9 @@ a {
     .header .content .burger {
       position: absolute;
       right: 53px;
-      width: 0; }
+      width: 0;
+      z-index: 2000;
+      transition: 2s; }
       @media screen and (max-width: 767px) {
         .header .content .burger {
           width: 30px; } }
@@ -723,6 +725,9 @@ a {
             background-color: #000; } }
       .header .content .burger .burger_line + .burger_line {
         margin-top: 9px; }
+      @media screen and (max-width: 767px) {
+        .header .content .burger {
+          cursor: pointer; } }
 
 .pets {
   width: 100%;
