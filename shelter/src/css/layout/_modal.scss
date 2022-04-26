@@ -163,8 +163,12 @@
   box-sizing: border-box;
   border-radius: 100px;
 
+  @include media-tablet {
+    margin-right: -45px;
+  }
+
   @include media-mobile {
-    margin-right: -25px;
+    margin-right: -38px;
   }
 }
 
