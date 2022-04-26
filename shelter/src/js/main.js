@@ -62,8 +62,8 @@ const cardsCount = petsJS.length;
 let result = [];
 let arr = [];
 
-const RightBtn = document.querySelector(".right-button");
-const LeftBtn = document.querySelector(".left-button");
+const LeftBtn = document.querySelector(".right-button");
+const RightBtn = document.querySelector(".left-button");
 const sidebar = document.querySelector(".cardsWrapper");
 let number;
 
