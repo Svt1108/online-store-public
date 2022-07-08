@@ -1,11 +1,10 @@
 class App {
 
-    constructor() {
-
-    }
+    // constructor() {
+    // }
 
     public start(): void {
-
+console.log(1)
 }
 }
 
