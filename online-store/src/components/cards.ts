@@ -41,13 +41,14 @@ class CardList {
       plateName.innerHTML = `${this.drawData[i].name}`;
       plateName.classList.add(
         "grey-text",
-        "text-darken-4",
+        "text-darken-2",
         "plate-card__title"
       );
       cardContent.appendChild(plateName);
 
       const plateInfo = document.createElement("p");
-      plateInfo.innerHTML = `${this.drawData[i].author}, ${this.drawData[i].year}`;
+      plateInfo.innerHTML = `${this.drawData[i].author}, ${this.drawData[i].year}
+      <p class = "grey-text text-darken-4 modal-window__title">${this.drawData[i].price}</p>`;
       plateInfo.classList.add("grey-text", "text-darken-4", "plate-card__text");
       cardContent.appendChild(plateInfo);
     }

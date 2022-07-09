@@ -39,9 +39,13 @@ class FilterList {
     setArrayColor.sort();
     setArrayColor.forEach((element) => {
       const colorItem = document.createElement("div");
-      colorItem.classList.add("filter-content");
+      colorItem.classList.add("filter-content_color", "z-depth-1");
       colorItem.textContent = `${element}`;
-      colorItem.style.backgroundColor = `${element}`;
+      if (element === "blue")
+        colorItem.style.borderBottom = `solid 3px mediumblue`;
+      else if (element === "red")
+        colorItem.style.borderBottom = `solid 3px crimson`;
+      else colorItem.style.borderBottom = `solid 3px ${element}`;
       color.appendChild(colorItem);
     });
 

@@ -6,22 +6,47 @@
         margin: 0.5rem;
     }
     .filters__content {
-        height: 25vh;
+        height: 30vh;
         overflow: auto;
-        // width: fit-content;
         padding: 0.5rem;
+        background-color: white;
     }
     .filters__content_popularity {
         height: 10vh;
         overflow: auto;
-        // width: fit-content;
         padding: 0.5rem;
+    }
+    .filters__content_color {
+        height: 20vh;
+        display: flex;
+        flex-wrap: wrap;
+        //       background-color: white;
     }
 }
 
 .filter-content {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+    transition: 0.1s;
     &:hover {
-        background-color: #c5e1a5;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}
+
+.filter-content_color {
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: 5rem;
+    height: fit-content;
+    min-width: fit-content;
+    margin: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    transition: 0.1s;
+    &:hover {
+        transform: scale(1.1);
     }
 }

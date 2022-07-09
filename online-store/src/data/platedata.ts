@@ -11,7 +11,8 @@ const json = `[
       "color": "chocolate",
       "secondColor": "green",
       "quantity": "3",
-      "popularity": "yes"
+      "popularity": "yes", 
+      "price": "10$"
     },
     {
        "id": "2",
@@ -23,7 +24,8 @@ const json = `[
        "color": "pink",
        "secondColor": "red",
        "quantity": "5",
-       "popularity": "no"
+       "popularity": "no", 
+       "price": "37$"
     },
     {
         "id": "3",
@@ -35,7 +37,8 @@ const json = `[
         "color": "green",
         "secondColor": "green",
         "quantity": "44",
-        "popularity": "yes"
+        "popularity": "yes", 
+        "price": "4$"
     },
     {
          "id": "4",
@@ -47,7 +50,8 @@ const json = `[
          "color": "white",
          "secondColor": "green",
          "quantity": "35",
-         "popularity": "no"
+         "popularity": "no", 
+         "price": "7$"
     },
     {
         "id": "5",
@@ -59,7 +63,8 @@ const json = `[
         "color": "pink",
         "secondColor": "white",
         "quantity": "2",
-        "popularity": "yes"
+        "popularity": "yes", 
+        "price": "29$"
     },
     {
          "id": "6",
@@ -71,7 +76,8 @@ const json = `[
          "color": "white",
          "secondColor": "blue",
          "quantity": "15",
-         "popularity": "no"
+         "popularity": "no", 
+         "price": "19$"
     },
     {
           "id": "7",
@@ -83,7 +89,8 @@ const json = `[
           "color": "white",
           "secondColor": "red",
           "quantity": "4",
-          "popularity": "no"
+          "popularity": "no", 
+          "price": "3$"
     },
     {
            "id": "8",
@@ -95,7 +102,8 @@ const json = `[
            "color": "blue",
            "secondColor": "white",
            "quantity": "45",
-           "popularity": "no"
+           "popularity": "no", 
+           "price": "11$"
     },    
     {
             "id": "9",
@@ -107,7 +115,8 @@ const json = `[
             "color": "red",
             "secondColor": "pink",
             "quantity": "4",
-            "popularity": "yes"
+            "popularity": "yes", 
+            "price": "36$"
     },
     {
              "id": "10",
@@ -119,7 +128,8 @@ const json = `[
              "color": "green",
              "secondColor": "yellow",
              "quantity": "50",
-             "popularity": "yes"
+             "popularity": "yes", 
+             "price": "5$"
     },
     {
               "id": "11",
@@ -131,7 +141,8 @@ const json = `[
               "color": "yellow",
               "secondColor": "brown",
               "quantity": "10",
-              "popularity": "no"
+              "popularity": "no", 
+              "price": "22$"
     },
     {
                "id": "12",
@@ -143,7 +154,8 @@ const json = `[
                "color": "white",
                "secondColor": "blue",
                "quantity": "2",
-               "popularity": "yes"
+               "popularity": "yes", 
+               "price": "15$"
     },
     {
               "id": "13",
@@ -155,7 +167,8 @@ const json = `[
               "color": "chocolate",
               "secondColor": "green",
               "quantity": "3",
-              "popularity": "yes"
+              "popularity": "yes", 
+              "price": "7$"
     },
     {
                "id": "14",
@@ -167,7 +180,8 @@ const json = `[
                "color": "white",
                "secondColor": "green",
                "quantity": "35",
-               "popularity": "no"
+               "popularity": "no", 
+               "price": "30$"
     },
     {
                 "id": "15",
@@ -179,7 +193,8 @@ const json = `[
                 "color": "black",
                 "secondColor": "white",
                 "quantity": "28",
-                "popularity": "no"
+                "popularity": "no", 
+                "price": "35$"
     },
     {
                  "id": "16",
@@ -191,7 +206,8 @@ const json = `[
                  "color": "pink",
                  "secondColor": "pink",
                  "quantity": "45",
-                 "popularity": "no"
+                 "popularity": "no", 
+                 "price": "47$"
     },  
     {
         "id": "17",
@@ -203,7 +219,8 @@ const json = `[
         "color": "white",
         "secondColor": "green",
         "quantity": "52",
-        "popularity": "no"
+        "popularity": "no", 
+        "price": "22$"
     },
     {
          "id": "18",
@@ -215,7 +232,8 @@ const json = `[
          "color": "black",
          "secondColor": "red",
          "quantity": "13",
-         "popularity": "yes"
+         "popularity": "yes", 
+         "price": "10$"
     },
     {
           "id": "19",
@@ -227,7 +245,8 @@ const json = `[
           "color": "blue",
           "secondColor": "white",
           "quantity": "62",
-          "popularity": "no"
+          "popularity": "no", 
+          "price": "1$"
     },
     {
            "id": "20",
@@ -239,7 +258,8 @@ const json = `[
            "color": "white",
            "secondColor": "blue",
            "quantity": "10",
-           "popularity": "yes"
+           "popularity": "yes", 
+           "price": "14$"
     },
     {
           "id": "21",
@@ -251,7 +271,8 @@ const json = `[
           "color": "black",
           "secondColor": "white",
           "quantity": "28",
-          "popularity": "no"
+          "popularity": "no", 
+          "price": "45$"
     },
     {
            "id": "22",
@@ -263,7 +284,8 @@ const json = `[
            "color": "white",
            "secondColor": "blue",
            "quantity": "10",
-           "popularity": "yes"
+           "popularity": "yes", 
+           "price": "5$"
     },
     {
             "id": "23",
@@ -275,7 +297,8 @@ const json = `[
             "color": "white",
             "secondColor": "red",
             "quantity": "2",
-            "popularity": "yes"
+            "popularity": "yes", 
+            "price": "28$"
     },
     {
              "id": "24",
@@ -287,7 +310,8 @@ const json = `[
              "color": "white",
              "secondColor": "blue",
              "quantity": "28",
-             "popularity": "no"
+             "popularity": "no", 
+             "price": "5$"
     },    
     {
               "id": "25",
@@ -299,7 +323,8 @@ const json = `[
               "color": "white",
               "secondColor": "green",
               "quantity": "47",
-              "popularity": "no"
+              "popularity": "no", 
+              "price": "6$"
     },
     {
                "id": "26",
@@ -311,7 +336,8 @@ const json = `[
                "color": "chocolate",
                "secondColor": "green",
                "quantity": "7",
-               "popularity": "yes"
+               "popularity": "yes", 
+               "price": "12$"
     },
     {
                 "id": "27",
@@ -323,7 +349,8 @@ const json = `[
                 "color": "green",
                 "secondColor": "black",
                 "quantity": "17",
-                "popularity": "yes"
+                "popularity": "yes", 
+                "price": "50$"
     },
     {
                  "id": "28",
@@ -335,7 +362,8 @@ const json = `[
                  "color": "beige",
                  "secondColor": "white",
                  "quantity": "37",
-                 "popularity": "yes"
+                 "popularity": "yes", 
+                 "price": "19$"
     },
     {
                 "id": "29",
@@ -347,7 +375,8 @@ const json = `[
                 "color": "white",
                 "secondColor": "black",
                 "quantity": "15",
-                "popularity": "yes"
+                "popularity": "yes", 
+                "price": "21$"
     },
     {
                  "id": "30",
@@ -359,7 +388,8 @@ const json = `[
                  "color": "white",
                  "secondColor": "black",
                  "quantity": "53",
-                 "popularity": "no"
+                 "popularity": "no", 
+                 "price": "33$"
     },
     {
                   "id": "31",
@@ -371,7 +401,8 @@ const json = `[
                   "color": "black",
                   "secondColor": "chocolate",
                   "quantity": "21",
-                  "popularity": "yes"
+                  "popularity": "yes", 
+                  "price": "16$"
     },
     {
                    "id": "32",
@@ -383,7 +414,8 @@ const json = `[
                    "color": "white",
                    "secondColor": "black",
                    "quantity": "23",
-                   "popularity": "yes"
+                   "popularity": "yes", 
+                   "price": "27$"
     },  
     {
       "id": "33",
@@ -395,7 +427,8 @@ const json = `[
       "color": "white",
       "secondColor": "blue",
       "quantity": "18",
-      "popularity": "no"
+      "popularity": "no", 
+      "price": "4$"
     },
     {
        "id": "34",
@@ -407,7 +440,8 @@ const json = `[
        "color": "pink",
        "secondColor": "white",
        "quantity": "29",
-       "popularity": "no"
+       "popularity": "no", 
+       "price": "1$"
     },
     {
         "id": "35",
@@ -419,7 +453,8 @@ const json = `[
         "color": "white",
         "secondColor": "black",
         "quantity": "4",
-        "popularity": "no"
+        "popularity": "no", 
+        "price": "36$"
     },
     {
          "id": "36",
@@ -431,7 +466,8 @@ const json = `[
          "color": "black",
          "secondColor": "chocolate",
          "quantity": "8",
-         "popularity": "no"
+         "popularity": "no", 
+         "price": "48$"
     },
     {
         "id": "37",
@@ -443,7 +479,8 @@ const json = `[
         "color": "white",
         "secondColor": "pink",
         "quantity": "24",
-        "popularity": "no"
+        "popularity": "no", 
+        "price": "3$"
     },
     {
          "id": "38",
@@ -455,7 +492,8 @@ const json = `[
          "color": "chocolate",
          "secondColor": "white",
          "quantity": "9",
-         "popularity": "no"
+         "popularity": "no", 
+         "price": "22$"
     },
     {
           "id": "39",
@@ -467,7 +505,8 @@ const json = `[
           "color": "white",
           "secondColor": "black",
           "quantity": "2",
-          "popularity": "yes"
+          "popularity": "yes", 
+          "price": "18$"
     },
     {
            "id": "40",
@@ -479,7 +518,8 @@ const json = `[
            "color": "red",
            "secondColor": "pink",
            "quantity": "5",
-           "popularity": "yes"
+           "popularity": "yes", 
+           "price": "2$"
     },    
     {
             "id": "41",
@@ -491,7 +531,8 @@ const json = `[
             "color": "red",
             "secondColor": "yellow",
             "quantity": "17",
-            "popularity": "yes"
+            "popularity": "yes", 
+            "price": "11$"
     },
     {
              "id": "42",
@@ -503,7 +544,8 @@ const json = `[
              "color": "green",
              "secondColor": "white",
              "quantity": "43",
-             "popularity": "no"
+             "popularity": "no", 
+             "price": "50$"
     },
     {
               "id": "43",
@@ -515,7 +557,8 @@ const json = `[
               "color": "white",
               "secondColor": "green",
               "quantity": "22",
-              "popularity": "yes"
+              "popularity": "yes", 
+              "price": "35$"
     },
     {
                "id": "44",
@@ -527,7 +570,8 @@ const json = `[
                "color": "pink",
                "secondColor": "pink",
                "quantity": "33",
-               "popularity": "no"
+               "popularity": "no", 
+               "price": "42$"
     },
     {
               "id": "45",
@@ -539,7 +583,8 @@ const json = `[
               "color": "white",
               "secondColor": "purple",
               "quantity": "2",
-              "popularity": "no"
+              "popularity": "no", 
+              "price": "18$"
     },
     {
                "id": "46",
@@ -551,7 +596,8 @@ const json = `[
                "color": "white",
                "secondColor": "green",
                "quantity": "15",
-               "popularity": "yes"
+               "popularity": "yes", 
+               "price": "7$"
     },
     {
                 "id": "47",
@@ -563,7 +609,8 @@ const json = `[
                 "color": "blue",
                 "secondColor": "blue",
                 "quantity": "8",
-                "popularity": "yes"
+                "popularity": "yes", 
+                "price": "20$"
     },
     {
                  "id": "48",
@@ -575,7 +622,8 @@ const json = `[
                  "color": "green",
                  "secondColor": "white",
                  "quantity": "7",
-                 "popularity": "no"
+                 "popularity": "no", 
+                 "price": "23$"
     },  
     {
         "id": "49",
@@ -587,7 +635,8 @@ const json = `[
         "color": "blue",
         "secondColor": "white",
         "quantity": "27",
-        "popularity": "yes"
+        "popularity": "yes", 
+        "price": "15$"
     },
     {
          "id": "50",
@@ -599,7 +648,8 @@ const json = `[
          "color": "white",
          "secondColor": "red",
          "quantity": "14",
-         "popularity": "no"
+         "popularity": "no", 
+         "price": "5$"
     }             
 ]`;
 

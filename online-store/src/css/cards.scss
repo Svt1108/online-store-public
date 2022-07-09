@@ -1,7 +1,8 @@
 .content {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 2rem;
+    column-gap: 3rem;
+    justify-content: center;
 }
 
 .plate-card {
@@ -10,18 +11,18 @@
 }
 
 .plate-card__image {
-    height: 15rem;
-    width: 15rem;
+    height: 13rem;
+    width: 13rem;
     background-size: contain;
 }
 
 .plate-card__title {
-    font-size: 1.2rem;
-    font-weight: normal;
+    font-size: 1rem;
+    font-weight: bold;
     text-align: center;
 }
 
 .plate-card__text {
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-align: center;
 }

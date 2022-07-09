@@ -9,4 +9,5 @@ export interface Data {
   secondColor: string;
   quantity: string;
   popularity: string;
+  price: string;
 }

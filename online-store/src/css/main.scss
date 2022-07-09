@@ -1,7 +1,14 @@
 .main {
     padding-top: 80px;
+    background-image: url("../assets/images/pattern-3.jpg");
+    background-size: 25rem;
+    background-repeat: repeat;
 }
 
 .divider_space {
     margin: 1rem 0;
+}
+
+.selected {
+    background-color: #d7ccc8;
 }
