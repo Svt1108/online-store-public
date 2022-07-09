@@ -1,10 +1,13 @@
 import { Data } from "../types/types";
+import ModalWindow from "./modal";
 
 class CardList {
   drawData: Array<Data>;
+  modalWindow: ModalWindow;
 
   constructor() {
     this.drawData = [];
+    this.modalWindow = new ModalWindow();
   }
 
   public drawCards(data: Array<Data>): void {
@@ -27,6 +30,9 @@ class CardList {
       );
       cardImage.style.backgroundImage = `url(../assets/images/${this.drawData[i].img})`;
       card.appendChild(cardImage);
+      cardImage.addEventListener("click", () =>
+        this.modalWindow.createModal(this.drawData[i])
+      );
 
       const cardContent = document.createElement("div");
       cardContent.classList.add("card-content");
@@ -35,25 +41,11 @@ class CardList {
       const plateName = document.createElement("p");
       plateName.innerHTML = `${this.drawData[i].name}`;
       plateName.classList.add(
-        "card-title",
         "grey-text",
         "text-darken-4",
         "plate-card__title"
       );
       cardContent.appendChild(plateName);
-
-      // content.insertAdjacentHTML(
-      //   `beforeend`,
-      //   `  <div class="card plate-card">
-      //        <div class="card-image waves-effect waves-block waves-light plate-card__image">
-      //          <img src="../assets/images/plate-${i}.jpg">
-      //        </div>
-      //        <div class="card-content">
-      //          <span class="card-title grey-text text-darken-4">Card Title</span>
-      //          <p><a href="#">This is a link</a></p>
-      //        </div>
-      //      </div>`
-      // );
     }
   }
 }
