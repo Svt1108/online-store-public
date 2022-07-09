@@ -1,0 +1,20 @@
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+}
+
+.plate-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.plate-card__image {
+    height: 15rem;
+    width: 15rem;
+    background-size: contain;
+}
+
+.plate-card__title {
+    font-size: 1rem;
+}

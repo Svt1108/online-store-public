@@ -3,7 +3,6 @@ import { Data } from "../types/types";
 const json = `[
     {
       "id": "1",
-      "name": "Lovely Mexico",
       "img": "plate-1.jpg",
       "type": "decorative",
       "author": "Grazielli David",
@@ -15,7 +14,6 @@ const json = `[
     },
     {
        "id": "2",
-       "name": "Coffee time",
        "img": "plate-2.jpg",
        "type": "decorative",
        "author": "Milena Kibede",
@@ -27,7 +25,6 @@ const json = `[
     },
     {
         "id": "3",
-        "name": "Nature",
         "img": "plate-3.jpg",
         "type": "decorative",
         "author": "Anonymous",
@@ -39,7 +36,6 @@ const json = `[
     },
     {
          "id": "4",
-         "name": "Sweet aloe",
          "img": "plate-4.jpg",
          "type": "common",
          "author": "Ahesan Ullah",
@@ -51,7 +47,6 @@ const json = `[
     },
     {
         "id": "5",
-        "name": "Pink fantasy",
         "img": "plate-5.jpg",
         "type": "decorative",
         "author": "Pedro Campos",
@@ -63,7 +58,6 @@ const json = `[
     },
     {
          "id": "6",
-         "name": "Magic bird",
          "img": "plate-6.jpg",
          "type": "for kids",
          "author": "Anonymous",
@@ -75,7 +69,6 @@ const json = `[
     },
     {
           "id": "7",
-          "name": "Fairytales",
           "img": "plate-7.jpg",
           "type": "for kids",
           "author": "Olga Emelianova",
@@ -87,7 +80,6 @@ const json = `[
     },
     {
            "id": "8",
-           "name": "Blue waves",
            "img": "plate-8.jpg",
            "type": "common",
            "author": "Ahesan Ullah",
@@ -99,7 +91,6 @@ const json = `[
     },    
     {
             "id": "9",
-            "name": "Heart fantasy",
             "img": "plate-9.jpg",
             "type": "decorative",
             "author": "Pedro Campos",
@@ -111,7 +102,6 @@ const json = `[
     },
     {
              "id": "10",
-             "name": "The book of jungles",
              "img": "plate-10.jpg",
              "type": "for kids",
              "author": "Anonymous",
@@ -123,7 +113,6 @@ const json = `[
     },
     {
               "id": "11",
-              "name": "Picasso dream",
               "img": "plate-11.jpg",
               "type": "decorative",
               "author": "Marta Zuravskaja",
@@ -135,7 +124,6 @@ const json = `[
     },
     {
                "id": "12",
-               "name": "Rustic table",
                "img": "plate-12.jpg",
                "type": "decorative",
                "author": "Julia Pilipchatina",
@@ -147,7 +135,6 @@ const json = `[
     },
     {
               "id": "13",
-              "name": "Lovely Mexico-2",
               "img": "plate-13.jpg",
               "type": "decorative",
               "author": "Grazielli David",
@@ -159,7 +146,6 @@ const json = `[
     },
     {
                "id": "14",
-               "name": "Sweet aloe-2",
                "img": "plate-14.jpg",
                "type": "common",
                "author": "Ahesan Ullah",
@@ -171,7 +157,6 @@ const json = `[
     },
     {
                 "id": "15",
-                "name": "Dark night",
                 "img": "plate-15.jpg",
                 "type": "common",
                 "author": "Finalista Premio Oxford",
@@ -183,7 +168,6 @@ const json = `[
     },
     {
                  "id": "16",
-                 "name": "Nature pink",
                  "img": "plate-16.jpg",
                  "type": "decorative",
                  "author": "Anonymous",
@@ -195,7 +179,6 @@ const json = `[
     },  
     {
         "id": "17",
-        "name": "Lily",
         "img": "plate-17.jpg",
         "type": "common",
         "author": "Elene Rossella Lana",
@@ -207,7 +190,6 @@ const json = `[
     },
     {
          "id": "18",
-         "name": "Summer fantasy",
          "img": "plate-18.jpg",
          "type": "decorative",
          "author": "Barbara Dantas",
@@ -219,7 +201,6 @@ const json = `[
     },
     {
           "id": "19",
-          "name": "Magic birds",
           "img": "plate-19.jpg",
           "type": "common",
           "author": "Anonymous",
@@ -231,7 +212,6 @@ const json = `[
     },
     {
            "id": "20",
-           "name": "Fairytales-2",
            "img": "plate-20.jpg",
            "type": "for kids",
            "author": "Olga Emelianova",
@@ -243,7 +223,6 @@ const json = `[
     },
     {
           "id": "21",
-          "name": "White night",
           "img": "plate-21.jpg",
           "type": "common",
           "author": "Finalista Premio Oxford",
@@ -255,7 +234,6 @@ const json = `[
     },
     {
            "id": "22",
-           "name": "Fairytales-3",
            "img": "plate-22.jpg",
            "type": "for kids",
            "author": "Olga Emelianova",
@@ -267,7 +245,6 @@ const json = `[
     },
     {
             "id": "23",
-            "name": "Dream",
             "img": "plate-23.jpg",
             "type": "for kids",
             "author": "Lena Guberman",
@@ -279,7 +256,6 @@ const json = `[
     },
     {
              "id": "24",
-             "name": "Rustic table-2",
              "img": "plate-24.jpg",
              "type": "decorative",
              "author": "Julia Pilipchatina",
@@ -291,7 +267,6 @@ const json = `[
     },    
     {
               "id": "25",
-              "name": "Sweet aloe-3",
               "img": "plate-25.jpg",
               "type": "common",
               "author": "Ahesan Ullah",
@@ -303,7 +278,6 @@ const json = `[
     },
     {
                "id": "26",
-               "name": "Lovely Mexico-3",
                "img": "plate-26.jpg",
                "type": "decorative",
                "author": "Grazielli David",
@@ -315,7 +289,6 @@ const json = `[
     },
     {
                 "id": "27",
-                "name": "Coffee time-2",
                 "img": "plate-27.jpg",
                 "type": "decorative",
                 "author": "Milena Kibede",
@@ -327,7 +300,6 @@ const json = `[
     },
     {
                  "id": "28",
-                 "name": "Flower serenity",
                  "img": "plate-28.jpg",
                  "type": "common",
                  "author": "Ahesan Ullah",
@@ -339,7 +311,6 @@ const json = `[
     },
     {
                 "id": "29",
-                "name": "Alice fantasy",
                 "img": "plate-29.jpg",
                 "type": "decorative",
                 "author": "Rory Dobner",
@@ -351,7 +322,6 @@ const json = `[
     },
     {
                  "id": "30",
-                 "name": "Country",
                  "img": "plate-30.jpg",
                  "type": "common",
                  "author": "Anonymous",
@@ -363,7 +333,6 @@ const json = `[
     },
     {
                   "id": "31",
-                  "name": "Morning star",
                   "img": "plate-31.jpg",
                   "type": "decorative",
                   "author": "Barbara Dantas",
@@ -375,7 +344,6 @@ const json = `[
     },
     {
                    "id": "32",
-                   "name": "Absence",
                    "img": "plate-32.jpg",
                    "type": "common",
                    "author": "Anonymous",
@@ -387,7 +355,6 @@ const json = `[
     },  
     {
       "id": "33",
-      "name": "Rustic table-4",
       "img": "plate-33.jpg",
       "type": "decorative",
       "author": "Julia Pilipchatina",
@@ -399,7 +366,6 @@ const json = `[
     },
     {
        "id": "34",
-       "name": "Flower queen",
        "img": "plate-34.jpg",
        "type": "common",
        "author": "Sania Khan",
@@ -411,7 +377,6 @@ const json = `[
     },
     {
         "id": "35",
-        "name": "Tiny pause",
         "img": "plate-35.jpg",
         "type": "decorative",
         "author": "Anonymous",
@@ -423,7 +388,6 @@ const json = `[
     },
     {
          "id": "36",
-         "name": "Be fast",
          "img": "plate-36.jpg",
          "type": "decorative",
          "author": "Barbara Dantas",
@@ -435,7 +399,6 @@ const json = `[
     },
     {
         "id": "37",
-        "name": "Summer flowers",
         "img": "plate-37.jpg",
         "type": "common",
         "author": "Anonymous",
@@ -447,7 +410,6 @@ const json = `[
     },
     {
          "id": "38",
-         "name": "Lovely Mexico-4",
          "img": "plate-38.jpg",
          "type": "decorative",
          "author": "Grazielli David",
@@ -459,7 +421,6 @@ const json = `[
     },
     {
           "id": "39",
-          "name": "Alice fantasy-2",
           "img": "plate-39.jpg",
           "type": "decorative",
           "author": "Rory Dobner",
@@ -471,7 +432,6 @@ const json = `[
     },
     {
            "id": "40",
-           "name": "My kitty",
            "img": "plate-40.jpg",
            "type": "decorative",
            "author": "Pedro Campos",
@@ -483,7 +443,6 @@ const json = `[
     },    
     {
             "id": "41",
-            "name": "Fenix",
             "img": "plate-41.jpg",
             "type": "common",
             "author": "Ahesan Ullah",
@@ -495,7 +454,6 @@ const json = `[
     },
     {
              "id": "42",
-             "name": "Flower queen-2",
              "img": "plate-42.jpg",
              "type": "common",
              "author": "Sania Khan",
@@ -507,7 +465,6 @@ const json = `[
     },
     {
               "id": "43",
-              "name": "Queen christmas",
               "img": "plate-43.jpg",
               "type": "common",
               "author": "Anonymous",
@@ -519,7 +476,6 @@ const json = `[
     },
     {
                "id": "44",
-               "name": "Nature pink-2",
                "img": "plate-44.jpg",
                "type": "decorative",
                "author": "Anonymous",
@@ -531,7 +487,6 @@ const json = `[
     },
     {
               "id": "45",
-              "name": "Simple theme",
               "img": "plate-45.jpg",
               "type": "common",
               "author": "Ahesan Ullah",
@@ -543,7 +498,6 @@ const json = `[
     },
     {
                "id": "46",
-               "name": "Forrest walk",
                "img": "plate-46.jpg",
                "type": "common",
                "author": "Ahesan Ullah",
@@ -555,7 +509,6 @@ const json = `[
     },
     {
                 "id": "47",
-                "name": "Blue in silver",
                 "img": "plate-47.jpg",
                 "type": "decorative",
                 "author": "Anonymous",
@@ -567,7 +520,6 @@ const json = `[
     },
     {
                  "id": "48",
-                 "name": "Travel time",
                  "img": "plate-48.jpg",
                  "type": "common",
                  "author": "Anonymous",
@@ -579,7 +531,6 @@ const json = `[
     },  
     {
         "id": "49",
-        "name": "Blue elegant",
         "img": "plate-49.jpg",
         "type": "common",
         "author": "Rafael Cataldi",
@@ -591,7 +542,6 @@ const json = `[
     },
     {
          "id": "50",
-         "name": "Country life",
          "img": "plate-50.jpg",
          "type": "for kids",
          "author": "Olga Emelianova",
@@ -600,7 +550,8 @@ const json = `[
          "secondColor": "red",
          "quantity": "14",
          "popularity": "no"
-    }             
-]`;
+    },                
+
+  ]`;
 
 export const platesArray: Array<Data> = JSON.parse(json);
