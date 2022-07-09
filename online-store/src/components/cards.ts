@@ -14,10 +14,9 @@ class CardList {
     const content = document.querySelector(".content") as HTMLElement;
     this.drawData = data;
     content.innerHTML = "";
-    //    console.log(this.drawData.length);
     for (let i = 0; i < this.drawData.length; i++) {
       const card = document.createElement("div");
-      card.classList.add("card", "plate-card");
+      card.classList.add("card", "plate-card", "z-depth-2");
       content.appendChild(card);
 
       const cardImage = document.createElement("div");
@@ -46,6 +45,11 @@ class CardList {
         "plate-card__title"
       );
       cardContent.appendChild(plateName);
+
+      const plateInfo = document.createElement("p");
+      plateInfo.innerHTML = `${this.drawData[i].author}, ${this.drawData[i].year}`;
+      plateInfo.classList.add("grey-text", "text-darken-4", "plate-card__text");
+      cardContent.appendChild(plateInfo);
     }
   }
 }

@@ -1,0 +1,27 @@
+.filters {
+    display: flex;
+    flex-direction: column;
+    .filters__title {
+        font-weight: 600;
+        margin: 0.5rem;
+    }
+    .filters__content {
+        height: 25vh;
+        overflow: auto;
+        // width: fit-content;
+        padding: 0.5rem;
+    }
+    .filters__content_popularity {
+        height: 10vh;
+        overflow: auto;
+        // width: fit-content;
+        padding: 0.5rem;
+    }
+}
+
+.filter-content {
+    font-size: 1rem;
+    &:hover {
+        background-color: #c5e1a5;
+    }
+}

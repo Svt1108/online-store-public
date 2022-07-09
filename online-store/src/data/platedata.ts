@@ -8,7 +8,7 @@ const json = `[
       "type": "decorative",
       "author": "Grazielli David",
       "year": "2022",
-      "color": "ochre",
+      "color": "chocolate",
       "secondColor": "green",
       "quantity": "3",
       "popularity": "yes"
@@ -152,7 +152,7 @@ const json = `[
               "type": "decorative",
               "author": "Grazielli David",
               "year": "2022",
-              "color": "ochre",
+              "color": "chocolate",
               "secondColor": "green",
               "quantity": "3",
               "popularity": "yes"
@@ -308,7 +308,7 @@ const json = `[
                "type": "decorative",
                "author": "Grazielli David",
                "year": "2022",
-               "color": "ochre",
+               "color": "chocolate",
                "secondColor": "green",
                "quantity": "7",
                "popularity": "yes"
@@ -369,7 +369,7 @@ const json = `[
                   "author": "Barbara Dantas",
                   "year": "2021",
                   "color": "black",
-                  "secondColor": "ochre",
+                  "secondColor": "chocolate",
                   "quantity": "21",
                   "popularity": "yes"
     },
@@ -429,7 +429,7 @@ const json = `[
          "author": "Barbara Dantas",
          "year": "2021",
          "color": "black",
-         "secondColor": "ochre",
+         "secondColor": "chocolate",
          "quantity": "8",
          "popularity": "no"
     },
@@ -452,7 +452,7 @@ const json = `[
          "type": "decorative",
          "author": "Grazielli David",
          "year": "2022",
-         "color": "ochre",
+         "color": "chocolate",
          "secondColor": "white",
          "quantity": "9",
          "popularity": "no"
