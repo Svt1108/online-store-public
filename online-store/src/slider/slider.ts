@@ -12,25 +12,28 @@ class Slider {
     this.minMaxQuantity = [];
   }
   public drawSlider(data: Data[]): void {
-    const priceSaved: Array<string> = JSON.parse(
-      localStorage.getItem("price_saved") as string
-    );
-    const yearSaved: Array<string> = JSON.parse(
-      localStorage.getItem("year_saved") as string
-    );
-    const quantitySaved: Array<string> = JSON.parse(
-      localStorage.getItem("quantity_saved") as string
-    );
-
     data.forEach((element) => {
       this.minMaxPrice.push(Number(element.price));
       this.minMaxYear.push(Number(element.year));
       this.minMaxQuantity.push(Number(element.quantity));
     });
 
+    const priceMinSaved = Number(localStorage.getItem("price_min_saved"));
+    let priceMaxSaved = Number(localStorage.getItem("price_max_saved"));
+    if (priceMaxSaved === 0)
+      priceMaxSaved = Math.max(...this.minMaxPrice) as number;
+    const yearMinSaved = Number(localStorage.getItem("year_min_saved"));
+    let yearMaxSaved = Number(localStorage.getItem("year_max_saved"));
+    if (yearMaxSaved === 0)
+      yearMaxSaved = Math.max(...this.minMaxYear) as number;
+    const quantityMinSaved = Number(localStorage.getItem("quantity_min_saved"));
+    let quantityMaxSaved = Number(localStorage.getItem("quantity_max_saved"));
+    if (quantityMaxSaved === 0)
+      quantityMaxSaved = Math.max(...this.minMaxQuantity) as number;
+
     const price = document.getElementById("price") as noUiSlider.target;
     noUiSlider.create(price as HTMLElement, {
-      start: [0, 70],
+      start: [priceMinSaved, priceMaxSaved],
       connect: true,
       step: 1,
       orientation: "horizontal",
@@ -47,7 +50,7 @@ class Slider {
 
     const year = document.getElementById("year") as noUiSlider.target;
     noUiSlider.create(year as HTMLElement, {
-      start: [0, 2050],
+      start: [yearMinSaved, yearMaxSaved],
       connect: true,
       step: 1,
       orientation: "horizontal",
@@ -64,7 +67,7 @@ class Slider {
 
     const quantity = document.getElementById("quantity") as noUiSlider.target;
     noUiSlider.create(quantity as HTMLElement, {
-      start: [0, 70],
+      start: [quantityMinSaved, quantityMaxSaved],
       connect: true,
       step: 1,
       orientation: "horizontal",

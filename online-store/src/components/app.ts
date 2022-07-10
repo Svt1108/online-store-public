@@ -1,5 +1,6 @@
 import { Data } from "../types/types";
 import { platesArray } from "../data/platedata";
+import * as noUiSlider from "../slider/nouislider";
 import CardList from "../components/cards";
 import FilterList from "../components/filters";
 import Storage from "../components/storage";
@@ -10,6 +11,7 @@ class App {
   filterList: FilterList;
   storage: Storage;
   slider: Slider;
+  //  slider2: Slider;
   data: Array<Data>;
   authorSaved: Array<string>;
   colorSaved: Array<string>;
@@ -46,15 +48,18 @@ class App {
         "popularity_saved",
         JSON.stringify(this.popularitySaved)
       );
-    if (!localStorage.getItem("price_saved"))
-      localStorage.setItem("price_saved", JSON.stringify(this.priceSaved));
-    if (!localStorage.getItem("year_saved"))
-      localStorage.setItem("year_saved", JSON.stringify(this.yearSaved));
-    if (!localStorage.getItem("quantity_saved"))
-      localStorage.setItem(
-        "quantity_saved",
-        JSON.stringify(this.quantitySaved)
-      );
+    if (!localStorage.getItem("price_max_saved"))
+      localStorage.setItem("price_max_saved", "");
+    if (!localStorage.getItem("price_min_saved"))
+      localStorage.setItem("price_min_saved", "");
+    if (!localStorage.getItem("year_max_saved"))
+      localStorage.setItem("year_max_saved", "");
+    if (!localStorage.getItem("year_min_saved"))
+      localStorage.setItem("year_min_saved", "");
+    if (!localStorage.getItem("quantity_max_saved"))
+      localStorage.setItem("quantity_max_saved", "");
+    if (!localStorage.getItem("quantity_min_saved"))
+      localStorage.setItem("quantity_min_saved", "");
 
     const author = document.getElementById("author") as HTMLElement;
     author.addEventListener("click", (event: Event) => {
@@ -80,6 +85,30 @@ class App {
       }
     });
 
+    const price = document.getElementById("price") as noUiSlider.target;
+    price.noUiSlider!.on("change", () => {
+      const sliderValues = price.noUiSlider!.get() as Array<string>;
+      localStorage.setItem("price_min_saved", sliderValues[0]);
+      localStorage.setItem("price_max_saved", sliderValues[1]);
+      this.storage.applyStorageFilter(this.data);
+    });
+
+    const year = document.getElementById("year") as noUiSlider.target;
+    year.noUiSlider!.on("change", () => {
+      const sliderValues = year.noUiSlider!.get() as Array<string>;
+      localStorage.setItem("year_min_saved", sliderValues[0]);
+      localStorage.setItem("year_max_saved", sliderValues[1]);
+      this.storage.applyStorageFilter(this.data);
+    });
+
+    const quantity = document.getElementById("quantity") as noUiSlider.target;
+    quantity.noUiSlider!.on("change", () => {
+      const sliderValues = quantity.noUiSlider!.get() as Array<string>;
+      localStorage.setItem("quantity_min_saved", sliderValues[0]);
+      localStorage.setItem("quantity_max_saved", sliderValues[1]);
+      this.storage.applyStorageFilter(this.data);
+    });
+
     (<HTMLElement>document.querySelector(".clear-button")).addEventListener(
       "click",
       () => {
@@ -92,8 +121,23 @@ class App {
           "popularity_saved",
           JSON.stringify(this.popularitySaved)
         );
+        localStorage.setItem("price_max_saved", "");
+        localStorage.setItem("price_min_saved", "");
+        localStorage.setItem("year_max_saved", "");
+        localStorage.setItem("year_min_saved", "");
+        localStorage.setItem("quantity_max_saved", "");
+        localStorage.setItem("quantity_min_saved", "");
         this.cardList.drawCards(this.data);
         this.filterList.setFilters(this.data);
+        const price = document.getElementById("price") as noUiSlider.target;
+        price.noUiSlider!.reset();
+        const year = document.getElementById("year") as noUiSlider.target;
+        //       year.noUiSlider!.reset();
+        year.noUiSlider?.set([0, 3000]);
+        const quantity = document.getElementById(
+          "quantity"
+        ) as noUiSlider.target;
+        quantity.noUiSlider!.reset();
       }
     );
 

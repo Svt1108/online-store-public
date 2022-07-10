@@ -29,4 +29,10 @@
 .plate-card__text {
     font-size: 0.9rem;
     text-align: center;
+    word-wrap: break-word;
+    width: 11rem;
+}
+
+.card .card-content {
+    padding: 1rem;
 }
