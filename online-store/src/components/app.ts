@@ -2,56 +2,88 @@ import { Data } from "../types/types";
 import { platesArray } from "../data/platedata";
 import CardList from "../components/cards";
 import FilterList from "../components/filters";
+import Storage from "../components/storage";
+import Slider from "../slider/slider";
 
 class App {
   cardList: CardList;
   filterList: FilterList;
+  storage: Storage;
+  slider: Slider;
   data: Array<Data>;
+  authorSaved: Array<string>;
+  colorSaved: Array<string>;
+  popularitySaved: Array<string>;
+  arrayOfFilters: Array<string>;
 
   constructor() {
     this.cardList = new CardList();
     this.filterList = new FilterList();
+    this.storage = new Storage();
+    this.slider = new Slider();
     this.data = platesArray;
+    this.authorSaved = [];
+    this.colorSaved = [];
+    this.popularitySaved = [];
+    this.arrayOfFilters = ["author", "color", "popularity"];
   }
 
   public start(): void {
+    //this.slider.drawSlider();
+
+    if (!localStorage.getItem("author_saved"))
+      localStorage.setItem("author_saved", JSON.stringify(this.authorSaved));
+    if (!localStorage.getItem("color_saved"))
+      localStorage.setItem("color_saved", JSON.stringify(this.colorSaved));
+    if (!localStorage.getItem("popularity_saved"))
+      localStorage.setItem(
+        "popularity_saved",
+        JSON.stringify(this.popularitySaved)
+      );
+
     const author = document.getElementById("author") as HTMLElement;
     author.addEventListener("click", (event: Event) => {
       if (event.target !== author) {
-        const author_item = (<HTMLElement>event.target).textContent as string;
-        if (!localStorage.getItem("author_saved")) {
-          const author_saved = [author_item];
-          localStorage.setItem("author_saved", JSON.stringify(author_saved));
-          (<HTMLElement>event.target).classList.add("selected");
-          //         console.log(event.target);
-        } else {
-          const author_saved: Array<string> = JSON.parse(
-            localStorage.getItem("author_saved") as string
-          );
-          if (author_saved.indexOf(author_item) === -1) {
-            author_saved.push(author_item);
-            (<HTMLElement>event.target).classList.add("selected");
-          } else {
-            author_saved.splice(author_saved.indexOf(author_item), 1);
-            (<HTMLElement>event.target).classList.remove("selected");
-          }
-          localStorage.removeItem("author_saved");
-          localStorage.setItem("author_saved", JSON.stringify(author_saved));
-        }
-
-        const author_saved: Array<string> = JSON.parse(
-          localStorage.getItem("author_saved") as string
-        );
-        const valuesFilter: Data[] = [];
-        this.data.forEach((element) => {
-          if (author_saved.includes(element.author)) valuesFilter.push(element);
-        });
-        //       console.log(valuesFilter);
-        this.cardList.drawCards(valuesFilter);
+        this.storage.checkStorage(event, "author");
+        this.storage.applyStorageFilter(this.data);
       }
     });
 
-    this.cardList.drawCards(this.data);
+    const color = document.getElementById("color") as HTMLElement;
+    color.addEventListener("click", (event: Event) => {
+      if (event.target !== color) {
+        this.storage.checkStorage(event, "color");
+        this.storage.applyStorageFilter(this.data);
+      }
+    });
+
+    const popularity = document.getElementById("popularity") as HTMLElement;
+    popularity.addEventListener("click", (event: Event) => {
+      if (event.target !== popularity) {
+        this.storage.checkStorage(event, "popularity");
+        this.storage.applyStorageFilter(this.data);
+      }
+    });
+
+    (<HTMLElement>document.querySelector(".clear-button")).addEventListener(
+      "click",
+      () => {
+        this.authorSaved = [];
+        localStorage.setItem("author_saved", JSON.stringify(this.authorSaved));
+        this.colorSaved = [];
+        localStorage.setItem("color_saved", JSON.stringify(this.colorSaved));
+        this.popularitySaved = [];
+        localStorage.setItem(
+          "popularity_saved",
+          JSON.stringify(this.popularitySaved)
+        );
+        this.cardList.drawCards(this.data);
+        this.filterList.setFilters(this.data);
+      }
+    );
+
+    //    this.cardList.drawCards(this.data);
+    this.storage.applyStorageFilter(this.data);
     this.filterList.setFilters(this.data);
   }
 }

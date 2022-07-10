@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0"
+  },
+  "dependencies": {
+    "nouislider": "^15.6.0"
   }
 }

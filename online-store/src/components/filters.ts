@@ -24,22 +24,36 @@ class FilterList {
   }
 
   private drawFilters(): void {
+    const authorSaved: Array<string> = JSON.parse(
+      localStorage.getItem("author_saved") as string
+    );
+    const colorSaved: Array<string> = JSON.parse(
+      localStorage.getItem("color_saved") as string
+    );
+    const popularitySaved: Array<string> = JSON.parse(
+      localStorage.getItem("popularity_saved") as string
+    );
+
     const author = document.getElementById("author") as HTMLElement;
+    author.innerHTML = "";
     const setArray = Array.from(this.setAuthor);
     setArray.sort();
     setArray.forEach((element) => {
       const authorItem = document.createElement("div");
       authorItem.classList.add("filter-content");
+      if (authorSaved.includes(element)) authorItem.classList.add("selected");
       authorItem.textContent = `${element}`;
       author.appendChild(authorItem);
     });
 
     const color = document.getElementById("color") as HTMLElement;
+    color.innerHTML = "";
     const setArrayColor = Array.from(this.setColor);
     setArrayColor.sort();
     setArrayColor.forEach((element) => {
       const colorItem = document.createElement("div");
       colorItem.classList.add("filter-content_color", "z-depth-1");
+      if (colorSaved.includes(element)) colorItem.classList.add("selected");
       colorItem.textContent = `${element}`;
       if (element === "blue")
         colorItem.style.borderBottom = `solid 3px mediumblue`;
@@ -50,11 +64,14 @@ class FilterList {
     });
 
     const popularity = document.getElementById("popularity") as HTMLElement;
+    popularity.innerHTML = "";
     const setArrayPopularity = Array.from(this.setPopularity);
     setArrayPopularity.sort();
     setArrayPopularity.forEach((element) => {
       const popularityItem = document.createElement("div");
       popularityItem.classList.add("filter-content");
+      if (popularitySaved.includes(element))
+        popularityItem.classList.add("selected");
       popularityItem.textContent = `${element}`;
       popularity.appendChild(popularityItem);
     });

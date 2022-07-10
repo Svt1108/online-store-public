@@ -14,6 +14,10 @@ class CardList {
     const content = document.querySelector(".content") as HTMLElement;
     this.drawData = data;
     content.innerHTML = "";
+    if (this.drawData.length === 0) {
+      content.innerHTML = `<p class = "z-depth-1 message teal-text text-darken-3">Sorry, we can't find anything. Try another filter, please!</p>`;
+      return;
+    }
     for (let i = 0; i < this.drawData.length; i++) {
       const card = document.createElement("div");
       card.classList.add("card", "plate-card", "z-depth-2");

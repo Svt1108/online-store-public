@@ -34,7 +34,6 @@ class ModalWindow {
       <br/>
       <li><strong>Type: </strong>${item.type}</li>
       <li><strong>Color: </strong>${item.color}</li>
-      <li><strong>Second color: </strong>${item.secondColor}</li>
       <li><strong>Popularity: </strong>${item.popularity}</li>
       <li><strong>Quantity: </strong>${item.quantity}</li>
       </ul>
