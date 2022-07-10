@@ -52,7 +52,7 @@ class CardList {
 
       const plateInfo = document.createElement("p");
       plateInfo.innerHTML = `${this.drawData[i].author}, ${this.drawData[i].year}
-      <p class = "grey-text text-darken-4 modal-window__title">${this.drawData[i].price}</p>`;
+      <p class = "grey-text text-darken-4 modal-window__title">${this.drawData[i].price} €</p>`;
       plateInfo.classList.add("grey-text", "text-darken-4", "plate-card__text");
       cardContent.appendChild(plateInfo);
     }

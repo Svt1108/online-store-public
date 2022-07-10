@@ -11,9 +11,13 @@
 }
 
 .plate-card__image {
+    transition: 0.3s;
     height: 13rem;
     width: 13rem;
     background-size: contain;
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 .plate-card__title {

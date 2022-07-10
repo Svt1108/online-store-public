@@ -37,7 +37,7 @@ class ModalWindow {
       <li><strong>Popularity: </strong>${item.popularity}</li>
       <li><strong>Quantity: </strong>${item.quantity}</li>
       </ul>
-      <p class = "grey-text text-darken-4 modal-window__title">${item.price}</p>`;
+      <p class = "grey-text text-darken-4 modal-window__title">${item.price} €</p>`;
 
     const closeButton = document.createElement("button");
     closeButton.classList.add("modal-window__close");

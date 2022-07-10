@@ -6,21 +6,24 @@
         margin: 0.5rem;
     }
     .filters__content {
-        height: 30vh;
+        height: 21vh;
         overflow: auto;
-        padding: 0.5rem;
+        padding: 0.3rem 0.5rem;
         background-color: white;
     }
     .filters__content_popularity {
-        height: 10vh;
+        height: 7vh;
         overflow: auto;
-        padding: 0.5rem;
+        padding: 0.3rem 0.5rem;
     }
     .filters__content_color {
-        height: 20vh;
+        height: 17vh;
         display: flex;
         flex-wrap: wrap;
-        //       background-color: white;
+    }
+    .filters__slider {
+        width: 80%;
+        align-self: center;
     }
 }
 
@@ -49,4 +52,44 @@
     &:hover {
         transform: scale(1.1);
     }
+}
+
+
+/*------------- slider -----------------*/
+
+.noUi-horizontal {
+    height: 10px;
+    border: solid 1px #00695c;
+}
+
+.noUi-touch-area {
+    height: 1rem;
+}
+
+.noUi-horizontal .noUi-handle {
+    width: 28px;
+    height: 18px;
+    right: -17px;
+    top: -6px;
+    background-color: #e0f2f1;
+    border-color: #00695c;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.noUi-connect {
+    background: #d7ccc8;
+}
+
+.noUi-tooltip {
+    padding: 2px;
+    color: #00695c;
+    font-size: 0.9rem;
+}
+
+.noUi-handle:before {
+    opacity: 0;
+}
+
+.noUi-handle:after {
+    opacity: 0;
 }

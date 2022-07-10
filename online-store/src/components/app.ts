@@ -14,6 +14,9 @@ class App {
   authorSaved: Array<string>;
   colorSaved: Array<string>;
   popularitySaved: Array<string>;
+  priceSaved: Array<string>;
+  yearSaved: Array<string>;
+  quantitySaved: Array<string>;
   arrayOfFilters: Array<string>;
 
   constructor() {
@@ -25,11 +28,14 @@ class App {
     this.authorSaved = [];
     this.colorSaved = [];
     this.popularitySaved = [];
+    this.priceSaved = [];
+    this.yearSaved = [];
+    this.quantitySaved = [];
     this.arrayOfFilters = ["author", "color", "popularity"];
   }
 
   public start(): void {
-    //this.slider.drawSlider();
+    this.slider.drawSlider(this.data);
 
     if (!localStorage.getItem("author_saved"))
       localStorage.setItem("author_saved", JSON.stringify(this.authorSaved));
@@ -39,6 +45,15 @@ class App {
       localStorage.setItem(
         "popularity_saved",
         JSON.stringify(this.popularitySaved)
+      );
+    if (!localStorage.getItem("price_saved"))
+      localStorage.setItem("price_saved", JSON.stringify(this.priceSaved));
+    if (!localStorage.getItem("year_saved"))
+      localStorage.setItem("year_saved", JSON.stringify(this.yearSaved));
+    if (!localStorage.getItem("quantity_saved"))
+      localStorage.setItem(
+        "quantity_saved",
+        JSON.stringify(this.quantitySaved)
       );
 
     const author = document.getElementById("author") as HTMLElement;
