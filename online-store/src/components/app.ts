@@ -130,14 +130,16 @@ class App {
         this.cardList.drawCards(this.data);
         this.filterList.setFilters(this.data);
         const price = document.getElementById("price") as noUiSlider.target;
-        price.noUiSlider!.reset();
+        //price.noUiSlider!.reset();
+        price.noUiSlider?.set([0, 3000]);
         const year = document.getElementById("year") as noUiSlider.target;
         //       year.noUiSlider!.reset();
         year.noUiSlider?.set([0, 3000]);
         const quantity = document.getElementById(
           "quantity"
         ) as noUiSlider.target;
-        quantity.noUiSlider!.reset();
+        //quantity.noUiSlider!.reset();
+        quantity.noUiSlider?.set([0, 3000]);
       }
     );
 

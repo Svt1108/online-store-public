@@ -46,6 +46,8 @@ class ModalWindow {
       modal.remove();
       document.body.style.overflow = "";
     };
+
+    setTimeout(() => (modalWindow.style.transform = `scale(0.8)`), 100);
   }
 }
 
