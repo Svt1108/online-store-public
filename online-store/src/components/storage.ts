@@ -43,6 +43,8 @@ class Storage {
     const quantityMinSaved = Number(localStorage.getItem("quantity_min_saved"));
     const quantityMaxSaved = Number(localStorage.getItem("quantity_max_saved"));
 
+    const searchSaved = localStorage.getItem("search_saved") as string;
+
     const valuesFilter: Data[] = [];
     data.forEach((element) => {
       if (
@@ -56,7 +58,10 @@ class Storage {
         (Number(element.year) <= yearMaxSaved || yearMaxSaved === 0) &&
         (Number(element.quantity) >= quantityMinSaved ||
           quantityMinSaved === 0) &&
-        (Number(element.quantity) <= quantityMaxSaved || quantityMaxSaved === 0)
+        (Number(element.quantity) <= quantityMaxSaved ||
+          quantityMaxSaved === 0) &&
+        (element.name.toLowerCase().indexOf(searchSaved) !== -1 ||
+          searchSaved === "")
       )
         valuesFilter.push(element);
     });

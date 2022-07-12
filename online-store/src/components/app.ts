@@ -16,9 +16,9 @@ class App {
   authorSaved: Array<string>;
   colorSaved: Array<string>;
   popularitySaved: Array<string>;
-  priceSaved: Array<string>;
-  yearSaved: Array<string>;
-  quantitySaved: Array<string>;
+  // priceSaved: Array<string>;
+  // yearSaved: Array<string>;
+  // quantitySaved: Array<string>;
   arrayOfFilters: Array<string>;
 
   constructor() {
@@ -30,9 +30,9 @@ class App {
     this.authorSaved = [];
     this.colorSaved = [];
     this.popularitySaved = [];
-    this.priceSaved = [];
-    this.yearSaved = [];
-    this.quantitySaved = [];
+    // this.priceSaved = [];
+    // this.yearSaved = [];
+    // this.quantitySaved = [];
     this.arrayOfFilters = ["author", "color", "popularity"];
   }
 
@@ -60,6 +60,8 @@ class App {
       localStorage.setItem("quantity_max_saved", "");
     if (!localStorage.getItem("quantity_min_saved"))
       localStorage.setItem("quantity_min_saved", "");
+    if (!localStorage.getItem("search_saved"))
+      localStorage.setItem("search_saved", "");
 
     const author = document.getElementById("author") as HTMLElement;
     author.addEventListener("click", (event: Event) => {
@@ -109,6 +111,27 @@ class App {
       this.storage.applyStorageFilter(this.data);
     });
 
+    const search = document.getElementById("search") as HTMLInputElement;
+    search.value = localStorage.getItem("search_saved") as string;
+    search.addEventListener("input", () => {
+      localStorage.setItem("search_saved", search.value.toLowerCase());
+      this.storage.applyStorageFilter(this.data);
+    });
+
+    const close = document.getElementById("close") as HTMLInputElement;
+    close.addEventListener("click", () => {
+      search.value = "";
+      localStorage.setItem("search_saved", "");
+      this.storage.applyStorageFilter(this.data);
+    });
+
+    const sort = document.getElementById("sort") as HTMLInputElement;
+    sort.addEventListener("click", () => {
+      search.value = "";
+      localStorage.setItem("search_saved", "");
+      this.storage.applyStorageFilter(this.data);
+    });
+
     (<HTMLElement>document.querySelector(".clear-button")).addEventListener(
       "click",
       () => {
@@ -127,6 +150,7 @@ class App {
         localStorage.setItem("year_min_saved", "");
         localStorage.setItem("quantity_max_saved", "");
         localStorage.setItem("quantity_min_saved", "");
+        localStorage.setItem("search_saved", "");
         this.cardList.drawCards(this.data);
         this.filterList.setFilters(this.data);
         const price = document.getElementById("price") as noUiSlider.target;
@@ -140,6 +164,8 @@ class App {
         ) as noUiSlider.target;
         //quantity.noUiSlider!.reset();
         quantity.noUiSlider?.set([0, 3000]);
+        const search = document.getElementById("search") as HTMLInputElement;
+        search.value = "";
       }
     );
 

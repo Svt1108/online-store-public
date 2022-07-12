@@ -30,6 +30,10 @@
     }
 }
 
+.search__input:focus~.search__close {
+    opacity: 1;
+}
+
 .sort {
     width: 20%;
     margin-top: 0;

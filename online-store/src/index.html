@@ -24,7 +24,6 @@
         </div>
     </nav>
 
-    <!-- Page Layout here -->
     <div class="row main">
         <div class="col s12 m4 l3 filters">
             <p class="grey-text text-darken-2 filters__title">Author</p>
@@ -48,22 +47,27 @@
             <div class="search-and-sort">
                 <div class="input-field card search">
                     <i class="brown-text text-lighten-3 material-icons">search</i>
-                    <input type="text" placeholder="some text" class="brown-text text-darken-3 search__input" />
-                    <div class="search__close">
+                    <input type="text" placeholder="some text" class="brown-text text-darken-3 search__input" id="search" autofocus autocomplete="off" />
+                    <div class="search__close" id="close">
                         <i class="teal-text text-darken-2 material-icons">close</i>
                     </div>
                 </div>
                 <div class="card sort">
-                    <select class="browser-default sort__select">
+                    <select class="browser-default sort__select" id="sort">
               <option value="" disabled selected>Sort</option>
-              <option value="1">Lower price</option>
-              <option value="2">Higher price</option>
-              <option value="3">Newest</option>
-              <option value="3">Oldest</option>
+              <option value="name_low">Name, A-Z</option>
+              <option value="name_high">Name, Z-A</option>
+              <option value="price_low">Lower price</option>
+              <option value="price_high">Higher price</option>
+              <option value="year_low">Oldest</option>
+              <option value="year_high">Newest</option>
             </select>
                 </div>
+                <button class="btn waves-effect waves-light clear-button">
+            Clear all
+          </button>
             </div>
-            <div class="content">Содержимое</div>
+            <div class="content"></div>
         </div>
     </div>
 
