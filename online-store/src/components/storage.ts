@@ -1,4 +1,4 @@
-import { Data } from "../types/types";
+import { Data, SortEnum } from "../types/types";
 import CardList from "../components/cards";
 
 class Storage {
@@ -42,7 +42,6 @@ class Storage {
     const yearMaxSaved = Number(localStorage.getItem("year_max_saved"));
     const quantityMinSaved = Number(localStorage.getItem("quantity_min_saved"));
     const quantityMaxSaved = Number(localStorage.getItem("quantity_max_saved"));
-
     const searchSaved = localStorage.getItem("search_saved") as string;
 
     const valuesFilter: Data[] = [];
@@ -65,7 +64,24 @@ class Storage {
       )
         valuesFilter.push(element);
     });
-    this.cardList.drawCards(valuesFilter);
+    this.cardList.drawCards(this.applySorting(valuesFilter));
+  }
+
+  private applySorting(data: Data[]): Data[] {
+    const sortSaved = localStorage.getItem("sort_saved") as SortEnum;
+    if (sortSaved === "name_low")
+      data.sort((a, b) => (a.name > b.name ? 1 : -1));
+    if (sortSaved === "name_high")
+      data.sort((a, b) => (a.name < b.name ? 1 : -1));
+    if (sortSaved === "price_low")
+      data.sort((a, b) => Number(a.price) - Number(b.price));
+    if (sortSaved === "price_high")
+      data.sort((a, b) => Number(b.price) - Number(a.price));
+    if (sortSaved === "year_low")
+      data.sort((a, b) => Number(a.year) - Number(b.year));
+    if (sortSaved === "year_high")
+      data.sort((a, b) => Number(b.year) - Number(a.year));
+    return data;
   }
 }
 

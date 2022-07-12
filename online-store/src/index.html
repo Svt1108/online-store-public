@@ -38,7 +38,7 @@
             <div id="year" class="filters__slider"></div>
             <p class="grey-text text-darken-2 filters__title">Quantity</p>
             <div id="quantity" class="filters__slider"></div>
-            <button class="btn waves-effect waves-light clear-button">
+            <button class="btn waves-effect waves-light clear-button" id="reset">
           Reset filters
         </button>
         </div>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="card sort">
                     <select class="browser-default sort__select" id="sort">
-              <option value="" disabled selected>Sort</option>
+              <option value="default" disabled selected>Sort option</option>
               <option value="name_low">Name, A-Z</option>
               <option value="name_high">Name, Z-A</option>
               <option value="price_low">Lower price</option>
@@ -63,7 +63,7 @@
               <option value="year_high">Newest</option>
             </select>
                 </div>
-                <button class="btn waves-effect waves-light clear-button">
+                <button class="btn waves-effect waves-light clear-button" id="clear">
             Clear all
           </button>
             </div>

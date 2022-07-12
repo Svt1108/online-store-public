@@ -1,4 +1,4 @@
-import { Data } from "../types/types";
+import { Data, SortEnum } from "../types/types";
 import { platesArray } from "../data/platedata";
 import * as noUiSlider from "../slider/nouislider";
 import CardList from "../components/cards";
@@ -11,14 +11,8 @@ class App {
   filterList: FilterList;
   storage: Storage;
   slider: Slider;
-  //  slider2: Slider;
   data: Array<Data>;
-  authorSaved: Array<string>;
-  colorSaved: Array<string>;
-  popularitySaved: Array<string>;
-  // priceSaved: Array<string>;
-  // yearSaved: Array<string>;
-  // quantitySaved: Array<string>;
+  emptyArray: Array<string>;
   arrayOfFilters: Array<string>;
 
   constructor() {
@@ -27,12 +21,7 @@ class App {
     this.storage = new Storage();
     this.slider = new Slider();
     this.data = platesArray;
-    this.authorSaved = [];
-    this.colorSaved = [];
-    this.popularitySaved = [];
-    // this.priceSaved = [];
-    // this.yearSaved = [];
-    // this.quantitySaved = [];
+    this.emptyArray = [];
     this.arrayOfFilters = ["author", "color", "popularity"];
   }
 
@@ -40,14 +29,11 @@ class App {
     this.slider.drawSlider(this.data);
 
     if (!localStorage.getItem("author_saved"))
-      localStorage.setItem("author_saved", JSON.stringify(this.authorSaved));
+      localStorage.setItem("author_saved", JSON.stringify(this.emptyArray));
     if (!localStorage.getItem("color_saved"))
-      localStorage.setItem("color_saved", JSON.stringify(this.colorSaved));
+      localStorage.setItem("color_saved", JSON.stringify(this.emptyArray));
     if (!localStorage.getItem("popularity_saved"))
-      localStorage.setItem(
-        "popularity_saved",
-        JSON.stringify(this.popularitySaved)
-      );
+      localStorage.setItem("popularity_saved", JSON.stringify(this.emptyArray));
     if (!localStorage.getItem("price_max_saved"))
       localStorage.setItem("price_max_saved", "");
     if (!localStorage.getItem("price_min_saved"))
@@ -62,6 +48,8 @@ class App {
       localStorage.setItem("quantity_min_saved", "");
     if (!localStorage.getItem("search_saved"))
       localStorage.setItem("search_saved", "");
+    if (!localStorage.getItem("sort_saved"))
+      localStorage.setItem("sort_saved", "default");
 
     const author = document.getElementById("author") as HTMLElement;
     author.addEventListener("click", (event: Event) => {
@@ -126,52 +114,50 @@ class App {
     });
 
     const sort = document.getElementById("sort") as HTMLInputElement;
-    sort.addEventListener("click", () => {
-      search.value = "";
-      localStorage.setItem("search_saved", "");
+    sort.value = localStorage.getItem("sort_saved") as SortEnum;
+    sort.addEventListener("change", () => {
+      localStorage.setItem("sort_saved", sort.value);
       this.storage.applyStorageFilter(this.data);
     });
 
-    (<HTMLElement>document.querySelector(".clear-button")).addEventListener(
-      "click",
-      () => {
-        this.authorSaved = [];
-        localStorage.setItem("author_saved", JSON.stringify(this.authorSaved));
-        this.colorSaved = [];
-        localStorage.setItem("color_saved", JSON.stringify(this.colorSaved));
-        this.popularitySaved = [];
-        localStorage.setItem(
-          "popularity_saved",
-          JSON.stringify(this.popularitySaved)
-        );
-        localStorage.setItem("price_max_saved", "");
-        localStorage.setItem("price_min_saved", "");
-        localStorage.setItem("year_max_saved", "");
-        localStorage.setItem("year_min_saved", "");
-        localStorage.setItem("quantity_max_saved", "");
-        localStorage.setItem("quantity_min_saved", "");
-        localStorage.setItem("search_saved", "");
-        this.cardList.drawCards(this.data);
-        this.filterList.setFilters(this.data);
-        const price = document.getElementById("price") as noUiSlider.target;
-        //price.noUiSlider!.reset();
-        price.noUiSlider?.set([0, 3000]);
-        const year = document.getElementById("year") as noUiSlider.target;
-        //       year.noUiSlider!.reset();
-        year.noUiSlider?.set([0, 3000]);
-        const quantity = document.getElementById(
-          "quantity"
-        ) as noUiSlider.target;
-        //quantity.noUiSlider!.reset();
-        quantity.noUiSlider?.set([0, 3000]);
-        const search = document.getElementById("search") as HTMLInputElement;
-        search.value = "";
-      }
-    );
+    const clear = document.getElementById("clear") as HTMLElement;
+    clear.addEventListener("click", () => {
+      localStorage.clear();
+      this.clearFilters();
+      const sort = document.getElementById("sort") as HTMLInputElement;
+      sort.value = "default";
+    });
 
-    //    this.cardList.drawCards(this.data);
+    const reset = document.getElementById("reset") as HTMLElement;
+    reset.addEventListener("click", () => {
+      this.clearFilters();
+    });
+
     this.storage.applyStorageFilter(this.data);
     this.filterList.setFilters(this.data);
+  }
+
+  private clearFilters(): void {
+    localStorage.setItem("author_saved", JSON.stringify(this.emptyArray));
+    localStorage.setItem("color_saved", JSON.stringify(this.emptyArray));
+    localStorage.setItem("popularity_saved", JSON.stringify(this.emptyArray));
+    localStorage.setItem("price_max_saved", "");
+    localStorage.setItem("price_min_saved", "");
+    localStorage.setItem("year_max_saved", "");
+    localStorage.setItem("year_min_saved", "");
+    localStorage.setItem("quantity_max_saved", "");
+    localStorage.setItem("quantity_min_saved", "");
+    localStorage.setItem("search_saved", "");
+    this.storage.applyStorageFilter(this.data);
+    this.filterList.setFilters(this.data);
+    const price = document.getElementById("price") as noUiSlider.target;
+    price.noUiSlider?.set([0, 3000]);
+    const year = document.getElementById("year") as noUiSlider.target;
+    year.noUiSlider?.set([0, 3000]);
+    const quantity = document.getElementById("quantity") as noUiSlider.target;
+    quantity.noUiSlider?.set([0, 3000]);
+    const search = document.getElementById("search") as HTMLInputElement;
+    search.value = "";
   }
 }
 
