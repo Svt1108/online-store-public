@@ -81,8 +81,12 @@
 }
 
 .no-empty {
-    background-color: #00695c;;
+    background-color: #00695c;
     color: white;
     border-radius: 3px;
 }
 
+.no-empty_quant {
+    color: #00695c;
+    font-weight: bold;
+}

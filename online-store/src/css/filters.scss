@@ -1,11 +1,15 @@
 .filters {
     display: flex;
     flex-direction: column;
-    font-family: "Montserrat", sans-serif;
-    margin-top: 3.5rem;
+    font-family: "Circe", sans-serif;
+    font-weight: 300;
+    color: #616161;
+    margin-top: 3.8rem;
     width: 100%;
     padding-left: 1rem;
     .filters__title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1rem;
         font-weight: 600;
         padding-bottom: 0.5rem;
     }
@@ -15,7 +19,7 @@
         padding: 0.3rem 0.5rem;
         background-color: white;
         margin-bottom: 1rem;
-        width: fit-content;
+        width: 100%;
     }
     .filters__content_popularity {
         background-color: white;
@@ -25,7 +29,7 @@
         margin-bottom: 1rem;
     }
     .filters__content_color {
-        //   width: 93%;
+        width: 100%;
         height: fit-content;
         display: flex;
         flex-wrap: wrap;
@@ -40,7 +44,8 @@
 }
 
 .filter-content {
-    font-size: 0.8rem;
+    width: 90%;
+    font-size: 0.9rem;
     line-height: 1.4rem;
     transition: 0.1s;
     border-bottom: 1px solid rgba(0, 0, 0, 0.14);
@@ -48,11 +53,12 @@
     &:hover {
         transform: scale(1.1);
         font-weight: 500;
+        padding-left: 0.4rem;
     }
 }
 
 .filter-content_color {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 500;
     width: 4.3rem;
     height: fit-content;
@@ -115,13 +121,16 @@
     //    align-items: center;
     align-items: flex-start;
     padding: 0.5rem 0;
-    width: 90%;
+    width: 93%;
     gap: 1.2rem;
 }
 
 .reset-button {
     width: fit-content;
     margin: 1rem auto 0 auto;
+    display: flex;
+    height: 2.3rem;
+    align-items: center;
 }
 
 @media (max-width: 769px) {

@@ -6,7 +6,9 @@ import "./css/main.scss";
 import "./css/filters.scss";
 import "./css/cards.scss";
 import "./css/modal.scss";
+import "./css/message.scss";
 import "./css/search.scss";
+import "./css/cart.scss";
 
 const app = new App();
 app.start();

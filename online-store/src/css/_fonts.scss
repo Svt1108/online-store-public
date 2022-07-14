@@ -6,6 +6,20 @@
 }
 
 @font-face {
+    font-family: "Gordita";
+    src: url("../assets/fonts/gordita/GorditaBold.otf"), url("../assets/fonts/gordita/GorditaLight.otf"), url("../assets/fonts/gordita/GorditaMedium.otf"), url("../assets/fonts/gordita/GorditaThin.otf"), url("../assets/fonts/gordita/GorditaRegular.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Circe";
+    src: url("../assets/fonts/circe/Circe-Bold.ttf"), url("../assets/fonts/circe/Circe-ExtraBold.ttf"), url("../assets/fonts/circe/Circe-ExtraLight.ttf"), url("../assets/fonts/circe/Circe-Light.ttf"), url("../assets/fonts/circe/Circe-Thin.ttf"), url("../assets/fonts/circe/Circe-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: "Material Icons";
     font-style: normal;
     font-weight: 400;

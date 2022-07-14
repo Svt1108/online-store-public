@@ -4,7 +4,9 @@
     justify-content: flex-end;
     align-items: flex-start;
     column-gap: 1rem;
-    padding: 0.7rem 0 1rem 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1.5%;
     width: 90%;
 }
 
@@ -50,5 +52,7 @@
 }
 
 .clear-button {
-    margin-right: 3%;
+    display: flex;
+    height: 2.3rem;
+    align-items: center;
 }

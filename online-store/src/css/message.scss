@@ -1,0 +1,19 @@
+.message-window {
+    background-color: white;
+    border: 0.3rem solid #00796b;
+    border-radius: 10px;
+    padding: 2rem 0.8rem;
+    // position: absolute;
+    // top: 0;
+    //    right: -40rem;
+    transform: scale(0);
+    //width: 40rem;
+    transition: 0.5s;
+}
+
+.message-window__text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.8rem;
+    color: #004d40;
+    text-align: center;
+}

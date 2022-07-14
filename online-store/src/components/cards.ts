@@ -1,13 +1,16 @@
 import { Data } from "../types/types";
 import ModalWindow from "./modal";
+import MessageWindow from "./message";
 
 class CardList {
   drawData: Array<Data>;
   modalWindow: ModalWindow;
+  messageWindow: MessageWindow;
 
   constructor() {
     this.drawData = [];
     this.modalWindow = new ModalWindow();
+    this.messageWindow = new MessageWindow();
   }
 
   public drawCards(data: Array<Data>): void {
@@ -107,13 +110,19 @@ class CardList {
         basketSum.innerHTML = localStorage.getItem("sum") || "0";
         plus.classList.remove("disabled");
         if (quantityToCart.innerHTML === `0`) {
-    //      quantityToCart.classList.remove("no-empty");
+          quantityToCart.classList.remove("no-empty_quant");
           inCart.classList.remove("no-empty");
           minus.classList.add("disabled");
         }
       });
 
       plus.addEventListener("click", () => {
+        if (localStorage.getItem("sum") === "20") {
+          this.messageWindow.createMessage(
+            `Sorry, maximum 20 items in the cart...`
+          );
+          return;
+        }
         quantityToCart.innerHTML = (
           Number(quantityToCart.innerHTML) + 1
         ).toString();
@@ -127,9 +136,9 @@ class CardList {
         );
         basketSum.innerHTML = localStorage.getItem("sum") || "0";
         minus.classList.remove("disabled");
- //       quantityToCart.classList.add("no-empty");
+        quantityToCart.classList.add("no-empty_quant");
         inCart.classList.add("no-empty");
-         if (quantityToCart.innerHTML === `${this.drawData[i].quantity}`)
+        if (quantityToCart.innerHTML === `${this.drawData[i].quantity}`)
           plus.classList.add("disabled");
       });
 
@@ -140,7 +149,7 @@ class CardList {
 
       if (quantityToCart.innerHTML === "0") minus.classList.add("disabled");
       else {
-  //      quantityToCart.classList.add("no-empty");
+        quantityToCart.classList.add("no-empty_quant");
         inCart.classList.add("no-empty");
       }
       if (quantityToCart.innerHTML === `${this.drawData[i].quantity}`)

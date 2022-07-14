@@ -8,6 +8,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
     padding-left: 1rem;
+    font-family: "Circe", sans-serif;
     .logo-custom {
         grid-row: 1/2;
         grid-column: 1/7;
@@ -58,7 +59,7 @@
             position: relative;
             top: 13%;
         }
-        &:hover .basket__image{
+        &:hover .basket__image {
             transform: rotate(10deg);
         }
     }
