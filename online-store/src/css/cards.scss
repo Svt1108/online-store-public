@@ -10,9 +10,12 @@
     flex-direction: column;
     transition: opacity 2s;
     opacity: 0.5;
-    &:hover {
-        box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);
-    }
+}
+
+.glass {
+    opacity: 0;
+    transition: opacity 0.5s;
+    color: #80cbc4;
 }
 
 .plate-card__image {
@@ -20,6 +23,12 @@
     width: 13rem;
     background-size: contain;
     z-index: 5;
+    &:hover {
+        box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);
+    }
+    &:hover .glass {
+        opacity: 1;
+    }
 }
 
 .plate-card__title {
@@ -37,4 +46,35 @@
 
 .card .card-content {
     padding: 1rem;
+}
+
+.buy-wrap {
+    font-size: 0.9rem;
+    word-wrap: break-word;
+    width: 11rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    .buy-wrap__minus,
+    .buy-wrap__plus {
+        background-color: white;
+        cursor: pointer;
+        border-radius: 1px;
+        transition: 0.1s;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.disabled {
+    color: #bdbdbd;
+    cursor: auto;
+    pointer-events: none;
+}
+
+.no-empty {
+    color: #00695c;
+    font-weight: bold;
 }

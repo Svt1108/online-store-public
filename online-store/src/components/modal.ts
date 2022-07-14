@@ -6,7 +6,7 @@ class ModalWindow {
     modal.classList.add("modal-wrap");
     document.body.append(modal);
     document.body.style.overflow = "hidden";
-    modal.onclick = (event) => {
+    modal.onclick = (event: Event) => {
       if (event.target === modal) {
         modal.remove();
         document.body.style.overflow = "";

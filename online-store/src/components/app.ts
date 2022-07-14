@@ -50,6 +50,10 @@ class App {
       localStorage.setItem("search_saved", "");
     if (!localStorage.getItem("sort_saved"))
       localStorage.setItem("sort_saved", "default");
+    if (!localStorage.getItem("sum")) localStorage.setItem("sum", "0");
+
+    const basketSum = document.getElementById("basket-sum") as HTMLElement;
+    basketSum.innerHTML = localStorage.getItem("sum") || "0";
 
     const author = document.getElementById("author") as HTMLElement;
     author.addEventListener("click", (event: Event) => {
@@ -126,6 +130,7 @@ class App {
       this.clearFilters();
       const sort = document.getElementById("sort") as HTMLInputElement;
       sort.value = "default";
+      basketSum.innerHTML = "0";
     });
 
     const reset = document.getElementById("reset") as HTMLElement;
