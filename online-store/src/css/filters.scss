@@ -1,46 +1,60 @@
 .filters {
     display: flex;
     flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 3.5rem;
+    width: 100%;
+    padding-left: 1rem;
     .filters__title {
         font-weight: 600;
-        margin: 0.5rem;
+        padding-bottom: 0.5rem;
     }
     .filters__content {
         height: 21vh;
         overflow: auto;
         padding: 0.3rem 0.5rem;
         background-color: white;
+        margin-bottom: 1rem;
+        width: fit-content;
     }
     .filters__content_popularity {
-        height: 7vh;
-        overflow: auto;
-        padding: 0.3rem 0.5rem;
+        background-color: white;
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 1rem;
     }
     .filters__content_color {
-        height: 17vh;
+        //   width: 93%;
+        height: fit-content;
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
     }
     .filters__slider {
-        width: 80%;
-        align-self: center;
+        width: 100%;
+    }
+    .filters__title_slider {
+        margin-bottom: 0.3rem;
     }
 }
 
 .filter-content {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     line-height: 1.4rem;
     transition: 0.1s;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+    white-space: nowrap;
     &:hover {
-        font-size: 1rem;
+        transform: scale(1.1);
         font-weight: 500;
     }
 }
 
 .filter-content_color {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 500;
-    width: 5rem;
+    width: 4.3rem;
     height: fit-content;
     min-width: fit-content;
     margin: 0.5rem;
@@ -83,7 +97,7 @@
 .noUi-tooltip {
     padding: 2px;
     color: #00695c;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .noUi-handle:before {
@@ -92,4 +106,26 @@
 
 .noUi-handle:after {
     opacity: 0;
+}
+
+.slider-wrap {
+    display: flex;
+    flex-direction: column;
+    //    flex-wrap: nowrap;
+    //    align-items: center;
+    align-items: flex-start;
+    padding: 0.5rem 0;
+    width: 90%;
+    gap: 1.2rem;
+}
+
+.reset-button {
+    width: fit-content;
+    margin: 1rem auto 0 auto;
+}
+
+@media (max-width: 769px) {
+    .filters {
+        margin-top: 0;
+    }
 }

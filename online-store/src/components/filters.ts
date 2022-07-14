@@ -69,7 +69,7 @@ class FilterList {
     setArrayPopularity.sort();
     setArrayPopularity.forEach((element) => {
       const popularityItem = document.createElement("div");
-      popularityItem.classList.add("filter-content");
+      popularityItem.classList.add("filter-content", "filter-content_color", "z-depth-1");
       if (popularitySaved.includes(element))
         popularityItem.classList.add("selected");
       popularityItem.textContent = `${element}`;

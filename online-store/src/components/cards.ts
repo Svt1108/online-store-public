@@ -71,7 +71,7 @@ class CardList {
       buyWrap.classList.add("buy-wrap", "grey-text", "text-darken-4");
       cardContent.appendChild(buyWrap);
 
-      const inCart = document.createElement("span");
+      const inCart = document.createElement("div");
       inCart.innerHTML = "In cart:";
       inCart.classList.add("buy-wrap__in-cart");
       buyWrap.appendChild(inCart);
@@ -107,7 +107,7 @@ class CardList {
         basketSum.innerHTML = localStorage.getItem("sum") || "0";
         plus.classList.remove("disabled");
         if (quantityToCart.innerHTML === `0`) {
-          quantityToCart.classList.remove("no-empty");
+    //      quantityToCart.classList.remove("no-empty");
           inCart.classList.remove("no-empty");
           minus.classList.add("disabled");
         }
@@ -127,9 +127,9 @@ class CardList {
         );
         basketSum.innerHTML = localStorage.getItem("sum") || "0";
         minus.classList.remove("disabled");
-        quantityToCart.classList.add("no-empty");
+ //       quantityToCart.classList.add("no-empty");
         inCart.classList.add("no-empty");
-        if (quantityToCart.innerHTML === `${this.drawData[i].quantity}`)
+         if (quantityToCart.innerHTML === `${this.drawData[i].quantity}`)
           plus.classList.add("disabled");
       });
 
@@ -140,7 +140,7 @@ class CardList {
 
       if (quantityToCart.innerHTML === "0") minus.classList.add("disabled");
       else {
-        quantityToCart.classList.add("no-empty");
+  //      quantityToCart.classList.add("no-empty");
         inCart.classList.add("no-empty");
       }
       if (quantityToCart.innerHTML === `${this.drawData[i].quantity}`)

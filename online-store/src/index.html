@@ -27,25 +27,33 @@
     </nav>
 
     <div class="row main">
-        <div class="col s12 m4 l3 filters">
+        <div class="col s12 m4 l2">
+            <div class="filters">
             <p class="grey-text text-darken-2 filters__title">Author</p>
             <div class="z-depth-1 filters__content" id="author"></div>
             <p class="grey-text text-darken-2 filters__title">Color</p>
             <div class="z-depth-1 filters__content filters__content_color" id="color"></div>
             <p class="grey-text text-darken-2 filters__title">Popular</p>
-            <div class="z-depth-1 filters__content filters__content_popularity" id="popularity"></div>
-            <p class="grey-text text-darken-2 filters__title">Price</p>
+            <div class="z-depth-1 filters__content_popularity" id="popularity"></div>
+            <div class="slider-wrap">
+            <p class="grey-text text-darken-2 filters__title filters__title_slider">Price</p>
             <div id="price" class="filters__slider"></div>
-            <p class="grey-text text-darken-2 filters__title">Year</p>
+            </div>
+            <div class="slider-wrap">
+            <p class="grey-text text-darken-2 filters__title filters__title_slider">Year of creation</p>
             <div id="year" class="filters__slider"></div>
-            <p class="grey-text text-darken-2 filters__title">Quantity</p>
+            </div>
+            <div class="slider-wrap">
+            <p class="grey-text text-darken-2 filters__title filters__title_slider">Quantity in stock</p>
             <div id="quantity" class="filters__slider"></div>
-            <button class="btn waves-effect waves-light clear-button" id="reset">
+            </div>
+            <button class="btn waves-effect waves-light reset-button teal darken-1" id="reset">
           Reset filters
         </button>
         </div>
+        </div>
 
-        <div class="col s12 m8 l9">
+        <div class="col s12 m8 l10">
             <div class="search-and-sort">
                 <div class="input-field card search">
                     <i class="brown-text text-lighten-3 material-icons">search</i>
@@ -65,7 +73,7 @@
               <option value="year_high">Newest</option>
             </select>
                 </div>
-                <button class="btn waves-effect waves-light clear-button" id="clear">
+                <button class="btn waves-effect waves-light clear-button  teal darken-1" id="clear">
             Clear all
           </button>
             </div>
@@ -76,27 +84,13 @@
     <footer class="page-footer brown lighten-2">
         <div class="container">
             <div class="row">
-                <div class="col l6 s12">
                     <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-1">
-                        You can use rows and columns here to organize your footer content.
-                    </p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                    </ul>
-                </div>
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2022 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                © 2022 Copyright
+                <a class="grey-text text-lighten-4 right" href="#!">Links</a>
             </div>
         </div>
     </footer>

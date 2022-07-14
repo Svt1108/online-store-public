@@ -1,4 +1,4 @@
-import * as noUiSlider from "nouislider";
+import * as noUiSlider from "./nouislider";
 import { Data } from "../types/types";
 
 class Slider {

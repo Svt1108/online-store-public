@@ -12,6 +12,13 @@
     src: url(../assets/fonts/material-icons.woff2) format("woff2");
 }
 
+@font-face {
+    font-family: "Montserrat";
+    src: url("../assets/fonts/montserrat/montserrat.ttf"), url("../assets/fonts/montserrat/montserratblack.ttf"), url("../assets/fonts/montserrat/montserratbold.ttf"), url("../assets/fonts/montserrat/montserrathairline.ttf"), url("../assets/fonts/montserrat/montserratlight.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
 .material-icons {
     font-family: "Material Icons";
     font-weight: normal;
