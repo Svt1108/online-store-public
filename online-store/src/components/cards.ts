@@ -35,7 +35,7 @@ class CardList {
         "waves-light",
         "plate-card__image"
       );
-      cardImage.style.backgroundImage = `url(../assets/images/${this.drawData[i].img})`;
+      cardImage.style.backgroundImage = `url(./assets/images/${this.drawData[i].img})`;
       card.appendChild(cardImage);
 
       cardImage.addEventListener("click", () =>
@@ -108,7 +108,8 @@ class CardList {
           (Number(localStorage.getItem("sum")) - 1).toString()
         );
         basketSum.innerHTML = localStorage.getItem("sum") || "0";
-        if(basketSum.innerHTML ==="0") basketSum.classList.remove("no-empty_basket");
+        if (basketSum.innerHTML === "0")
+          basketSum.classList.remove("no-empty_basket");
         plus.classList.remove("disabled");
         if (quantityToCart.innerHTML === `0`) {
           quantityToCart.classList.remove("no-empty_quant");
@@ -127,7 +128,7 @@ class CardList {
         quantityToCart.innerHTML = (
           Number(quantityToCart.innerHTML) + 1
         ).toString();
-                localStorage.setItem(
+        localStorage.setItem(
           `${this.drawData[i].id}`,
           quantityToCart.innerHTML
         );
