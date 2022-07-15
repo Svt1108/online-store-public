@@ -4,6 +4,7 @@ import * as noUiSlider from "../slider/nouislider";
 import CardList from "../components/cards";
 import FilterList from "../components/filters";
 import Storage from "../components/storage";
+import ShoppingCart from "../components/cart";
 import Slider from "../slider/slider";
 
 class App {
@@ -11,6 +12,7 @@ class App {
   filterList: FilterList;
   storage: Storage;
   slider: Slider;
+  shoppingCart: ShoppingCart;
   data: Array<Data>;
   emptyArray: Array<string>;
   arrayOfFilters: Array<string>;
@@ -20,14 +22,13 @@ class App {
     this.filterList = new FilterList();
     this.storage = new Storage();
     this.slider = new Slider();
+    this.shoppingCart = new ShoppingCart();
     this.data = platesArray;
     this.emptyArray = [];
     this.arrayOfFilters = ["author", "color", "popularity"];
   }
 
   public start(): void {
-    this.slider.drawSlider(this.data);
-
     if (!localStorage.getItem("author_saved"))
       localStorage.setItem("author_saved", JSON.stringify(this.emptyArray));
     if (!localStorage.getItem("color_saved"))
@@ -51,6 +52,8 @@ class App {
     if (!localStorage.getItem("sort_saved"))
       localStorage.setItem("sort_saved", "default");
     if (!localStorage.getItem("sum")) localStorage.setItem("sum", "0");
+
+    this.slider.drawSlider(this.data);
 
     const basketSum = document.getElementById("basket-sum") as HTMLElement;
     basketSum.innerHTML = localStorage.getItem("sum") || "0";
@@ -136,6 +139,11 @@ class App {
     const reset = document.getElementById("reset") as HTMLElement;
     reset.addEventListener("click", () => {
       this.clearFilters();
+    });
+
+    const cart = document.getElementById("shopping-cart") as HTMLElement;
+    cart.addEventListener("click", () => {
+      this.shoppingCart.showCart(this.data);
     });
 
     this.storage.applyStorageFilter(this.data);

@@ -10,7 +10,7 @@ class MessageWindow {
     };
 
     const messageWindow = document.createElement("div");
-    messageWindow.classList.add("z-depth-3", "message-window");
+    messageWindow.classList.add("message-window");
     messageWindow.innerHTML = `<p class = "message-window__text">${text}</p>`;
     message.appendChild(messageWindow);
     setTimeout(() => {
