@@ -17,7 +17,7 @@ class ModalWindow {
 
     const modalImage = document.createElement("div");
     modalImage.classList.add("modal-window__image");
-    modalImage.style.backgroundImage = `url(../assets/images/${item.img})`;
+    modalImage.style.backgroundImage = `url(./assets/images/${item.img})`;
     modalWindow.appendChild(modalImage);
 
     const modalText = document.createElement("div");
