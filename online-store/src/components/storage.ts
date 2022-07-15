@@ -33,6 +33,9 @@ class Storage {
     const colorSaved: Array<string> = JSON.parse(
       localStorage.getItem("color_saved") as string
     );
+    const typeSaved: Array<string> = JSON.parse(
+      localStorage.getItem("type_saved") as string
+    );
     const popularitySaved: Array<string> = JSON.parse(
       localStorage.getItem("popularity_saved") as string
     );
@@ -49,6 +52,7 @@ class Storage {
       if (
         (authorSaved.includes(element.author) || authorSaved.length === 0) &&
         (colorSaved.includes(element.color) || colorSaved.length === 0) &&
+        (typeSaved.includes(element.type) || typeSaved.length === 0) &&
         (popularitySaved.includes(element.popularity) ||
           popularitySaved.length === 0) &&
         (Number(element.price) >= priceMinSaved || priceMinSaved === 0) &&

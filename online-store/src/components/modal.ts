@@ -7,8 +7,8 @@ class ModalWindow {
     document.body.append(modal);
     document.body.style.overflow = "hidden";
     modal.onclick = () => {
-        modal.remove();
-        document.body.style.overflow = "";
+      modal.remove();
+      document.body.style.overflow = "";
     };
 
     const modalWindow = document.createElement("div");
@@ -19,6 +19,23 @@ class ModalWindow {
     modalImage.classList.add("modal-window__image");
     modalImage.style.backgroundImage = `url(../assets/images/${item.img})`;
     modalWindow.appendChild(modalImage);
+
+    const modalText = document.createElement("div");
+    modalText.classList.add("modal-window__text");
+    modalWindow.appendChild(modalText);
+
+    modalText.innerHTML = `	
+    <p class = "gray-text text-darken-4 modal-window__title">${item.name}</p>	
+      <ul class = "modal-window__list">	
+      <li><strong>Author: </strong>${item.author}</li>	
+      <li><strong>Year: </strong>${item.year}</li>	
+      <br/>	
+      <li><strong>Material: </strong>${item.type}</li>	
+      <li><strong>Color: </strong>${item.color}</li>	
+      <li><strong>Popularity: </strong>${item.popularity}</li>	
+      <li><strong>Quantity: </strong>${item.quantity}</li>	
+      </ul>	
+      <p class = "grey-text text-darken-4 modal-window__title">${item.price} €</p>`;
 
     setTimeout(() => (modalWindow.style.transform = `scale(0.8)`), 100);
   }

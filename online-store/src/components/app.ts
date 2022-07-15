@@ -25,7 +25,7 @@ class App {
     this.shoppingCart = new ShoppingCart();
     this.data = platesArray;
     this.emptyArray = [];
-    this.arrayOfFilters = ["author", "color", "popularity"];
+    this.arrayOfFilters = ["author", "color", "type", "popularity"];
   }
 
   public start(): void {
@@ -33,6 +33,8 @@ class App {
       localStorage.setItem("author_saved", JSON.stringify(this.emptyArray));
     if (!localStorage.getItem("color_saved"))
       localStorage.setItem("color_saved", JSON.stringify(this.emptyArray));
+    if (!localStorage.getItem("type_saved"))
+      localStorage.setItem("type_saved", JSON.stringify(this.emptyArray));
     if (!localStorage.getItem("popularity_saved"))
       localStorage.setItem("popularity_saved", JSON.stringify(this.emptyArray));
     if (!localStorage.getItem("price_max_saved"))
@@ -57,7 +59,7 @@ class App {
 
     const basketSum = document.getElementById("basket-sum") as HTMLElement;
     basketSum.innerHTML = localStorage.getItem("sum") || "0";
-    if(basketSum.innerHTML !=="0") basketSum.classList.add("no-empty_basket");
+    if (basketSum.innerHTML !== "0") basketSum.classList.add("no-empty_basket");
 
     const author = document.getElementById("author") as HTMLElement;
     author.addEventListener("click", (event: Event) => {
@@ -71,6 +73,14 @@ class App {
     color.addEventListener("click", (event: Event) => {
       if (event.target !== color) {
         this.storage.checkStorage(event, "color");
+        this.storage.applyStorageFilter(this.data);
+      }
+    });
+
+    const type = document.getElementById("type") as HTMLElement;
+    type.addEventListener("click", (event: Event) => {
+      if (event.target !== type) {
+        this.storage.checkStorage(event, "type");
         this.storage.applyStorageFilter(this.data);
       }
     });
@@ -155,6 +165,7 @@ class App {
   private clearFilters(): void {
     localStorage.setItem("author_saved", JSON.stringify(this.emptyArray));
     localStorage.setItem("color_saved", JSON.stringify(this.emptyArray));
+    localStorage.setItem("type_saved", JSON.stringify(this.emptyArray));
     localStorage.setItem("popularity_saved", JSON.stringify(this.emptyArray));
     localStorage.setItem("price_max_saved", "");
     localStorage.setItem("price_min_saved", "");
