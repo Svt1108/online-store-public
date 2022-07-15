@@ -9,11 +9,14 @@ html {
     font-family: "Roboto", sans-serif;
 }
 
-.main {
-    padding-top: 80px;
+body {
     background-image: url("../assets/images/pattern-3.jpg");
     background-size: 25rem;
     background-repeat: repeat;
+}
+
+.main {
+    padding-top: 80px;
 }
 
 .divider_space {

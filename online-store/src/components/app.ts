@@ -57,6 +57,7 @@ class App {
 
     const basketSum = document.getElementById("basket-sum") as HTMLElement;
     basketSum.innerHTML = localStorage.getItem("sum") || "0";
+    if(basketSum.innerHTML !=="0") basketSum.classList.add("no-empty_basket");
 
     const author = document.getElementById("author") as HTMLElement;
     author.addEventListener("click", (event: Event) => {
@@ -134,6 +135,7 @@ class App {
       const sort = document.getElementById("sort") as HTMLInputElement;
       sort.value = "default";
       basketSum.innerHTML = "0";
+      basketSum.classList.remove("no-empty_basket");
     });
 
     const reset = document.getElementById("reset") as HTMLElement;

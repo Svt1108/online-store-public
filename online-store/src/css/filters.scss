@@ -47,12 +47,12 @@
     width: 90%;
     font-size: 0.9rem;
     line-height: 1.4rem;
-    transition: 0.1s;
+    transition: 0.3s;
     border-bottom: 1px solid rgba(0, 0, 0, 0.14);
     white-space: nowrap;
     &:hover {
         transform: scale(1.1);
-        font-weight: 500;
+        color: black;
         padding-left: 0.4rem;
     }
 }
@@ -68,9 +68,10 @@
     justify-content: center;
     align-items: center;
     border-radius: 3px;
-    transition: 0.1s;
+    transition: 0.3s;
     &:hover {
         transform: scale(1.1);
+        color: black;
     }
 }
 
@@ -117,8 +118,6 @@
 .slider-wrap {
     display: flex;
     flex-direction: column;
-    //    flex-wrap: nowrap;
-    //    align-items: center;
     align-items: flex-start;
     padding: 0.5rem 0;
     width: 93%;
@@ -136,5 +135,19 @@
 @media (max-width: 769px) {
     .filters {
         margin-top: 0;
+    }
+}
+
+@media (max-width: 601px) {
+    .filters {
+        justify-content: center;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        margin-top: 4.5rem;
+    }
+    .filter-content {
+        &:hover {
+            transform: scale(1);
+        }
     }
 }

@@ -6,11 +6,9 @@ class ModalWindow {
     modal.classList.add("modal-wrap");
     document.body.append(modal);
     document.body.style.overflow = "hidden";
-    modal.onclick = (event: Event) => {
-      if (event.target === modal) {
+    modal.onclick = () => {
         modal.remove();
         document.body.style.overflow = "";
-      }
     };
 
     const modalWindow = document.createElement("div");
@@ -21,14 +19,6 @@ class ModalWindow {
     modalImage.classList.add("modal-window__image");
     modalImage.style.backgroundImage = `url(../assets/images/${item.img})`;
     modalWindow.appendChild(modalImage);
-
-    const closeButton = document.createElement("button");
-    closeButton.classList.add("modal-window__close");
-    modalImage.appendChild(closeButton);
-    closeButton.onclick = () => {
-      modal.remove();
-      document.body.style.overflow = "";
-    };
 
     setTimeout(() => (modalWindow.style.transform = `scale(0.8)`), 100);
   }

@@ -24,41 +24,44 @@ class ShoppingCart {
       }
     };
     const cartWindow = document.createElement("div");
-    cartWindow.classList.add("cart-window");
+    cartWindow.classList.add("cart");
     cart.appendChild(cartWindow);
     setTimeout(() => {
       cartWindow.style.transform = `translateX(-40rem)`;
     }, 500);
     const titleCart = document.createElement("div");
     titleCart.innerHTML = "You chose these plates: ";
-    titleCart.classList.add("title-cart");
+    titleCart.classList.add("cart__title", "brown-text", "text-lighten-2");
     cartWindow.appendChild(titleCart);
 
     const itemsCart = document.createElement("div");
     let totalPrice = 0;
-    itemsCart.classList.add("items-cart");
+    itemsCart.classList.add("cart__items");
     cartWindow.appendChild(itemsCart);
     for (let i = 0; i < Math.max(...this.minMaxId); i++) {
       const quantity = Number(localStorage.getItem(this.data[i].id));
       if (quantity > 0) {
         const item = document.createElement("div");
         totalPrice = totalPrice + Number(quantity) * Number(this.data[i].price);
-        item.innerHTML = `${this.data[i].name}, ${quantity} * ${this.data[i].price}€`;
-        item.classList.add("item");
+        item.innerHTML = `<div>${this.data[i].name}</div> <div>${quantity} * ${this.data[i].price}€</div>`;
+        item.classList.add("cart__item");
         itemsCart.appendChild(item);
+        const divider = document.createElement("div");
+        divider.classList.add("divider");
+        itemsCart.appendChild(divider);
       }
     }
 
-    const divider = document.createElement("div");
-    divider.classList.add("divider");
-    cartWindow.appendChild(divider);
-
     const total = document.createElement("div");
-    total.innerHTML = `Total: ${localStorage.getItem(
+    total.innerHTML = `<div>Total:  ${localStorage.getItem(
       "sum"
-    )} pieces, ${totalPrice}€`;
-    total.classList.add("total-cart");
+    )} pieces</div><div>${totalPrice}€</div>`;
+    total.classList.add("cart__total");
     cartWindow.appendChild(total);
+
+    const btnWrap = document.createElement("div");
+    btnWrap.classList.add("btn-wrap");
+    cartWindow.appendChild(btnWrap);
 
     const btnClose = document.createElement("button");
     btnClose.innerHTML = "Turn to choice";
@@ -69,7 +72,12 @@ class ShoppingCart {
       "brown",
       "lighten-2"
     );
-    cartWindow.appendChild(btnClose);
+    btnWrap.appendChild(btnClose);
+
+    btnClose.onclick = () => {
+        cart.remove();
+        document.body.style.overflow = "";
+    };
 
     const btnBuy = document.createElement("button");
     btnBuy.innerHTML = "Buy all";
@@ -80,7 +88,7 @@ class ShoppingCart {
       "teal",
       "darken-1"
     );
-    cartWindow.appendChild(btnBuy);
+    btnWrap.appendChild(btnBuy);
   }
 }
 

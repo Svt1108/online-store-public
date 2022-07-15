@@ -56,3 +56,20 @@
     height: 2.3rem;
     align-items: center;
 }
+
+@media (max-width: 601px) {
+    .search-and-sort {
+     flex-wrap: wrap;
+     justify-content: center;
+     padding-right: 0;
+     margin: 0 auto;
+    }
+    .sort {
+        width: 45%;
+    }
+    .search {
+        padding: 0;
+        width: 45%;
+        margin-bottom: 0;
+}
+}

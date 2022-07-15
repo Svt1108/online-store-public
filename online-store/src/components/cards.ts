@@ -108,6 +108,7 @@ class CardList {
           (Number(localStorage.getItem("sum")) - 1).toString()
         );
         basketSum.innerHTML = localStorage.getItem("sum") || "0";
+        if(basketSum.innerHTML ==="0") basketSum.classList.remove("no-empty_basket");
         plus.classList.remove("disabled");
         if (quantityToCart.innerHTML === `0`) {
           quantityToCart.classList.remove("no-empty_quant");
@@ -126,7 +127,7 @@ class CardList {
         quantityToCart.innerHTML = (
           Number(quantityToCart.innerHTML) + 1
         ).toString();
-        localStorage.setItem(
+                localStorage.setItem(
           `${this.drawData[i].id}`,
           quantityToCart.innerHTML
         );
@@ -135,6 +136,7 @@ class CardList {
           (Number(localStorage.getItem("sum")) + 1).toString()
         );
         basketSum.innerHTML = localStorage.getItem("sum") || "0";
+        basketSum.classList.add("no-empty_basket");
         minus.classList.remove("disabled");
         quantityToCart.classList.add("no-empty_quant");
         inCart.classList.add("no-empty");
