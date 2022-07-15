@@ -22,26 +22,9 @@ class ModalWindow {
     modalImage.style.backgroundImage = `url(../assets/images/${item.img})`;
     modalWindow.appendChild(modalImage);
 
-    const modalText = document.createElement("div");
-    modalText.classList.add("modal-window__text");
-    modalWindow.appendChild(modalText);
-
-    modalText.innerHTML = `
-    <p class = "gray-text text-darken-4 modal-window__title">${item.name}</p>
-      <ul class = "modal-window__list">
-      <li><strong>Author: </strong>${item.author}</li>
-      <li><strong>Year: </strong>${item.year}</li>
-      <br/>
-      <li><strong>Type: </strong>${item.type}</li>
-      <li><strong>Color: </strong>${item.color}</li>
-      <li><strong>Popularity: </strong>${item.popularity}</li>
-      <li><strong>Quantity: </strong>${item.quantity}</li>
-      </ul>
-      <p class = "grey-text text-darken-4 modal-window__title">${item.price} €</p>`;
-
     const closeButton = document.createElement("button");
     closeButton.classList.add("modal-window__close");
-    modalWindow.appendChild(closeButton);
+    modalImage.appendChild(closeButton);
     closeButton.onclick = () => {
       modal.remove();
       document.body.style.overflow = "";

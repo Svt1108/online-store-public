@@ -42,8 +42,8 @@ class ShoppingCart {
       const quantity = Number(localStorage.getItem(this.data[i].id));
       if (quantity > 0) {
         const item = document.createElement("div");
-        totalPrice = totalPrice + Number(this.data[i].price);
-        item.innerHTML = `${this.data[i].name}, ${quantity}, ${this.data[i].price}€`;
+        totalPrice = totalPrice + Number(quantity) * Number(this.data[i].price);
+        item.innerHTML = `${this.data[i].name}, ${quantity} * ${this.data[i].price}€`;
         item.classList.add("item");
         itemsCart.appendChild(item);
       }
@@ -54,7 +54,9 @@ class ShoppingCart {
     cartWindow.appendChild(divider);
 
     const total = document.createElement("div");
-    total.innerHTML = `Total: ${localStorage.getItem("sum")}, ${totalPrice}€`;
+    total.innerHTML = `Total: ${localStorage.getItem(
+      "sum"
+    )} pieces, ${totalPrice}€`;
     total.classList.add("total-cart");
     cartWindow.appendChild(total);
 
