@@ -1,0 +1,26 @@
+.page-footer {
+    padding-top: 0;
+    font-family: "Circe", sans-serif;
+}
+
+.page-footer__logo {
+    width: 6rem;
+    height: 3rem;
+    background-image: url(../assets/svg/rs_school_js.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.page-footer__github-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    .page-footer__github {
+        width: 3rem;
+        height: 3rem;
+        background-image: url(../assets/svg/github-icon.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}

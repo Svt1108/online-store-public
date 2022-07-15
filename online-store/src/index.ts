@@ -9,6 +9,7 @@ import "./css/modal.scss";
 import "./css/message.scss";
 import "./css/search.scss";
 import "./css/cart.scss";
+import "./css/footer.scss";
 
 const app = new App();
 app.start();
