@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Method createMessage create correct message 1`] = `"<div class=\\"modal-wrap\\"><div class=\\"message-window\\"><p class=\\"message-window__text\\">This is a message</p></div></div>"`;

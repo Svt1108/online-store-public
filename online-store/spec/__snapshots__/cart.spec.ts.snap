@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Method showCart renders correctly 1`] = `"<div class=\\"modal-wrap\\"><div class=\\"cart\\"><div class=\\"cart__title brown-text text-lighten-2\\">You chose these plates: </div><div class=\\"cart__items\\"></div><div class=\\"cart__total\\"><div>Total:  0 pieces</div><div>0 €</div></div><div class=\\"btn-wrap\\"><button class=\\"btn waves-effect waves-light brown lighten-2\\">Turn to choice</button><button class=\\"btn waves-effect waves-light teal darken-1\\">Buy all</button></div></div></div>"`;
+
+exports[`Method showCart renders correctly with empty cart 1`] = `"<div class=\\"modal-wrap\\"><div class=\\"cart\\"><div class=\\"cart__title brown-text text-lighten-2\\">You chose these plates: </div><div class=\\"cart__items\\"></div><div class=\\"cart__total\\"><div>Total:  0 pieces</div><div>0 €</div></div><div class=\\"btn-wrap\\"><button class=\\"btn waves-effect waves-light brown lighten-2\\">Turn to choice</button><button class=\\"btn waves-effect waves-light teal darken-1\\">Buy all</button></div></div></div>"`;

@@ -54,9 +54,9 @@ class ShoppingCart {
     }
 
     const total = document.createElement("div");
-    total.innerHTML = `<div>Total:  ${localStorage.getItem(
-      "sum"
-    )} pieces</div><div>${totalPrice} €</div>`;
+    total.innerHTML = `<div>Total:  ${
+      localStorage.getItem("sum") || 0
+    } pieces</div><div>${totalPrice} €</div>`;
     total.classList.add("cart__total");
     cartWindow.appendChild(total);
 

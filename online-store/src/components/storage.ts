@@ -71,7 +71,7 @@ class Storage {
     this.cardList.drawCards(this.applySorting(valuesToFilter));
   }
 
-  private applySorting(data: Data[]): Data[] {
+  applySorting(data: Data[]): Data[] {
     const sortSaved = localStorage.getItem("sort_saved") as SortEnum;
     if (
       ![
@@ -91,7 +91,12 @@ class Storage {
   }
 }
 
-function sortType<T>(a: T, b: T, prop: keyof T, type: "low" | "high"): number {
+export function sortType<T>(
+  a: T,
+  b: T,
+  prop: keyof T,
+  type: "low" | "high"
+): number {
   if (prop === "name" && type === "low") return a[prop] > b[prop] ? 1 : -1;
   else if (prop === "name" && type === "high")
     return a[prop] < b[prop] ? 1 : -1;
