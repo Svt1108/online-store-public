@@ -73,6 +73,17 @@ class Storage {
 
   private applySorting(data: Data[]): Data[] {
     const sortSaved = localStorage.getItem("sort_saved") as SortEnum;
+    if (
+      ![
+        "name_low",
+        "name_high",
+        "year_low",
+        "year_high",
+        "price_low",
+        "price_low",
+      ].includes(sortSaved)
+    )
+      return data;
     const sortValue = sortSaved.split("_")[0] as keyof Data;
     const sortDirection = sortSaved.split("_")[1] as "low" | "high";
     data.sort((a, b) => sortType(a, b, sortValue, sortDirection));
