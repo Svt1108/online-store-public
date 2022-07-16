@@ -43,7 +43,7 @@ class ShoppingCart {
       if (quantity > 0) {
         const item = document.createElement("div");
         totalPrice = totalPrice + Number(quantity) * Number(this.data[i].price);
-        item.innerHTML = `<div>${this.data[i].name}</div> <div>${quantity} * ${this.data[i].price}€</div>`;
+        item.innerHTML = `<div>${this.data[i].name}</div> <div>${quantity} * ${this.data[i].price} €</div>`;
         item.classList.add("cart__item");
         itemsCart.appendChild(item);
         const divider = document.createElement("div");
@@ -55,7 +55,7 @@ class ShoppingCart {
     const total = document.createElement("div");
     total.innerHTML = `<div>Total:  ${localStorage.getItem(
       "sum"
-    )} pieces</div><div>${totalPrice}€</div>`;
+    )} pieces</div><div>${totalPrice} €</div>`;
     total.classList.add("cart__total");
     cartWindow.appendChild(total);
 
@@ -75,8 +75,8 @@ class ShoppingCart {
     btnWrap.appendChild(btnClose);
 
     btnClose.onclick = () => {
-        cart.remove();
-        document.body.style.overflow = "";
+      cart.remove();
+      document.body.style.overflow = "";
     };
 
     const btnBuy = document.createElement("button");

@@ -19,7 +19,7 @@ class CardList {
     this.drawData = data;
     content.innerHTML = "";
     if (this.drawData.length === 0) {
-      content.innerHTML = `<p class = "z-depth-1 message teal-text text-darken-3">Sorry, we can't find anything. Try another filter, please!</p>`;
+      content.innerHTML = `<p class = "z-depth-1 message teal-text text-darken-3">Sorry, we can't find anything. Try another query, please!</p>`;
       return;
     }
     for (let i = 0; i < this.drawData.length; i++) {
