@@ -14,7 +14,6 @@ class MessageWindow {
     messageWindow.innerHTML = `<p class = "message-window__text">${text}</p>`;
     message.appendChild(messageWindow);
     setTimeout(() => {
-      //      messageWindow.style.transform = `translateX(-40rem)`;
       messageWindow.style.transform = `scale(1)`;
     }, 500);
     setTimeout(() => {

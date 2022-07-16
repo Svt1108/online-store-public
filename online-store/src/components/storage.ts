@@ -82,12 +82,12 @@ class Storage {
 
 function sortType<T>(a: T, b: T, prop: keyof T, type: "low" | "high"): number {
   if (prop === "name" && type === "low") return a[prop] > b[prop] ? 1 : -1;
-  if (prop === "name" && type === "high") return a[prop] < b[prop] ? 1 : -1;
-  if ((prop === "price" || prop === "year") && type === "low")
+  else if (prop === "name" && type === "high")
+    return a[prop] < b[prop] ? 1 : -1;
+  else if ((prop === "price" || prop === "year") && type === "low")
     return Number(a[prop]) - Number(b[prop]);
-  if ((prop === "price" || prop === "year") && type === "high")
-    return Number(b[prop]) - Number(a[prop]);
-  return 0;
+  else (prop === "price" || prop === "year") && type === "high";
+  return Number(b[prop]) - Number(a[prop]);
 }
 
 export default Storage;
