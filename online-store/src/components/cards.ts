@@ -96,18 +96,31 @@ class CardList {
       buyWrap.appendChild(plus);
 
       minus.addEventListener("click", () => {
-        quantityToCart.innerHTML = (
-          Number(quantityToCart.innerHTML) - 1
-        ).toString();
+        quantityToCart.innerHTML =
+          quantityToCart.innerHTML === "0"
+            ? "0"
+            : (Number(quantityToCart.innerHTML) - 1).toString();
         localStorage.setItem(
           `${this.drawData[i].id}`,
           quantityToCart.innerHTML
         );
-        localStorage.setItem(
-          "sum",
-          (Number(localStorage.getItem("sum")) - 1).toString()
-        );
-        basketSum.innerHTML = localStorage.getItem("sum") || "0";
+        // localStorage.setItem(
+        //   `${this.drawData[i].id}`,
+        //   (Number(quantityToCart.innerHTML) - 1).toString()
+        // );
+        // quantityToCart.innerHTML = localStorage.getItem(`${this.drawData[i].id}`) || "0";
+
+        basketSum.innerHTML =
+          basketSum.innerHTML === "0"
+            ? "0"
+            : (Number(basketSum.innerHTML) - 1).toString();
+        localStorage.setItem("sum", basketSum.innerHTML);
+
+        // localStorage.setItem(
+        //   "sum",
+        //   (Number(localStorage.getItem("sum")) - 1).toString()
+        // );
+        // basketSum.innerHTML = localStorage.getItem("sum") || "0";
         if (basketSum.innerHTML === "0")
           basketSum.classList.remove("no-empty_basket");
         plus.classList.remove("disabled");
