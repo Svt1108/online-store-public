@@ -15,7 +15,6 @@ class App {
   shoppingCart: ShoppingCart;
   data: Array<Data>;
   emptyArray: Array<string>;
-  arrayOfFilters: Array<string>;
 
   constructor() {
     this.cardList = new CardList();
@@ -25,7 +24,6 @@ class App {
     this.shoppingCart = new ShoppingCart();
     this.data = platesArray;
     this.emptyArray = [];
-    this.arrayOfFilters = ["author", "color", "type", "popularity"];
   }
 
   public start(): void {
@@ -64,7 +62,7 @@ class App {
     const author = document.getElementById("author") as HTMLElement;
     author.addEventListener("click", (event: Event) => {
       if (event.target !== author) {
-        this.storage.checkStorage(event, "author");
+        this.storage.changeFilterState(event, "author");
         this.storage.applyStorageFilter(this.data);
       }
     });
@@ -72,7 +70,7 @@ class App {
     const color = document.getElementById("color") as HTMLElement;
     color.addEventListener("click", (event: Event) => {
       if (event.target !== color) {
-        this.storage.checkStorage(event, "color");
+        this.storage.changeFilterState(event, "color");
         this.storage.applyStorageFilter(this.data);
       }
     });
@@ -80,7 +78,7 @@ class App {
     const type = document.getElementById("type") as HTMLElement;
     type.addEventListener("click", (event: Event) => {
       if (event.target !== type) {
-        this.storage.checkStorage(event, "type");
+        this.storage.changeFilterState(event, "type");
         this.storage.applyStorageFilter(this.data);
       }
     });
@@ -88,7 +86,7 @@ class App {
     const popularity = document.getElementById("popularity") as HTMLElement;
     popularity.addEventListener("click", (event: Event) => {
       if (event.target !== popularity) {
-        this.storage.checkStorage(event, "popularity");
+        this.storage.changeFilterState(event, "popularity");
         this.storage.applyStorageFilter(this.data);
       }
     });

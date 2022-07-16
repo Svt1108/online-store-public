@@ -1,4 +1,4 @@
-import { Data, SortEnum } from "../types/types";
+import { Data, SortEnum, ValueFilterName } from "../types/types";
 import CardList from "../components/cards";
 
 class Storage {
@@ -8,7 +8,7 @@ class Storage {
     this.cardList = new CardList();
   }
 
-  public checkStorage(event: Event, filterName: string): void {
+  public changeFilterState(event: Event, filterName: ValueFilterName): void {
     const targetContent = (<HTMLElement>event.target).textContent as string;
     const contentSaved: Array<string> = JSON.parse(
       localStorage.getItem(`${filterName}_saved`) as string
@@ -47,7 +47,7 @@ class Storage {
     const quantityMaxSaved = Number(localStorage.getItem("quantity_max_saved"));
     const searchSaved = localStorage.getItem("search_saved") as string;
 
-    const valuesFilter: Data[] = [];
+    const valuesToFilter: Data[] = [];
     data.forEach((element) => {
       if (
         (authorSaved.includes(element.author) || authorSaved.length === 0) &&
@@ -66,27 +66,28 @@ class Storage {
         (element.name.toLowerCase().indexOf(searchSaved) !== -1 ||
           searchSaved === "")
       )
-        valuesFilter.push(element);
+        valuesToFilter.push(element);
     });
-    this.cardList.drawCards(this.applySorting(valuesFilter));
+    this.cardList.drawCards(this.applySorting(valuesToFilter));
   }
 
   private applySorting(data: Data[]): Data[] {
     const sortSaved = localStorage.getItem("sort_saved") as SortEnum;
-    if (sortSaved === "name_low")
-      data.sort((a, b) => (a.name > b.name ? 1 : -1));
-    if (sortSaved === "name_high")
-      data.sort((a, b) => (a.name < b.name ? 1 : -1));
-    if (sortSaved === "price_low")
-      data.sort((a, b) => Number(a.price) - Number(b.price));
-    if (sortSaved === "price_high")
-      data.sort((a, b) => Number(b.price) - Number(a.price));
-    if (sortSaved === "year_low")
-      data.sort((a, b) => Number(a.year) - Number(b.year));
-    if (sortSaved === "year_high")
-      data.sort((a, b) => Number(b.year) - Number(a.year));
+    const sortValue = sortSaved.split("_")[0] as keyof Data;
+    const sortDirection = sortSaved.split("_")[1] as "low" | "high";
+    data.sort((a, b) => sortType(a, b, sortValue, sortDirection));
     return data;
   }
+}
+
+function sortType<T>(a: T, b: T, prop: keyof T, type: "low" | "high"): number {
+  if (prop === "name" && type === "low") return a[prop] > b[prop] ? 1 : -1;
+  if (prop === "name" && type === "high") return a[prop] < b[prop] ? 1 : -1;
+  if ((prop === "price" || prop === "year") && type === "low")
+    return Number(a[prop]) - Number(b[prop]);
+  if ((prop === "price" || prop === "year") && type === "high")
+    return Number(b[prop]) - Number(a[prop]);
+  return 0;
 }
 
 export default Storage;

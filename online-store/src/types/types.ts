@@ -21,3 +21,5 @@ export enum SortEnum {
   year_low = "year_low",
   year_high = "year_high",
 }
+
+export type ValueFilterName = "author" | "color" | "type" | "popularity";

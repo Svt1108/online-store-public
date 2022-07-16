@@ -7,6 +7,7 @@ class ShoppingCart {
     this.data = [];
     this.minMaxId = [];
   }
+
   public showCart(data: Data[]): void {
     this.data = data;
     this.data.forEach((element) => {

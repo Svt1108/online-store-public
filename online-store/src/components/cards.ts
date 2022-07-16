@@ -95,73 +95,18 @@ class CardList {
       plus.classList.add("buy-wrap__plus", "z-depth-1", "material-icons");
       buyWrap.appendChild(plus);
 
-      minus.addEventListener("click", () => {
-        quantityToCart.innerHTML =
-          quantityToCart.innerHTML === "0"
-            ? "0"
-            : (Number(quantityToCart.innerHTML) - 1).toString();
-        localStorage.setItem(
-          `${this.drawData[i].id}`,
-          quantityToCart.innerHTML
-        );
-        // localStorage.setItem(
-        //   `${this.drawData[i].id}`,
-        //   (Number(quantityToCart.innerHTML) - 1).toString()
-        // );
-        // quantityToCart.innerHTML = localStorage.getItem(`${this.drawData[i].id}`) || "0";
-
-        basketSum.innerHTML =
-          basketSum.innerHTML === "0"
-            ? "0"
-            : (Number(basketSum.innerHTML) - 1).toString();
-        localStorage.setItem("sum", basketSum.innerHTML);
-
-        // localStorage.setItem(
-        //   "sum",
-        //   (Number(localStorage.getItem("sum")) - 1).toString()
-        // );
-        // basketSum.innerHTML = localStorage.getItem("sum") || "0";
-        if (basketSum.innerHTML === "0")
-          basketSum.classList.remove("no-empty_basket");
-        plus.classList.remove("disabled");
-        if (quantityToCart.innerHTML === `0`) {
-          quantityToCart.classList.remove("no-empty_quant");
-          inCart.classList.remove("no-empty");
-          minus.classList.add("disabled");
-        }
-      });
-
-      plus.addEventListener("click", () => {
-        if (localStorage.getItem("sum") === "20") {
-          this.messageWindow.createMessage(
-            `Sorry, maximum 20 items in the cart...`
-          );
-          return;
-        }
-        quantityToCart.innerHTML = (
-          Number(quantityToCart.innerHTML) + 1
-        ).toString();
-        localStorage.setItem(
-          `${this.drawData[i].id}`,
-          quantityToCart.innerHTML
-        );
-        localStorage.setItem(
-          "sum",
-          (Number(localStorage.getItem("sum")) + 1).toString()
-        );
-        basketSum.innerHTML = localStorage.getItem("sum") || "0";
-        basketSum.classList.add("no-empty_basket");
-        minus.classList.remove("disabled");
-        quantityToCart.classList.add("no-empty_quant");
-        inCart.classList.add("no-empty");
-        if (quantityToCart.innerHTML === `${this.drawData[i].quantity}`)
-          plus.classList.add("disabled");
-      });
-
       const maximum = document.createElement("span");
       maximum.innerHTML = `max: ${this.drawData[i].quantity}`;
       maximum.classList.add("buy-wrap__maximum", "grey-text", "text-lighten-1");
       buyWrap.appendChild(maximum);
+
+      minus.addEventListener("click", () =>
+        this.deleteItem(quantityToCart, basketSum, minus, inCart, plus, i)
+      );
+
+      plus.addEventListener("click", () =>
+        this.addItem(quantityToCart, basketSum, minus, inCart, plus, i)
+      );
 
       if (quantityToCart.innerHTML === "0") minus.classList.add("disabled");
       else {
@@ -172,6 +117,69 @@ class CardList {
         plus.classList.add("disabled");
 
       setTimeout(() => (card.style.opacity = `1`), 100);
+    }
+  }
+
+  private addItem(
+    quantityToCart: HTMLDivElement,
+    basketSum: HTMLElement,
+    minus: HTMLDivElement,
+    inCart: HTMLDivElement,
+    plus: HTMLDivElement,
+    i: number
+  ): void {
+    {
+      if (localStorage.getItem("sum") === "20") {
+        this.messageWindow.createMessage(
+          `Sorry, maximum 20 items in the cart...`
+        );
+        return;
+      }
+      quantityToCart.innerHTML = (
+        Number(quantityToCart.innerHTML) + 1
+      ).toString();
+      localStorage.setItem(`${this.drawData[i].id}`, quantityToCart.innerHTML);
+      localStorage.setItem(
+        "sum",
+        (Number(localStorage.getItem("sum")) + 1).toString()
+      );
+      basketSum.innerHTML = localStorage.getItem("sum") || "0";
+      basketSum.classList.add("no-empty_basket");
+      minus.classList.remove("disabled");
+      quantityToCart.classList.add("no-empty_quant");
+      inCart.classList.add("no-empty");
+      if (quantityToCart.innerHTML === `${this.drawData[i].quantity}`)
+        plus.classList.add("disabled");
+    }
+  }
+
+  private deleteItem(
+    quantityToCart: HTMLDivElement,
+    basketSum: HTMLElement,
+    minus: HTMLDivElement,
+    inCart: HTMLDivElement,
+    plus: HTMLDivElement,
+    i: number
+  ) {
+    {
+      quantityToCart.innerHTML =
+        quantityToCart.innerHTML === "0"
+          ? "0"
+          : (Number(quantityToCart.innerHTML) - 1).toString();
+      localStorage.setItem(`${this.drawData[i].id}`, quantityToCart.innerHTML);
+      basketSum.innerHTML =
+        basketSum.innerHTML === "0"
+          ? "0"
+          : (Number(basketSum.innerHTML) - 1).toString();
+      localStorage.setItem("sum", basketSum.innerHTML);
+      if (basketSum.innerHTML === "0")
+        basketSum.classList.remove("no-empty_basket");
+      plus.classList.remove("disabled");
+      if (quantityToCart.innerHTML === `0`) {
+        quantityToCart.classList.remove("no-empty_quant");
+        inCart.classList.remove("no-empty");
+        minus.classList.add("disabled");
+      }
     }
   }
 }
