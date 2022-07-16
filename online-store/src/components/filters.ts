@@ -6,7 +6,6 @@ class FilterList {
   setColor: Set<string>;
   setType: Set<string>;
   setPopularity: Set<string>;
-  //  arrayOfFilters: Array<string>;
 
   constructor() {
     this.drawData = [];
@@ -14,7 +13,6 @@ class FilterList {
     this.setColor = new Set();
     this.setType = new Set();
     this.setPopularity = new Set();
-    //   this.arrayOfFilters = ["author", "color", "type", "popularity"];
   }
 
   public setFilters(data: Array<Data>): void {

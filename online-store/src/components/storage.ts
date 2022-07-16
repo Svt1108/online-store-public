@@ -80,7 +80,7 @@ class Storage {
         "year_low",
         "year_high",
         "price_low",
-        "price_low",
+        "price_high",
       ].includes(sortSaved)
     )
       return data;
