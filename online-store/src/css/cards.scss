@@ -68,6 +68,9 @@
         &:hover {
             transform: scale(1.1);
         }
+        &:active {
+            background-color: #e0f2f1;
+        }
     }
     .buy-wrap__in-cart {
         padding: 0 0.1rem;

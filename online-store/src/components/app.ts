@@ -94,24 +94,24 @@ class App {
     });
 
     const price = document.getElementById("price") as noUiSlider.target;
-    price.noUiSlider!.on("change", () => {
-      const sliderValues = price.noUiSlider!.get() as Array<string>;
+    price.noUiSlider?.on("change", () => {
+      const sliderValues = price.noUiSlider?.get() as Array<string>;
       localStorage.setItem("price_min_saved", sliderValues[0]);
       localStorage.setItem("price_max_saved", sliderValues[1]);
       this.storage.applyStorageFilter(this.data);
     });
 
     const year = document.getElementById("year") as noUiSlider.target;
-    year.noUiSlider!.on("change", () => {
-      const sliderValues = year.noUiSlider!.get() as Array<string>;
+    year.noUiSlider?.on("change", () => {
+      const sliderValues = year.noUiSlider?.get() as Array<string>;
       localStorage.setItem("year_min_saved", sliderValues[0]);
       localStorage.setItem("year_max_saved", sliderValues[1]);
       this.storage.applyStorageFilter(this.data);
     });
 
     const quantity = document.getElementById("quantity") as noUiSlider.target;
-    quantity.noUiSlider!.on("change", () => {
-      const sliderValues = quantity.noUiSlider!.get() as Array<string>;
+    quantity.noUiSlider?.on("change", () => {
+      const sliderValues = quantity.noUiSlider?.get() as Array<string>;
       localStorage.setItem("quantity_min_saved", sliderValues[0]);
       localStorage.setItem("quantity_max_saved", sliderValues[1]);
       this.storage.applyStorageFilter(this.data);
