@@ -25,7 +25,7 @@ describe("Method drawSlider", () => {
     <div id="year" class="filters__slider"></div>
     <div id="quantity" class="filters__slider"></div>
 `;
-    let data = [
+    const data = [
       {
         id: "1",
         name: "Lovely Mexico",

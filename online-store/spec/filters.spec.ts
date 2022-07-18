@@ -50,7 +50,7 @@ describe("Method setFilters", () => {
       localStorage.setItem("sort_saved", "default");
     if (!localStorage.getItem("sum")) localStorage.setItem("sum", "0");
 
-    let data = [
+    const data = [
       {
         id: "1",
         name: "Lovely Mexico",

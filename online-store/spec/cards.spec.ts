@@ -32,7 +32,7 @@ describe("Method drawCards", () => {
   });
 
   test("should render cards", () => {
-    let data = [
+    const data = [
       {
         id: "1",
         name: "Lovely Mexico",
