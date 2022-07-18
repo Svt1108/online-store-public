@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Method drawOneSlider renders correctly 1`] = `
+"
+                <div id=\\"name\\" class=\\"filters__slider noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr\\"><div class=\\"noUi-base\\"><div class=\\"noUi-connects\\"><div class=\\"noUi-connect\\" style=\\"transform: translate(22.22222222222222%, 0) scale(0.44444444444444436, 1);\\"></div></div><div class=\\"noUi-origin\\" style=\\"transform: translate(-77.77777777777777%, 0); z-index: 5;\\"><div class=\\"noUi-handle noUi-handle-lower\\" data-handle=\\"0\\" tabindex=\\"0\\" role=\\"slider\\" aria-orientation=\\"horizontal\\" aria-valuemin=\\"1.0\\" aria-valuemax=\\"7.0\\" aria-valuenow=\\"3.0\\" aria-valuetext=\\"3.00\\"><div class=\\"noUi-touch-area\\"></div><div class=\\"noUi-tooltip\\">3</div></div></div><div class=\\"noUi-origin\\" style=\\"transform: translate(-33.33333333333334%, 0); z-index: 4;\\"><div class=\\"noUi-handle noUi-handle-upper\\" data-handle=\\"1\\" tabindex=\\"0\\" role=\\"slider\\" aria-orientation=\\"horizontal\\" aria-valuemin=\\"3.0\\" aria-valuemax=\\"10.0\\" aria-valuenow=\\"7.0\\" aria-valuetext=\\"7.00\\"><div class=\\"noUi-touch-area\\"></div><div class=\\"noUi-tooltip\\">7</div></div></div></div></div>
+  "
+`;
+
+exports[`Method drawOneSlider renders correctly without currency 1`] = `
+"
+                <div id=\\"name\\" class=\\"filters__slider noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr\\"><div class=\\"noUi-base\\"><div class=\\"noUi-connects\\"><div class=\\"noUi-connect\\" style=\\"transform: translate(22.22222222222222%, 0) scale(0.44444444444444436, 1);\\"></div></div><div class=\\"noUi-origin\\" style=\\"transform: translate(-77.77777777777777%, 0); z-index: 5;\\"><div class=\\"noUi-handle noUi-handle-lower\\" data-handle=\\"0\\" tabindex=\\"0\\" role=\\"slider\\" aria-orientation=\\"horizontal\\" aria-valuemin=\\"1.0\\" aria-valuemax=\\"7.0\\" aria-valuenow=\\"3.0\\" aria-valuetext=\\"3.00\\"><div class=\\"noUi-touch-area\\"></div><div class=\\"noUi-tooltip\\">3</div></div></div><div class=\\"noUi-origin\\" style=\\"transform: translate(-33.33333333333334%, 0); z-index: 4;\\"><div class=\\"noUi-handle noUi-handle-upper\\" data-handle=\\"1\\" tabindex=\\"0\\" role=\\"slider\\" aria-orientation=\\"horizontal\\" aria-valuemin=\\"3.0\\" aria-valuemax=\\"10.0\\" aria-valuenow=\\"7.0\\" aria-valuetext=\\"7.00\\"><div class=\\"noUi-touch-area\\"></div><div class=\\"noUi-tooltip\\">7</div></div></div></div></div>
+  "
+`;
+
 exports[`Method drawSlider renders correctly 1`] = `""`;
 
 exports[`Method drawSlider renders correctly with empty data 1`] = `""`;
+
+exports[`Method drawSlider renders correctly with empty data 2`] = `""`;
+
+exports[`Method drawSlider renders correctly with no empty data 1`] = `""`;

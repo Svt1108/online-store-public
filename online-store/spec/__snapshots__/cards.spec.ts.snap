@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Method drawCards should call setFilters 1`] = `
+"
+    <div class=\\"row main\\">
+        <div class=\\"col s12 m4 l2\\">
+            <div class=\\"filters\\">
+                <div class=\\"z-depth-1 filters__content\\" id=\\"author\\"></div>
+                <div class=\\"z-depth-1 filters__content filters__content_color\\" id=\\"color\\"></div>
+                <div class=\\"z-depth-1 filters__content_type\\" id=\\"type\\"></div>
+                <div class=\\"z-depth-1 filters__content_popularity\\" id=\\"popularity\\"></div>
+                <div id=\\"price\\" class=\\"filters__slider\\"></div>
+                <div id=\\"year\\" class=\\"filters__slider\\"></div>
+                <div id=\\"quantity\\" class=\\"filters__slider\\"></div>
+            </div>
+        </div>
+    </div>
+    <div class=\\"content\\"><div class=\\"card plate-card z-depth-2\\"><div class=\\"card-image waves-effect waves-block waves-light plate-card__image\\" style=\\"background-image: url(./assets/images/plate-1.jpg);\\"><div class=\\"glass material-icons\\">zoom_out_map</div></div><div class=\\"card-content\\"><p class=\\"grey-text text-darken-2 plate-card__title\\">Lovely Mexico</p><p class=\\"grey-text text-darken-4 plate-card__text\\">Grazielli David, 2022
+      <p class=\\"grey-text text-darken-4 modal-window__title\\">10 €</p></p><div class=\\"divider\\"></div><div class=\\"buy-wrap grey-text text-darken-4\\"><div class=\\"buy-wrap__in-cart\\">In cart:</div><div class=\\"buy-wrap__minus z-depth-1 material-icons disabled\\">remove</div><div class=\\"buy-wrap__quantity-to-cart\\">0</div><div class=\\"buy-wrap__plus z-depth-1 material-icons\\">add</div><span class=\\"buy-wrap__maximum grey-text text-lighten-1\\">max: 3</span></div></div></div><div class=\\"card plate-card z-depth-2\\"><div class=\\"card-image waves-effect waves-block waves-light plate-card__image\\" style=\\"background-image: url(./assets/images/plate-2.jpg);\\"><div class=\\"glass material-icons\\">zoom_out_map</div></div><div class=\\"card-content\\"><p class=\\"grey-text text-darken-2 plate-card__title\\">Coffee time</p><p class=\\"grey-text text-darken-4 plate-card__text\\">Milena Kibede, 2021
+      <p class=\\"grey-text text-darken-4 modal-window__title\\">37 €</p></p><div class=\\"divider\\"></div><div class=\\"buy-wrap grey-text text-darken-4\\"><div class=\\"buy-wrap__in-cart\\">In cart:</div><div class=\\"buy-wrap__minus z-depth-1 material-icons disabled\\">remove</div><div class=\\"buy-wrap__quantity-to-cart\\">0</div><div class=\\"buy-wrap__plus z-depth-1 material-icons\\">add</div><span class=\\"buy-wrap__maximum grey-text text-lighten-1\\">max: 5</span></div></div></div></div>
+  "
+`;
+
+exports[`Method drawCards should render cards 1`] = `
+"
+  <div class=\\"row main\\">
+      <div class=\\"col s12 m4 l2\\">
+          <div class=\\"filters\\">
+              <div class=\\"z-depth-1 filters__content\\" id=\\"author\\"></div>
+              <div class=\\"z-depth-1 filters__content filters__content_color\\" id=\\"color\\"></div>
+              <div class=\\"z-depth-1 filters__content_type\\" id=\\"type\\"></div>
+              <div class=\\"z-depth-1 filters__content_popularity\\" id=\\"popularity\\"></div>
+              <div id=\\"price\\" class=\\"filters__slider\\"></div>
+              <div id=\\"year\\" class=\\"filters__slider\\"></div>
+              <div id=\\"quantity\\" class=\\"filters__slider\\"></div>
+          </div>
+      </div>
+  </div>
+  <div class=\\"content\\"><div class=\\"card plate-card z-depth-2\\"><div class=\\"card-image waves-effect waves-block waves-light plate-card__image\\" style=\\"background-image: url(./assets/images/plate-1.jpg);\\"><div class=\\"glass material-icons\\">zoom_out_map</div></div><div class=\\"card-content\\"><p class=\\"grey-text text-darken-2 plate-card__title\\">Lovely Mexico</p><p class=\\"grey-text text-darken-4 plate-card__text\\">Grazielli David, 2022
+      <p class=\\"grey-text text-darken-4 modal-window__title\\">10 €</p></p><div class=\\"divider\\"></div><div class=\\"buy-wrap grey-text text-darken-4\\"><div class=\\"buy-wrap__in-cart\\">In cart:</div><div class=\\"buy-wrap__minus z-depth-1 material-icons disabled\\">remove</div><div class=\\"buy-wrap__quantity-to-cart\\">0</div><div class=\\"buy-wrap__plus z-depth-1 material-icons\\">add</div><span class=\\"buy-wrap__maximum grey-text text-lighten-1\\">max: 3</span></div></div></div><div class=\\"card plate-card z-depth-2\\"><div class=\\"card-image waves-effect waves-block waves-light plate-card__image\\" style=\\"background-image: url(./assets/images/plate-2.jpg);\\"><div class=\\"glass material-icons\\">zoom_out_map</div></div><div class=\\"card-content\\"><p class=\\"grey-text text-darken-2 plate-card__title\\">Coffee time</p><p class=\\"grey-text text-darken-4 plate-card__text\\">Milena Kibede, 2021
+      <p class=\\"grey-text text-darken-4 modal-window__title\\">37 €</p></p><div class=\\"divider\\"></div><div class=\\"buy-wrap grey-text text-darken-4\\"><div class=\\"buy-wrap__in-cart\\">In cart:</div><div class=\\"buy-wrap__minus z-depth-1 material-icons disabled\\">remove</div><div class=\\"buy-wrap__quantity-to-cart\\">0</div><div class=\\"buy-wrap__plus z-depth-1 material-icons\\">add</div><span class=\\"buy-wrap__maximum grey-text text-lighten-1\\">max: 5</span></div></div></div></div>
+"
+`;
+
+exports[`Method drawCards should render no result message 1`] = `
+"
+  <div class=\\"row main\\">
+      <div class=\\"col s12 m4 l2\\">
+          <div class=\\"filters\\">
+              <div class=\\"z-depth-1 filters__content\\" id=\\"author\\"></div>
+              <div class=\\"z-depth-1 filters__content filters__content_color\\" id=\\"color\\"></div>
+              <div class=\\"z-depth-1 filters__content_type\\" id=\\"type\\"></div>
+              <div class=\\"z-depth-1 filters__content_popularity\\" id=\\"popularity\\"></div>
+              <div id=\\"price\\" class=\\"filters__slider\\"></div>
+              <div id=\\"year\\" class=\\"filters__slider\\"></div>
+              <div id=\\"quantity\\" class=\\"filters__slider\\"></div>
+          </div>
+      </div>
+  </div>
+  <div class=\\"content\\"><p class=\\"z-depth-1 message teal-text text-darken-3\\">Sorry, we can't find anything. Try another query, please!</p></div>
+"
+`;

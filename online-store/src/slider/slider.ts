@@ -33,54 +33,48 @@ class Slider {
 
     const price = document.getElementById("price") as noUiSlider.target;
     if (!price) return;
-    noUiSlider.create(price as HTMLElement, {
-      start: [priceMinSaved, priceMaxSaved],
-      connect: true,
-      step: 1,
-      orientation: "horizontal",
-      range: {
-        min: Math.min(...this.minMaxPrice) || 0,
-        max: Math.max(...this.minMaxPrice) || 0,
-      },
-      tooltips: {
-        to: function (numericValue) {
-          return numericValue.toFixed() + " €";
-        },
-      },
-    });
+    this.drawOneSlider(
+      price,
+      priceMinSaved,
+      priceMaxSaved,
+      this.minMaxPrice,
+      " €"
+    );
 
     const year = document.getElementById("year") as noUiSlider.target;
     if (!year) return;
-    noUiSlider.create(year as HTMLElement, {
-      start: [yearMinSaved, yearMaxSaved],
-      connect: true,
-      step: 1,
-      orientation: "horizontal",
-      range: {
-        min: Math.min(...this.minMaxYear) || 0,
-        max: Math.max(...this.minMaxYear) || 0,
-      },
-      tooltips: {
-        to: function (numericValue) {
-          return numericValue.toFixed();
-        },
-      },
-    });
+    this.drawOneSlider(year, yearMinSaved, yearMaxSaved, this.minMaxYear, "");
 
     const quantity = document.getElementById("quantity") as noUiSlider.target;
     if (!quantity) return;
-    noUiSlider.create(quantity as HTMLElement, {
-      start: [quantityMinSaved, quantityMaxSaved],
+    this.drawOneSlider(
+      quantity,
+      quantityMinSaved,
+      quantityMaxSaved,
+      this.minMaxQuantity,
+      ""
+    );
+  }
+
+  drawOneSlider(
+    name: HTMLElement,
+    startMin: number,
+    startMax: number,
+    minMaxName: number[],
+    addition: string
+  ) {
+    noUiSlider.create(name as HTMLElement, {
+      start: [startMin, startMax],
       connect: true,
       step: 1,
       orientation: "horizontal",
       range: {
-        min: Math.min(...this.minMaxQuantity) || 0,
-        max: Math.max(...this.minMaxQuantity) || 0,
+        min: Math.min(...minMaxName) || 0,
+        max: Math.max(...minMaxName) || 0,
       },
       tooltips: {
         to: function (numericValue) {
-          return numericValue.toFixed();
+          return numericValue.toFixed() + addition;
         },
       },
     });
