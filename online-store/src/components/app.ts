@@ -6,6 +6,7 @@ import FilterList from "../components/filters";
 import Storage from "../components/storage";
 import ShoppingCart from "../components/cart";
 import Slider from "../slider/slider";
+import { evaluation } from "../components/evaluation";
 
 class App {
   cardList: CardList;
@@ -164,6 +165,8 @@ class App {
 
     this.storage.applyStorageFilter(this.data);
     this.filterList.setFilters(this.data);
+
+    evaluation();
   }
 
   clearFilters(): void {
