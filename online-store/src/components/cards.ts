@@ -13,7 +13,7 @@ class CardList {
     this.messageWindow = new MessageWindow();
   }
 
-  public drawCards(data: Array<Data>): void {
+  public drawCards(data: Array<Data> | []): void {
     const content = document.querySelector(".content") as HTMLElement;
     const basketSum = document.getElementById("basket-sum") as HTMLElement;
     this.drawData = data;

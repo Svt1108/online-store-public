@@ -1,5 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Method createModal create modal window correctly 1`] = `
+"<div class=\\"modal-wrap\\"><div class=\\"modal-window\\"><div class=\\"modal-window__image\\" style=\\"background-image: url(./assets/images/plate-1.jpg);\\"></div><div class=\\"modal-window__text\\">	
+    <p class=\\"gray-text text-darken-4 modal-window__title\\">Lovely Mexico</p>	
+      <ul class=\\"modal-window__list\\">	
+      <li><strong>Author: </strong>Grazielli David</li>	
+      <li><strong>Year: </strong>2022</li>	
+      <br>	
+      <li><strong>Material: </strong>stoneware</li>	
+      <li><strong>Color: </strong>chocolate</li>	
+      <li><strong>Popularity: </strong>yes</li>	
+      <li><strong>Quantity: </strong>3</li>	
+      </ul>	
+      <p class=\\"grey-text text-darken-4 modal-window__title\\">10 €</p></div></div></div>"
+`;
+
 exports[`Method showCart create modal window correctly 1`] = `
 "<div class=\\"modal-wrap\\"><div class=\\"modal-window\\"><div class=\\"modal-window__image\\" style=\\"background-image: url(./assets/images/plate-1.jpg);\\"></div><div class=\\"modal-window__text\\">	
     <p class=\\"gray-text text-darken-4 modal-window__title\\">Lovely Mexico</p>	

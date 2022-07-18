@@ -32,6 +32,7 @@ class Slider {
       quantityMaxSaved = Math.max(...this.minMaxQuantity) as number;
 
     const price = document.getElementById("price") as noUiSlider.target;
+    if (!price) return;
     noUiSlider.create(price as HTMLElement, {
       start: [priceMinSaved, priceMaxSaved],
       connect: true,
@@ -49,6 +50,7 @@ class Slider {
     });
 
     const year = document.getElementById("year") as noUiSlider.target;
+    if (!year) return;
     noUiSlider.create(year as HTMLElement, {
       start: [yearMinSaved, yearMaxSaved],
       connect: true,
@@ -66,6 +68,7 @@ class Slider {
     });
 
     const quantity = document.getElementById("quantity") as noUiSlider.target;
+    if (!quantity) return;
     noUiSlider.create(quantity as HTMLElement, {
       start: [quantityMinSaved, quantityMaxSaved],
       connect: true,

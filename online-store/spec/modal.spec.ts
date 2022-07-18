@@ -1,6 +1,6 @@
 import ModalWindow from "../src/components/modal";
 
-describe("Method showCart", () => {
+describe("Method createModal", () => {
   const testModalWindow = new ModalWindow();
 
   test("should be defined", () => {

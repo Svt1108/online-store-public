@@ -26,7 +26,7 @@ class FilterList {
     this.drawFilters();
   }
 
-  private drawFilters(): void {
+  drawFilters(): void {
     const authorSaved: Array<string> = JSON.parse(
       localStorage.getItem("author_saved") as string
     );

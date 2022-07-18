@@ -166,7 +166,21 @@ class App {
     this.filterList.setFilters(this.data);
   }
 
-  private clearFilters(): void {
+  clearFilters(): void {
+    this.resetFiltersInStorage();
+    this.storage.applyStorageFilter(this.data);
+    this.filterList.setFilters(this.data);
+    const price = document.getElementById("price") as noUiSlider.target;
+    (<noUiSlider.API>price.noUiSlider).set([0, 3000]);
+    const year = document.getElementById("year") as noUiSlider.target;
+    (<noUiSlider.API>year.noUiSlider).set([0, 3000]);
+    const quantity = document.getElementById("quantity") as noUiSlider.target;
+    (<noUiSlider.API>quantity.noUiSlider).set([0, 3000]);
+    const search = document.getElementById("search") as HTMLInputElement;
+    search.value = "";
+  }
+
+  resetFiltersInStorage(): void {
     localStorage.setItem("author_saved", JSON.stringify(this.emptyArray));
     localStorage.setItem("color_saved", JSON.stringify(this.emptyArray));
     localStorage.setItem("type_saved", JSON.stringify(this.emptyArray));
@@ -178,16 +192,6 @@ class App {
     localStorage.setItem("quantity_max_saved", "");
     localStorage.setItem("quantity_min_saved", "");
     localStorage.setItem("search_saved", "");
-    this.storage.applyStorageFilter(this.data);
-    this.filterList.setFilters(this.data);
-    const price = document.getElementById("price") as noUiSlider.target;
-    (<noUiSlider.API>price.noUiSlider).set([0, 3000]);
-    const year = document.getElementById("year") as noUiSlider.target;
-    (<noUiSlider.API>year.noUiSlider).set([0, 3000]);
-    const quantity = document.getElementById("quantity") as noUiSlider.target;
-    (<noUiSlider.API>quantity.noUiSlider).set([0, 3000]);
-    const search = document.getElementById("search") as HTMLInputElement;
-    search.value = "";
   }
 }
 
